@@ -1,0 +1,18 @@
+{
+  "sha256": {
+    "build_runner.py": "030b744e4934fe02131121d8e06ec4df2d381aae3e98f36ea45033cc2ecf0891",
+    "external_replay.cpp": "2b55f5e4d4c29a8cad0cef97ee49088aa90f93639537ddfd5e79b94c52e2c5df",
+    "test_runner.py": "2182c95930677e27ef99cc1d1a78c77bbdac802ebb53f47517b3299aa72de62f",
+    "replay_128": "7f1a6e7858c44c0d47738cbe3a4447aaf288043a0b75919f3d6e11c161df4ddc",
+    "replay_4096": "cf70b879e081740a2c7bcdf5a9127e298c0e418dad9791a34244caf94d7ee551",
+    "runner_fixture_receipt.json": "79f95b6c12cc2f9e7bc779c1a1ba2a54442298ae63d9adbf5ba72d26c00b32e5"
+  },
+  "first_build_cpu": 3.990499,
+  "second_build_cpu": 4.206634,
+  "first_fixture_cpu": 0.109852,
+  "second_fixture_cpu": 0.104218,
+  "build_total_cpu": 8.197133,
+  "fixture_total_cpu": 0.21407,
+  "postfreeze_repairs": 0,
+  "external_outcomes_observed": false
+}

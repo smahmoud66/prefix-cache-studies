@@ -1,0 +1,27 @@
+{
+  "frozen_utc": "2026-11-09T00:49:45.527570+00:00",
+  "hashes": {
+    "evaluator": "3e9fc2fc004b7c18390a4c3ecd900a96c84223f4f8a978c74226f48d384106f3",
+    "evaluator.cpp": "84ed4bc51523c0d855b9514a7ef02596319a95648fe0b7bff962b0247424d549",
+    "benchmark.py": "1e073c51ef30f5fd9f6911b304d2af937cb816577159fca6883cc72eaa657295",
+    "test_exact.py": "76ccb42bd9f9600f87d4e2207aa7325695401a069130b495540191b237f1965b",
+    "summarize.py": "91da9949d73221d2503ce074c0a333dad9da1a49ee24702b4aed595bbed3510b",
+    "protocol.md": "481721db6076f35b3963ad1320bd86892c19333a2b8d623af30044c005ee685e",
+    "derivation.md": "cff1c35ca9329229852b21bf1eb2b0219e88a06e8edbac79e093b21342146967",
+    "audit.md": "27ea27003848f6b8f30eaeb2946dcb9b9003e2478a803ee8ee81983a01ad3785",
+    "../exit_cache_20261108/engine.cpp": "6b3c4b2e042cdca1d433a79349fb22a5e08ab7dbc9fe27bbe5127350a11f4a01",
+    "../exit_cache_20261108/runner.py": "ec300ec46b543d8a1fc7089dc29fb707571d2ec3dce93770b8bddcbae60906e9",
+    "../commitment_20261108/study.py": "b3b04b1b62fd3fac75508acc9d2a785a55e10a43a25984b1d55e20db52474386",
+    "../exit_cache_20261108/online_receipt.json": "520c556c3c1d79a2007786814e2cd63fdc5b027d15be44e41a583ddb14e5fd6b",
+    "../exit_cache_20261108/development_receipt.json": "8a230f83a8c0db7d6937e9c56875fb16a4c42779b840ec2969985733901a4fba"
+  },
+  "primary_comparison": "stateful native OPT TIE vs REF TIE, plus native exact IMM and K practical controls, common wire and compiler",
+  "procedure": "Full-workload verification, three timing repetitions, frozen order seed 20261108. Two development and 56 previously exposed bins for verification; 56 for timing.",
+  "fixtures": "Independent checks PASS per audit.md",
+  "cpu_limit_seconds": 3600,
+  "active_work_limit_seconds": 14400,
+  "correction_limit_seconds": 1800,
+  "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+  "compile_command": "c++ -std=c++17 -O3 -Wall -Wextra -pedantic evaluator.cpp -o evaluator",
+  "os": "macOS-27.0.1-arm64-arm-64bit-Mach-O"
+}

@@ -1,0 +1,143 @@
+{
+  "start_utc": "2026-11-08T22:12:57Z",
+  "state": "TERMINAL",
+  "workers": [
+    "commitment_token",
+    "commitment_visual",
+    "commitment_math"
+  ],
+  "search_caps_by_role": {
+    "token": [
+      5,
+      3
+    ],
+    "visual": [
+      5,
+      3
+    ],
+    "math": [
+      2,
+      1
+    ],
+    "root": [
+      6,
+      3
+    ]
+  },
+  "root_searches": [
+    "Filter official NeurIPS 2026 conference event catalogue for LLM prefix, KV-cache serving, batching, and scheduling",
+    "\"Intent-Aware Caching for Efficient LLM Serving\" arXiv IAC",
+    "\"Geometry-Aware Online Scheduling for LLM Serving\" arxiv"
+  ],
+  "root_manuscripts": [
+    "Geometry-Aware Online Scheduling for LLM Serving (technical sections attempted)",
+    "Intent-Aware Caching for Efficient LLM Serving (technical sections attempted)"
+  ],
+  "old_expiry": "2026-11-16T14:33:50.277332+00:00",
+  "prior_lifetime_accounting": {
+    "historical_ledger_sha256": "4bed0e3a28dddc49cd6ecb8fe2efede02466abfd6f72dfa992f8dd88eba8777b",
+    "prior_known_charged_cpu_seconds_including_prior_design": 60787.325632249005,
+    "prior_gpu_seconds": 1177,
+    "pass_elapsed_seconds_from_rounded_start": 857.152619,
+    "process_cpu_seconds_numerical_run": 1.112954,
+    "numerical_wall_seconds": 0.8864961249928456,
+    "additional_conservative_cpu_seconds_envelope": 3840,
+    "envelope_basis": "Four core equivalents times rounded pass duration with one minute closeout margin; administrative accounting convention, includes measured experiment. Exact total active CPU unmetered. Source retrieval and dependency preparation included in elapsed time.",
+    "known_cumulative_cpu_seconds_including_this_pass_envelope": 64627.325632249005,
+    "shared_ceiling_cpu_seconds": 460800,
+    "original_expiry": "2026-11-16T14:33:50.277332Z",
+    "past_unmetered_work": "unknown",
+    "new_gpu_seconds": 0,
+    "new_paid_model_api_calls": 0,
+    "new_job_submissions": 0
+  },
+  "limits": {
+    "selection_active_seconds": 10800,
+    "total_active_seconds": 21600,
+    "cpu_core_seconds": 115200,
+    "gpu_seconds": 21600,
+    "repairs_seconds": 5400,
+    "submissions": 4,
+    "integrated_studies": 1
+  },
+  "protocol_sha256": "3d354bf6f39560710bf389f8fb6caca181f8b1927e7321880049a2207d41f4dc",
+  "selection_utc": "2026-11-08T22:21:32.228960+00:00",
+  "config_sha256": "de6b6a53a5c56b7f0c3f487d5cd798390db4c6548fdb49dbf351de30a8e8d0a6",
+  "contract_sha256": "f345d656a6d34c96d22b9b4fe3b84d0ba9fdee60faf10b4d23208779223d78ff",
+  "constructive_revisions": 1,
+  "selected": "token",
+  "evaluation_opened_utc": "2026-11-08T22:31:38.470804+00:00",
+  "evaluation_script_sha256": "b3b04b1b62fd3fac75508acc9d2a785a55e10a43a25984b1d55e20db52474386",
+  "dev_changes": "none",
+  "operational_repairs": 0,
+  "closed_at_utc": "2026-11-08T22:36:33.217580+00:00",
+  "decision": "NO_ADVANTAGE_IN_REGISTERED_SETTING",
+  "accounting": {
+    "timestamp_utc": "2026-11-08T22:36:33.217580+00:00",
+    "event": "reconcile",
+    "reservation_id": "research_commitment_20261108_local",
+    "allocated_cpu_core_seconds": 3360,
+    "gpu_seconds": 0,
+    "job_submissions": 0,
+    "scope": "Coordinator + three native, nonrecursive design roles + one CPU trace study",
+    "coordinator_elapsed_seconds_through_close": 1416.21758,
+    "coordinator_core_equivalent_envelope": 1560,
+    "per_worker_design_core_equivalent_envelope": 600,
+    "worker_count": 3,
+    "measured_replay_cpu_seconds": 16.27579,
+    "accounting": "One core equivalent per role, rounded up with closeout margin; includes replay, verification and reporting. Actual Codex usage and total active local CPU unmetered. D side charge 3840 and earlier design envelope 600 remain part of lifetime accounting.",
+    "unused_reserved_cpu_seconds": 54240,
+    "known_lifetime_cpu_seconds_including_side_receipts": 67987.325632249,
+    "evidence": "research/commitment_20261108/final_study_report.md",
+    "decision": "NO_ADVANTAGE_IN_REGISTERED_SETTING"
+  },
+  "selection_elapsed_seconds": 515.22896,
+  "searches_used": {
+    "root": 3,
+    "token": 5,
+    "visual": 5,
+    "math": 2,
+    "total": 15
+  },
+  "manuscript_slots_charged": {
+    "root": 2,
+    "token": 3,
+    "visual": 2,
+    "math": 1,
+    "total": 8
+  },
+  "root_source_coverage": {
+    "geometry": "Conference poster 150070; arXiv:2606.22327v2 intro and stated claims. Accepted-text identity unresolved.",
+    "IAC": "Official conference poster 150630; abstract plus author publication metadata. No complete manuscript read."
+  },
+  "native_roles": "Three GPT-6-astra workers for distinct proposals and independent mathematical critique. Coordinator inherited session configuration. No recursive workers. Agent agreement was not a validation test.",
+  "frozen_study_execution": {
+    "development_groups": 8,
+    "evaluation_groups": 32,
+    "missing": 0,
+    "operational_repairs": 0,
+    "scientific_amendments": 0,
+    "gpu_submissions": 0
+  },
+  "final_report": "final_study_report.md",
+  "evidence_hashes": {
+    "final_study_report.md": "64e5a3a118a4d7d7880bcbf8b7e28db8f9bba599929b7839284eeafcb4a1ce49",
+    "summary.json": "597a8bcae044912ec6f2d4dba233a583ce593bfd62f352c69a2fddf089f534b7",
+    "visual_sources.md": "5a8ae91fcca0d566efa144304dd8198abb28f843b1e1800973d1556f0fab597d",
+    "config.json": "de6b6a53a5c56b7f0c3f487d5cd798390db4c6548fdb49dbf351de30a8e8d0a6",
+    "research_contract.md": "f345d656a6d34c96d22b9b4fe3b84d0ba9fdee60faf10b4d23208779223d78ff",
+    "math_notes.md": "2c23e58d554e1793b8b47042fce752b7c23221b9cb993d36de483c5d60d97c51",
+    "evaluation_receipt.json": "1d693661cb560fdab84c5f6fbeaf42b2909b3d86dd7803ea9dda16bbf0cd30a6",
+    "development_receipt.json": "4e7f5476483f2190213fec219ec9dc16a8fa9d361aabf2f19ace8b3532b3de8e",
+    "evaluation.jsonl": "bbbaa41e3ecc986c7b000fd91e3be82152b9944bf6a0d89e242026d1a37ef9ec",
+    "development.jsonl": "5c6ee89e96e4eb6820e8f5bfcd968eea2e3bd55f72e621959bb9fc6361de5f2a",
+    "token_sources.md": "a8e52e0972877d1232286a911b48ac1c8689f6d1c3f2e94c0a53d5a7ced54a83",
+    "study.py": "b3b04b1b62fd3fac75508acc9d2a785a55e10a43a25984b1d55e20db52474386",
+    "analyze.py": "f98e285dc6549664d288bfd1073e96cb8a9b6fa71a48f5444f4b6163f2777252",
+    "inputs/conversation.jsonl": "b8cbb061a85206d729d91cdc2981f43c9e0d99209dce588d3af5f7934408b9df",
+    "inputs/toolagent.jsonl": "48a2db1a13d3bc05e6330140c64f604ba366df20d3c9e128b5c35a01c1fa5f71",
+    "inputs/receipt.json": "6044f2777b243f29ce564410d5343c761fd9d404d8b718188ca61b570f6219ef"
+  },
+  "remaining_open_reservations_for_pass": 0,
+  "known_lifetime_gpu_seconds": 1177
+}

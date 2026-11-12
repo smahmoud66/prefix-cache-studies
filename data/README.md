@@ -10,3 +10,5 @@ This repository includes simulation results and a numeric witness panel, not ori
 The two `exit_cache_*.jsonl.gz` files are recorded Mooncake study outputs with request indices and computed costs. `external-timing-rows.tar.gz` holds the Qwen/Bailian comparison's per-cohort TSV rows. The upstream repositories are unaffiliated with this artifact.
 
 The two compressed Qwen cohort ledgers contain numeric arrival and grouping data derived from the attributed Bailian release; they support independent timing readback.
+
+The earlier commitment-study development and evaluation records are included as compressed JSON Lines. Historical narrative links point to the corresponding packaged records. The original machine-specific report path in one historical checkpoint has been replaced by its relative filename.

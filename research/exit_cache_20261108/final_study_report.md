@@ -48,7 +48,7 @@ The strongest finding is that **history can resolve equal-immediate-cost orders 
 
 ### Evidence and reproduction
 
-[Prospective contract](contract.md) · [Frozen files](freeze.json) · [Causal engine](engine.cpp) · [Online and offline runner](runner.py) · [Per-bin results and selected state records](online.jsonl) · [Privileged checks](hindsight.jsonl) · [Independent reconstruction of tool/agent bin 0](review.md) · [Analysis code](analyze.py).
+[Prospective contract](contract.md) · [Frozen files](freeze.json) · [Causal engine](engine.cpp) · [Online and offline runner](runner.py) · [Per-bin results and selected state records](../../data/exit_cache_20261108-online.jsonl.gz) · [Privileged checks](../../data/exit_cache_20261108-hindsight.jsonl.gz) · [Independent reconstruction of tool/agent bin 0](review.md) · [Analysis code](analyze.py).
 
 The following commands reproduce the scientific outputs on the recorded macOS/arm64 environment from the project root, in a fresh sibling directory. The frozen original binary, development receipt and input files are required. Wall/CPU timing and file hashes containing timing will vary. The archived compile command, compiler identity and C++ source hash are in freeze.json; the runner pins its evaluation executable.
 

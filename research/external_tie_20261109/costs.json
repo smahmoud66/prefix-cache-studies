@@ -1,0 +1,46 @@
+{
+  "disposition": "ACCELERATION_ESTABLISHED_SCHEDULING_TRANSFER_UNSUPPORTED",
+  "core_seconds_components": {
+    "full_replay_and_integration_children": 148.053116,
+    "replay_orchestrator": 0.35914399999999996,
+    "aggregation": 6.311806000000001,
+    "native_fixtures": 0.21407,
+    "compiled_builds": 8.197133,
+    "data_adapter_builds_outer_measured": 2.58,
+    "metadata_scan": 1.81,
+    "cohort_grouping": 0.46146699999999996,
+    "independent_output_audit": 0.75
+  },
+  "measured_or_reported_components_sum": 168.73673599999998,
+  "additional_estimated_seconds": {
+    "metadata_scans_uninstrumented": 2,
+    "adapter_fixture": 0.04
+  },
+  "administrative_charge_core_seconds_inclusive": 2460,
+  "conservative_role_charges": {
+    "data": 480,
+    "implementation": 480,
+    "review": 720,
+    "coordinator": 780
+  },
+  "charge_basis": "One core per role from common start to last role evidence plus two minutes rounded up to whole minutes, includes measured work. Exact aggregate CPU of shell, administrative tasks and agent service unmetered.",
+  "elapsed_from_start_s": 648.272045,
+  "authorized_active_hours": 6,
+  "charged_cpu_cap_s": 57600,
+  "numerical_cap_s": 7200,
+  "source_data_bytes": 152564475,
+  "source_and_metadata_saved_payload_bytes": 152583848,
+  "network_overhead": "unmetered",
+  "keyword_queries": 0,
+  "substantive_provenance_docs": 2,
+  "gpu_s": 0,
+  "pace_jobs": 0,
+  "paid_inference_calls": 0,
+  "postfreeze_retries": 0,
+  "postfreeze_repairs": 0,
+  "correction_cycle_invoked": false,
+  "unchanged_expiry": "2026-11-16T14:33:50.277332+00:00",
+  "prior_lifetime_core_seconds": 73387.325632249,
+  "lifetime_core_seconds_after": 75847.325632249,
+  "open_reservation_s": 0
+}

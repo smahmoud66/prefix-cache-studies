@@ -24,3 +24,9 @@ python3 tools/reproduce.py replay-ordering --work /tmp/new-ordering-replication
 ```
 
 For the original coefficient fit, [the exported NVIDIA component points](../research/prefix_order_pilot_20261112/sources/profile_points.json) are sufficient for [calibrate.py](../research/prefix_order_pilot_20261112/calibrate.py) (NumPy and SciPy); [export_profile.py](../research/prefix_order_pilot_20261112/export_profile.py) can extract them from the two pinned component Parquet files using DuckDB. The [exact hash and provenance record](../research/prefix_order_pilot_20261112/freeze.json) describes the original machine, inputs and historical file layout, including nonportable binaries not redistributed here.
+
+**Build both manuscripts.** A standard TeX Live installation with pdfLaTeX is sufficient. The command forms a source-only archive for each paper, extracts each into a new temporary directory, and compiles it twice there without shell escape. The archives and review PDFs are written to the selected destination.
+
+```sh
+python3 tools/build_papers.py --out /tmp/prefix-cache-papers
+```

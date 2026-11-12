@@ -1,0 +1,32 @@
+{
+  "started_utc": "2026-11-09T02:38:00Z",
+  "phase": "TERMINAL",
+  "reservation": {
+    "timestamp_utc": "2026-11-09T02:40:39.478927+00:00",
+    "event": "reserve",
+    "reservation_id": "focused_comparison_20261109_local",
+    "cpu_core_seconds": 28800,
+    "numerical_subcap_seconds": 3600,
+    "prior_known_lifetime_cpu_seconds": 77227.325632249,
+    "gpu_seconds": 0,
+    "scope": "One fair focused-LRU adaptation and Mooncake evaluator comparison; four cumulative active hours, one 30 minute correction, original expiry."
+  },
+  "expires": "2026-11-16T14:33:50.277332+00:00",
+  "request_sha256": "102725d680b02099ea94d996a8ebe908b60151a65f537cad0eb810ce6b81deb0",
+  "freeze_utc": "2026-11-09T02:44:29.624846+00:00",
+  "closed": "2026-11-09T02:49:08.374016+00:00",
+  "decision": "USEFUL_EXACT_SPECIALIZATION_LIMITED_INCREMENT_BEYOND_FOCUSED",
+  "open_reservations": 0,
+  "artifacts": {
+    "freeze.json": "b06621f7dcb67788c19b67c34ea8ef57b39f3bf8baad9a73d6657ed55d8e7cd8",
+    "benchmark_receipt.json": "c27f1c793031e6ec42559f3d514b12ef90958d8ecb107c32617da13b99d42901",
+    "verification_receipt.json": "202d9929bcd073913114a1979fdd0783f66c7baaaa81180af797983881cf1b80",
+    "summary.json": "313da1d138f945b3ad310e3973573a3c12004f8ac0a7b56af33d6d5e3f491c8c",
+    "timing_receipts.jsonl": "e6ed15ea15a82909a36a66aa680e4093fb1a32bb36628826df3a430dfbb73f33",
+    "primary_readback.json": "e13ca9bcf23045a6baa5eacfb07af81e0915857732e36aad3a73028f21caba9b",
+    "measurement_tables.md": "04e5802e3c91c301c1a46c17d71a746e2fdcc07f0d866e1086fd9c5998afd097",
+    "comparison_report.md": "ee507e40ebc42336dd2db48e54fc8fbddb44b015315ecba557bc29bbb7cdb457",
+    "manuscript_v2.md": "cef467301808f46a30d4387d4c05f5b6f0a824c7b40a0c44bf537a1df0f354fc",
+    "costs.json": "c5dcc1eb9a8d6fcf6915273b1ca3b351e65d1bbc76ab75fc8e58213e4f182fd7"
+  }
+}

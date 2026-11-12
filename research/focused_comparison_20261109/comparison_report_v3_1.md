@@ -1,6 +1,6 @@
 # What the focused-LRU comparison establishes
 
-**Current manuscript: [Exact Evaluation of Adaptive Prefix-Cache Continuations, v3.1](manuscript_v3_1.md).** Giving both implementations the survival test and cross-exit score sharing left the original RANK-11 kernel with zero additional replays saved. Its mean complete native CPU was higher in six of eight comparisons. The contribution that survives is the exact specialization for atomic prefix paths and the accounting of where each shortcut helps. FOCUSED is our adaptation of [Touzeau et al.](https://valentintouzeau.fr/papers/POPL2019.pdf#page=11); the published analyzer was not timed.
+**Current manuscript: [Exact Evaluation of Adaptive Prefix-Cache Continuations, v3.1](https://github.com/smahmoud66/prefix-cache-studies/blob/main/papers/evaluator/paper.pdf).** Giving both implementations the survival test and cross-exit score sharing left the original RANK-11 kernel with zero additional replays saved. Its mean complete native CPU was higher in six of eight comparisons. The contribution that survives is the exact specialization for atomic prefix paths and the accounting of where each shortcut helps. FOCUSED is our adaptation of [Touzeau et al.](https://valentintouzeau.fr/papers/POPL2019.pdf#page=11); the published analyzer was not timed.
 
 ## Where the 267,672 replays went
 
@@ -29,4 +29,4 @@ At 128 blocks on tool/agent decisions, turning on certification alone left 114,7
 
 Changing residual state representation reduced local caller wall by **16.9%** here. On conversation decisions, adding certification to sharing left replays unchanged at 32 blocks (151) and removed just 67 at 128 (223 to 156). But on conversation **absolute scores** at 128 blocks it cut replays from 12,182 to 6,975. The eight cells separate traffic, capacity and required output; the three repetitions on one M2 reuse the same exposed bins and describe machine variation only. [Timing definitions and full tables](measurement_tables.md) · [Matched contrasts](summary.json)
 
-This editorial readout uses the completed run. The [original comparison and reproduction instructions](comparison_report.md) still point to v2 as recorded in the [closed checkpoint](checkpoint.json). The [publication decision](decision_note_v2.md) remains in force.
+This readout uses the completed run. The [archived checkpoint](checkpoint.json) describes the earlier manuscript. The [public reproduction guide](../../docs/reproduce.md) describes how to verify the published measurements and obtain the code.

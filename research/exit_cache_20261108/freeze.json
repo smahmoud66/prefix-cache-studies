@@ -1,0 +1,24 @@
+{
+  "utc": "2026-11-08T23:00:59.567230+00:00",
+  "state": "FROZEN_BEFORE_NEW_EVALUATION",
+  "files": {
+    "contract.md": "addbfe2bdeeef664d0f3176fc98c0b9c0b28584d784df37ab38a6f187bfb9368",
+    "split.json": "cff9de15d48572f4a476b06c70806b630b77c22332c2819f48df86d0ec21b572",
+    "runner.py": "ec300ec46b543d8a1fc7089dc29fb707571d2ec3dce93770b8bddcbae60906e9",
+    "engine.cpp": "6b3c4b2e042cdca1d433a79349fb22a5e08ab7dbc9fe27bbe5127350a11f4a01",
+    "engine": "48eb78d5d86006d14b54056fd822eb8108b84621a0a57075bed13d14dd7e5bfc",
+    "development_receipt.json": "8a230f83a8c0db7d6937e9c56875fb16a4c42779b840ec2969985733901a4fba"
+  },
+  "input_protocol_sha256": "5e3ef8a20812c367a9908012a7368a0c33ce71eb04ced51e741069bef36d34c9",
+  "build": "c++ -std=c++17 -O3 -Wall -Wextra -pedantic engine.cpp -o engine",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "checks": "engine self-test PASS; previously exposed dev orders and prefill match parent; prefreeze static independent review; one instrumentation addition only",
+  "primary_mechanism_refinements": 0,
+  "repairs": 0,
+  "horizon": 2,
+  "M": 8,
+  "primary_capacity": 128,
+  "evaluation_bins": 56,
+  "numerical_core_seconds_cap": 3600
+}

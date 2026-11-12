@@ -195,6 +195,6 @@ A tied cohort has multiple immediately optimal orders. Distinct exits count full
 | B / 16 / 4096 | 5,000 / 5,000 | 120,000 / 24 | 0 (0 / 0) | 0 / 0 / 0 | 51,475 → 1,135,767 (3,395) | 3824.0 / 3849.7 / 0.0 | +0 / +0 / +0 / +0 |
 | B / 16 / 1024 | 5,000 / 5,000 | 119,814 / 24 | 0 (0 / 0) | 0 / 0 / 0 | 51,475 → 1,125,501 (3,395) | 3824.0 / 3848.4 / 0.0 | +0 / +0 / +0 / +0 |
 
-Per-cohort orders, displacement, eligibility counts, and per-repetition resource records are available in the [raw replay outputs](runs/) and [numerical summary](summary.json). Counts describe the observed mechanism. They cannot identify how much of the episode effect was caused by changes in residency versus recency.
+Per-cohort orders, displacement, eligibility counts, and per-repetition resource records are available in the [raw replay outputs](../../data/external-timing-rows.tar.gz) and [numerical summary](summary.json). Counts describe the observed mechanism. They cannot identify how much of the episode effect was caused by changes in residency versus recency.
 
 **Final judgment.** Retain the exact evaluator and the earlier measured acceleration. On the external chat episode, even abundant immediately optimal exits yielded no incremental saving over the immediate scheduler. The structurally isolated API episode adds an overhead measurement. Together they leave a deployment benefit unsupported.
