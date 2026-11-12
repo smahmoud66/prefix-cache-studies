@@ -1,10 +1,11 @@
-# Manuscripts and submission sources
+# Exact Evaluation of Adaptive Prefix-Cache Continuations
 
-| Paper | Read | Source | Metadata |
-|---|---|---|---|
-| Exact Evaluation of Adaptive Prefix-Cache Continuations (technical report v3.1) | [PDF](evaluator/paper.pdf) | [main.tex](evaluator/main.tex) | [Submission fields](evaluator/metadata.txt) |
-| Request Ordering Under a Waiting Limit for LLM Prefix Reuse: A Trace Replay Study | [PDF](ordering/paper.pdf) | [main.tex](ordering/main.tex) and [figure](ordering/heldout.pdf) | [Submission fields](ordering/metadata.txt) |
+Technical report v3.1 by Mohammad Ali Seyed Mahmoud, Georgia Institute of Technology.
 
-The [v1.0.1 release](https://github.com/smahmoud66/prefix-cache-studies/releases/tag/v1.0.1) contains two standalone arXiv source uploads and the review PDFs compiled from those exact archives. This GitHub publication does not indicate arXiv submission or acceptance. Use the [paper build script](../tools/build_papers.py) to recreate the uploads.
+[Review PDF](evaluator/paper.pdf) · [LaTeX source](evaluator/main.tex) · [Submission metadata](evaluator/metadata.txt) · [arXiv source archive](https://github.com/smahmoud66/prefix-cache-studies/releases/download/v1.1.0/exact-prefix-cache-continuations-v3.1-arxiv.tar.gz)
 
-Mohammad Ali Seyed Mahmoud licenses both manuscripts under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+The [v1.1.0 artifact release](https://github.com/smahmoud66/prefix-cache-studies/releases/tag/v1.1.0) contains the single submission package. The [build instructions](../docs/reproduce.md) reproduce the review PDF from the upload.
+
+The paper summarizes the held-out ordering result in **Experimental Evaluation**. The [full companion pilot](../research/prefix_order_pilot_20261112/result.md) includes the frozen protocol, results for all configurations and independent verification.
+
+Both reports are available under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/).

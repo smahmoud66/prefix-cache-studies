@@ -1,36 +1,67 @@
 #!/usr/bin/env python3
-"""Create source uploads and review PDFs; compile only what a reader extracts."""
-import argparse,gzip,io,os,shutil,subprocess,tarfile,tempfile
+"""Package the evaluator's arXiv source and compile its review PDF from that archive."""
+
+import argparse
+import gzip
+import os
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[1]
-STAMP=1794484800
-PAPERS={'evaluator':('exact-prefix-cache-continuations-v3.1-arxiv',['main.tex']),
-        'ordering':('request-ordering-waiting-limit-arxiv',['main.tex','heldout.pdf'])}
-def build(out):
-    out.mkdir(parents=True,exist_ok=True)
-    for study,(name,files) in PAPERS.items():
-        ar=out/(name+'.tar.gz')
-        with ar.open('wb') as raw,gzip.GzipFile(fileobj=raw,filename='',mode='wb',mtime=0) as gz,tarfile.open(fileobj=gz,mode='w',format=tarfile.USTAR_FORMAT) as pack:
-            for f in files:
-                b=(ROOT/'papers'/study/f).read_bytes();i=tarfile.TarInfo(f)
-                i.size=len(b);i.mode=0o644;i.mtime=STAMP;pack.addfile(i,io.BytesIO(b))
-        with tempfile.TemporaryDirectory(prefix='arxiv-build-') as tmp:
-            here=Path(tmp)
-            with tarfile.open(ar) as pack:
-                assert pack.getnames()==files
-                for member in pack:
-                    assert member.isfile() and member.name in files
-                    (here/member.name).write_bytes(pack.extractfile(member).read())
-            env={k:v for k,v in os.environ.items() if k not in ('TEXINPUTS','BIBINPUTS','BSTINPUTS','TEXMFHOME','TEXMFOUTPUT')}
-            env.update(TEXMFHOME=str(here/'empty-texmf'),SOURCE_DATE_EPOCH=str(STAMP),FORCE_SOURCE_DATE='1',TZ='UTC')
-            for _ in range(2):
-                r=subprocess.run(['pdflatex','-no-shell-escape','-halt-on-error','-interaction=nonstopmode','main.tex'],cwd=here,env=env,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True)
-                if r.returncode: raise RuntimeError(r.stdout[-3500:])
-            log=(here/'main.log').read_text()
-            for m in ('undefined references','Rerun to get cross-references','Missing character:'):
-                if m in log:raise RuntimeError(m)
-            shutil.copyfile(here/'main.pdf',out/(name+'.pdf'))
-            print(ar.name, 'and',name+'.pdf')
-if __name__=='__main__':
-    a=argparse.ArgumentParser(description=__doc__);a.add_argument('--out',type=Path,required=True)
-    build(a.parse_args().out.resolve())
+import shutil
+import subprocess
+import tarfile
+import tempfile
+
+
+ROOT = Path(__file__).resolve().parents[1]
+SOURCE = ROOT / "papers" / "evaluator" / "main.tex"
+NAME = "exact-prefix-cache-continuations-v3.1-arxiv"
+STAMP = 1794484800
+
+
+def build(output):
+    output.mkdir(parents=True, exist_ok=True)
+    archive = output / f"{NAME}.tar.gz"
+
+    with archive.open("wb") as raw:
+        with gzip.GzipFile(filename="", fileobj=raw, mode="wb", mtime=0) as compressed:
+            with tarfile.open(fileobj=compressed, mode="w", format=tarfile.USTAR_FORMAT) as pack:
+                member = tarfile.TarInfo(SOURCE.name)
+                member.size = SOURCE.stat().st_size
+                member.mode = 0o644
+                member.mtime = STAMP
+                with SOURCE.open("rb") as content:
+                    pack.addfile(member, content)
+
+    with tempfile.TemporaryDirectory(prefix="arxiv-build-") as temp:
+        work = Path(temp)
+        with tarfile.open(archive) as pack:
+            member = pack.getmember("main.tex")
+            if pack.getnames() != ["main.tex"] or not member.isfile():
+                raise ValueError("The source archive must contain only main.tex")
+            with pack.extractfile(member) as content:
+                (work / member.name).write_bytes(content.read())
+
+        env = os.environ.copy()
+        for name in ("TEXINPUTS", "BIBINPUTS", "BSTINPUTS", "TEXMFOUTPUT"):
+            env.pop(name, None)
+        env.update(TEXMFHOME=str(work / "empty-texmf"), SOURCE_DATE_EPOCH=str(STAMP),
+                   FORCE_SOURCE_DATE="1", TZ="UTC")
+        command = ["pdflatex", "-no-shell-escape", "-halt-on-error",
+                   "-interaction=nonstopmode", "main.tex"]
+        for _ in range(2):
+            result = subprocess.run(command, cwd=work, env=env, stdout=subprocess.PIPE,
+                                    stderr=subprocess.STDOUT, text=True)
+            if result.returncode:
+                raise RuntimeError(result.stdout[-3500:])
+        log = (work / "main.log").read_text()
+        for warning in ("undefined references", "Rerun to get cross-references", "Missing character:"):
+            if warning in log:
+                raise RuntimeError(warning)
+        pdf = output / f"{NAME}.pdf"
+        shutil.copyfile(work / "main.pdf", pdf)
+    print(f"{archive.name} and {pdf.name}")
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--out", type=Path, required=True)
+    build(parser.parse_args().out.resolve())

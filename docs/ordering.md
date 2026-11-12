@@ -1,6 +1,6 @@
 # Request ordering under a waiting limit
 
-[Read the paper](../papers/ordering/paper.pdf) · [LaTeX source](../papers/ordering/main.tex)
+[Full pilot results and audit](../research/prefix_order_pilot_20261112/result.md) · [Companion report (PDF)](../reports/ordering/pilot.pdf) · [Report source](../reports/ordering/main.tex)
 
 The CPU simulator measures modeled prefill service separately from waiting. Its waiting bound is an excess over each request's FCFS start. There is no production latency measurement.
 
