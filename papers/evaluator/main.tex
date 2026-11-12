@@ -3,7 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern,microtype}
 \usepackage[margin=0.93in,footskip=0.43in]{geometry}
-\usepackage{amsmath,amssymb,booktabs,tabularx,graphicx}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
 \usepackage{xcolor}
 \definecolor{linkink}{HTML}{155B73}
 \usepackage[colorlinks=true,linkcolor=linkink,citecolor=linkink,urlcolor=linkink,pdfencoding=auto]{hyperref}
@@ -16,28 +16,33 @@
 \hypersetup{pdfauthor={Mohammad Ali Seyed Mahmoud},pdftitle={Exact Evaluation of Adaptive Prefix-Cache Continuations}}
 \title{Exact Evaluation of Adaptive Prefix-Cache Continuations}
 \author{Mohammad Ali Seyed Mahmoud\\[3pt] {\normalsize Georgia Institute of Technology}\\[-1pt] {\small\href{mailto:m.seyedmahmoud@gatech.edu}{\nolinkurl{m.seyedmahmoud@gatech.edu}}}}
-\date{\small Technical report, v3.1. November 12, 2026.\enspace\textperiodcentered\enspace This paper is licensed under \href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0}.}
+\date{}
+
 \begin{document}
 \maketitle
 
 
 \begin{abstract}
-
-Tied request orders can leave different cache states. Under ordinary LRU with prefix paths charged at entry, we show how to score a known, finite continuation from those states even when its request order depends on cache hits. Equivalent starting states can share a score; a sufficient persistence test sometimes gives the score without replay. On one previously examined Mooncake tool/agent panel (128 blocks, decision output), the two shortcuts reduced historical replays from 267,672 to 46,610. Our original implementation and our adaptation of focused LRU saved exactly the same replays in all eight conditions. The original used more mean native CPU in six. On the highlighted panel, the focused implementation took 66.59 microseconds per decision versus 89.00 microseconds for the original; the local caller's wall time fell 16.9\%. The historical policy saved 0.204\% of pooled modeled prefill work over exact immediate ordering on Mooncake and zero on two external episodes. The evidence supports a specialization of focused LRU and a measurement of evaluator cost. We have not established an end-to-end benefit for an independent planner.
+In LLM serving with prefix caching, several request orders can incur the same immediate prefill work yet leave different cache states. We give an exact method to score a known, finite continuation from each state under least-recently-used eviction and entry-time charging of whole prefix paths. The continuation can select its next request using current hits. Equivalent starting states can share scores, and a sufficient persistence test can determine a score without replay. In one previously examined Mooncake tool/agent condition (128 blocks, decision output), the two shortcuts reduced full replays from 267,672 to 46,610. The complete-state and focused-state implementations used the same shortcuts and agreed on replay counts in each of eight conditions, as expected. The complete-state implementation used more mean native CPU in six of the eight. In the highlighted condition the focused-state implementation took 66.59 microseconds per decision versus 89.00 for the complete-state implementation. Local caller wall time fell 16.9\%. The policy saved 0.204\% of modeled prefill work at 128 blocks and 1.001\% at 32 on Mooncake, and zero on two external episodes. We have not established an end-to-end benefit for an independent planner.
 
 \end{abstract}
 
 \section{Introduction}
 
-Suppose two orders for the same ready requests incur the same prefill work and leave the same prefixes resident, but leave those prefixes in different recency orders. The next admission can evict a different prefix. A scheduler that prices the two exits by simulation must account for a second dependence: a continuation that prioritizes cache hits can issue its requests in different orders from those exits. What computation can the two simulations safely share?
+Suppose two orders for the same ready requests incur the same prefill work and leave the same prefixes resident, but leave those prefixes in different recency orders. The next admission can evict a different prefix. A scheduler that simulates the work remaining from each state also has to account for how later requests are chosen. A rule that prioritizes cache hits can issue the same pending requests in a different order from each state. What computation can the two simulations safely share?
 
-We give an exact method for scoring a finite continuation from multiple cache states and measure its computational cost. For each continuation, the evaluator identifies a sufficient cache observation, tests whether initially resident prefixes survive and initially absent ones miss exactly once, and computes each remaining distinct score once when required. It can propagate a complete cache or only the relevant focused state during residual replay. The construction preserves candidate scores and the chosen full exit. Whether historical demand predicts the next real requests is a separate question answered by trace replay.
+This methods and measurement report quantifies the cost of preserving every candidate score. The historical scheduling policy that motivates it saved little prefill work (Section~\ref{sec:policy}). It makes three contributions.
+\begin{itemize}
+\item An exact cache-state equivalence and a sufficient persistence test for finite continuations whose next request can depend on observed hits.
+\item Complete-state and focused-state implementations checked against 90,954 reference scores, with the selected order and its full cache state verified on the archived workloads.
+\item A matched measurement of the replays eliminated by certification and score sharing, their overlap, and the CPU cost of propagating the state on the remaining replays.
+\end{itemize}
 
 \section{Related Work}
 
-Mattson et al. use LRU stack positions to evaluate a scalar address sequence across cache capacities. Touzeau et al. classify cache hits and misses along program control flow by tracking the set of addresses younger than a focal address. Stock et al. study persistence, the property that all accesses to a block within a scope incur at most one miss in total. These results provide a basis for analyzing prefix paths admitted together. Givan et al. give the general principle for grouping states that preserve action-dependent transitions and rewards~\cite{mattson,touzeau,stock,givan}.
+Mattson et al. used LRU stack positions to evaluate a scalar address sequence across capacities~\cite{mattson}. Touzeau et al. classified hits and misses along program control flow by tracking addresses younger than a focal address~\cite{touzeau}. In the terminology of Stock et al., a block is persistent when all its accesses in a scope incur at most one miss~\cite{stock}. Our persistence test specializes this idea to a known starting state and an entire path charged at admission. Grouping states that preserve transitions and rewards is a general principle in state aggregation~\cite{givan}.
 
-Dexter et al. introduced k-LPM for scheduling requests with prefix reuse and latency constraints~\cite{dexter}. The historical continuations here use an adaptation of that rule. Their service order can therefore depend on which prefixes are resident at each step.
+SGLang's RadixAttention reuses common prefixes and uses cache-aware request ordering~\cite{sglang}. Dexter et al. introduced $k$-LPM to trade prefix reuse against latency constraints~\cite{dexter}. PEEK uses shared prefixes in the waiting queue to guide both admission and eviction~\cite{peek}. Liu et al. studied online replacement rules and offline references and released the FreeInference trace used in our ordering pilot~\cite{fancy}. Here the quantity evaluated exactly is the work of a specified continuation from a specified cache state.
 
 \section{System Model and Problem Formulation}
 
@@ -47,15 +52,17 @@ A node identifies a \textbf{complete prefix}. Equal content blocks under differe
  T_P(F)=\operatorname{take}_C\!\left(P\mathbin\Vert(F\setminus P)\right).
  \tag{1}
 \]
-Set deletion in (1) preserves list order. A reachable ancestor has been touched at least as recently as its descendants. The depth rule places ancestors ahead of descendants with the same stamp. Truncation from the end therefore removes eligible leaves, and the cap on $l$ protects the entire admitted path. For an input of $L$ positions and block width $b$, the actual prefill charge is $(L-bl)+b\,c_P(F)$. The first term covers all positions outside the reusable path, including the compulsory final token. Its sum is constant across orders serving the same requests.
+Set deletion in (1) preserves list order. A resident ancestor has been touched at least as recently as its descendants. The depth rule places ancestors ahead of descendants with the same stamp. Truncation from the end therefore removes eligible leaves, and the cap on $l$ protects the entire admitted path. For an input of $L$ positions and block width $b$, the actual prefill charge is $(L-bl)+b\,c_P(F)$. The first term covers all positions outside the reusable path, including the compulsory final token. Its sum is constant across orders serving the same requests.
 
-The charge convention changes the answer even when a scalar simulation produces the correct exit. At capacity two, start at $(b,a)$ and request $(a,x)$, where $x$ is a child of $a$ and $b$ is another root. At entry $a$ hits and $x$ misses. Scalar touches $x$ then $a$ also leave $(a,x)$, but the first touch evicts $a$ before the second, giving two misses. An exact continuation evaluator must preserve both the transition and the entry-time charge.
+Figure~\ref{fig:counterexamples}(a) illustrates why the evaluator must preserve both the entry-time charge and the cache transition.
 
-For a legal order $a$ of the current cohort, write $w_a$ for its immediate missing-block count and $F_a$ for its complete exit state. The evaluated policy first restricts attention to $\mathcal A_0=\arg\min_a w_a$. From each eligible exit it evaluates the same finite list of historical continuations. In the implemented policy, the current cohort contains up to four requests. The last sixteen completed cohorts supply up to eight disjoint chronological pairs $\mathcal H_j$, formed from the most recent end. Each pair starts afresh at $F_a$. With at least one pair available, the policy selects an order minimizing
+A \emph{cohort} is the group of ready requests considered in a single decision (up to four here). For a legal order $a$, let $w_a$ be its immediate missing-block count and let its \emph{exit}, $F_a$, be the complete cache state after serving it. The policy considers only $\mathcal A_0=\arg\min_a w_a$. The \emph{incumbent} is the order preferred by the immediate scheduler's deterministic tie rule.
+
+A \emph{continuation} consists of a finite pending workload and the rule that chooses its service order. Each \emph{historical pair} comprises two consecutive completed cohorts. The last sixteen completed cohorts supply up to eight disjoint pairs $\mathcal H_j$, grouped from the most recent end, with the older cohort served first within each pair. In each cohort our adaptation of $k$-LPM alternates between the oldest pending request and the request with the longest currently cached prefix, resolves ties by arrival order and restarts with the oldest at the next cohort. Each pair starts afresh from $F_a$. With at least one pair the policy selects an order minimizing
 \[
                  \sum_{j=1}^{m} J(F_a,\mathcal H_j),\qquad a\in\mathcal A_0,
 \]
-where $J$ counts missing blocks under the specified continuation rule. Ties retain the deterministic immediate incumbent when eligible among the minimizers, then favor arrival-lexicographic order. An empty history of complete pairs returns the incumbent.
+where $J$ counts missing blocks. Ties retain the incumbent when it is a minimizer, then favor arrival-lexicographic order. Empty history returns the incumbent. A \emph{witness} is the complete representative exit from which the evaluator can replay one class of equivalent candidates.
 
 \section{Exact Continuation Evaluation}
 
@@ -63,16 +70,18 @@ where $J$ counts missing blocks under the specified continuation rule. Ties reta
 
 Let $U$ cover every node that \textbf{any permitted branch} of a specified finite continuation can access. For each resident $x\in U$, $\Pi_U(F)$ records its identity and absolute, one-based rank $r_F(x)$. Unlisted labels in $U$ are absent. The gaps in these ranks retain the number of intervening outsiders even when their identities are discarded.
 
-\textbf{Proposition 1.} Fix the capacity, namespace, pending workload and metadata. Suppose the selector, its internal updates, and its stopping rule depend on cache state only through observations recoverable from $\Pi_U$, including the charge for a chosen request. For equally initialized controllers, equality of the initial keys implies identical actions, observed charges and total continuation work. For randomized controllers the statement holds pathwise under an identical random stream.
+\textbf{Proposition 1.} Fix the capacity, namespace, pending workload and metadata. Suppose the selector, its internal updates, and its stopping rule depend on cache state only through observations recoverable from $\Pi_U$, including the charge for a chosen request. For equally initialized controllers, equality of the initial keys implies identical actions, observed charges and total continuation work.
 
-\emph{Proof.} For any available path $P\subseteq U$, the key identifies its resident nodes. Prefix closure makes them an initial segment, giving the hit length and $c_P$. After admission, $p_i$ has rank $i$. For an initially resident $x\in U\setminus P$ of rank $r$, the prospective new rank is
+\emph{Proof.} For any available path $P\subseteq U$, the key identifies its resident nodes. Prefix closure makes them an initial segment, giving the hit length and $c_P$. After admission, $p_i$ has rank $i$. Write $r_F(p)=\infty$ for an absent node. The prospective new rank of an initially resident $x\in U\setminus P$ of rank $r$ is
 \[
  \tilde r=l+r-|\{p\in P:r_F(p)\le r\}|,
  \tag{2}
 \]
-using infinity for absence. The whole path moves ahead of $x$, and old path entries already ahead of $x$ are removed once. The node survives exactly when $\tilde r\le C$. An absent, untouched tracked node stays absent. Thus each permitted action determines the same charge and successor key from either initial state. Equal observations give the same controller decision and internal update; induction over the finite continuation proves the result. The archived k-LPM selector satisfies the restriction: it alternates oldest pending request with longest currently cached prefix, uses arrival order to resolve ties, and restarts the alternation at each cohort.
+where the whole path moves ahead of $x$, and old path entries already ahead of $x$ are removed once. The node survives exactly when $\tilde r\le C$. An absent, untouched tracked node stays absent. Thus each permitted action determines the same charge and successor key from either initial state. Equal observations give the same controller decision and internal update. Induction over the finite continuation proves the result. The selector in Section~3 satisfies the observation restriction.
 
-Absolute ranks matter. With capacity two, serving singleton roots $c,a$ from $(a,b)$ costs one miss, and from $(b,a)$ costs two. In both starts $a$ is the sole resident label in the continuation support. Conversely, if the continuation consists only of $a$, these different ranks give the same zero cost. Equality of keys is sufficient; necessity and global minimality do not follow. The historical application knows $U$ from completed requests. Using only the labels seen along one realized branch of a more general adaptive procedure could omit a possible access.
+Figure~\ref{fig:counterexamples}(b) shows that membership alone can lose information and that unequal ranks can nevertheless yield an equal score. The historical application knows $U$ from completed requests. Using only the labels seen along one realized branch of a more general adaptive procedure could omit a possible access.
+
+\noindent\textit{Relation to focused LRU.} For each resident node $x$, let $Y_x$ denote the set of nodes ahead of it in LRU order. Absence has its own marker. At admission, the implementation charges all path misses before updating recency. Each $p_i$ acquires the preceding $i-1$ path labels as its younger set. An untouched resident $x$ has prospective younger set $Y_x\cup P$ and survives precisely when its size is less than $C$. All these sets refer to the same candidate execution. Write $A_x=Y_x\cap U$ and $b_x=|Y_x\setminus U|$. On reachable states, $r_F(x)=1+|A_x|+b_x$. Conversely, the resident labeled ranks identify $A_x$ as the tracked residents ahead of $x$ and give $b_x=r_F(x)-1-|A_x|$. Absence markers agree. Since no outsider is touched, the atomic update for an untouched resident becomes $(A_x\cup P,b_x)$ before truncation, exactly the update in (2). This establishes mutual reconstruction for the \textbf{correlated} outsider-anonymized observations from one cache. Independently combining possibilities for different focal labels could produce an impossible joint order.
 
 \subsection{Cache Persistence}
 
@@ -96,13 +105,20 @@ The coverage distinction is essential. A superset of possible accesses suffices 
 
 First group immediately optimal orders that reach the same \textbf{complete} exit, keeping the representative preferred by the dispatch tie rule. For each historical pair, the key in Proposition 1 induces a further partition of those exits. Evaluate certified costs directly and reuse each unresolved class's simulated cost across its members. Add the score to each candidate's own sum. Partitions are pair-specific: two candidates can share a term for one pair and have different terms for another. If every candidate has the same term, decision-only evaluation can skip it. Absolute scoring computes that term once and restores it for every candidate.
 
-These operations preserve the ordering of objective values, including ties. The evaluator commits the winning order's \textbf{own complete exit}. A simple example shows why: serving only $a$ from $(x)$ or $(y)$ at capacity two costs one miss and gives the same terminal key on $\{a\}$. The resulting complete caches $(a,x)$ and $(a,y)$ differ on the next real request for $x$. Only a scalar historical term was shared.
+These operations preserve the ordering of objective values, including ties. The evaluator commits the winning order's own complete exit. Figure~\ref{fig:counterexamples}(c) shows why sharing a scalar historical term does not authorize substituting a different complete state.
 
-\section{Implementation}
+\begin{figure}[htbp]\centering
+\fbox{\begin{minipage}{0.94\linewidth}\small
+\textbf{(a) Entry-time charging.} Start $[b,a]$, where $b$ is another root and $x$ is a child of $a$. Admitting $[a,x]$ incurs one miss and leaves $[a,x]$. Scalar touches $x$ then $a$ reach the same exit in two misses because $x$ first evicts $a$.\par\smallskip
+\textbf{(b) Absolute ranks.} Serve singleton roots $c$ then $a$. From $[a,b]$ the cost is one miss. From $[b,a]$ it is two. Both starts contain only $a$ from this continuation's support. If the sole request is $a$, both starts cost zero despite their different ranks.\par\smallskip
+\textbf{(c) Committing the exit.} Serve only $a$ from $[x]$ or $[y]$. Both cost one miss and yield the same key on $\{a\}$. The complete exits $[a,x]$ and $[a,y]$ differ on the next real request for $x$.
+\end{minipage}}
+\caption{Three capacity-two examples. Lists show the most recent prefix first.}\label{fig:counterexamples}
+\end{figure}
 
-For each resident node $x$, let $Y_x$ denote the set of nodes ahead of it in LRU order. Absence has its own marker. At admission, the implementation charges all path misses before updating recency. Each $p_i$ acquires the preceding $i-1$ path labels as its younger set. An untouched resident $x$ has prospective younger set $Y_x\cup P$ and survives precisely when its size is less than $C$. All these sets refer to the same candidate execution. Write $A_x=Y_x\cap U$ and $b_x=|Y_x\setminus U|$. On reachable states, $r_F(x)=1+|A_x|+b_x$. Conversely, the resident labeled ranks identify $A_x$ as the tracked residents ahead of $x$ and give $b_x=r_F(x)-1-|A_x|$. Absence markers agree. Since no outsider is touched, the atomic update for an untouched resident becomes $(A_x\cup P,b_x)$ before truncation, exactly the update in (2). This establishes mutual reconstruction for the \textbf{correlated} outsider-anonymized observations from one cache. Independently combining possibilities for different focal labels could produce an impossible joint order.
+\section{Implementations}
 
-Both implementations use the persistence condition in Proposition 2 and share scores using the same projected keys. The comparison measures the cost of propagating the complete cache versus the focused state when replay is still necessary.
+The complete-state implementation with both shortcuts is RANK-11. The focused-state implementation is FOCUSED. The two digits in RANK indicate whether persistence certification and score sharing, respectively, are enabled. Both implementations use the same candidate generator, certificate, score memo and tie rules.
 
 \begin{center}\small
 \begin{tabularx}{\linewidth}{@{}lccX@{}}
@@ -121,9 +137,9 @@ FOCUSED & On & On & Tracked identities and their absolute ranks\\
 
 \bottomrule\end{tabularx}\end{center}
 
-FOCUSED is our adaptation of focused-LRU principles, not the published POPL analyzer. It uses the same candidate generator, certificate, memo and tie rules as RANK-11. Only when replay is needed does it scan the representative and initialize the reduced state. It then obtains each adaptive choice from the current tracked hits and advances the ranks after each atomic admission. RANK-11 instead runs the same continuation on the complete witness. FULL and RANK-00 share one code path because the witness-based implementation with both shortcuts disabled has no use for a projected key. The benchmark compares our two implementations; it supplies no runtime comparison with Touzeau et al.'s software.
+FOCUSED adapts the focused-LRU construction of Touzeau et al.~\cite{touzeau}. When replay is needed, it scans the witness to initialize the reduced state and advances tracked ranks after each admission. RANK-11 replays the same continuation on the complete witness. FULL and RANK-00 share one code path. The comparison times these two implementations by the same author.
 
-\textbf{Computational complexity.} For a historical pair with $E$ distinct eligible exits, full evaluation can require $E$ replays. With both shortcuts, it needs one replay per distinct uncertified class whose cost is required. Candidate generation is common work. The implementation scans up to $EC$ slots to identify varying ranks, charges certificate and key construction, and stores class scores in a pair-local linear memo. If $L$ exits require key lookup and they form $D$ unresolved classes, key comparisons alone can cost $O(LDC)$. When every exit is distinguishable and uncertified, classification adds work without saving replays. The focused kernel trades a scan to convert each residual witness for updates over tracked residents. Its two buffers reserve space at the compiled capacity. The history index also records identities encountered over the episode, so a sixteen-cohort history does not bound its storage.
+\textbf{Computational complexity.} For a historical pair with $E$ distinct eligible exits, full evaluation can require $E$ replays. With both shortcuts, it needs one replay per distinct uncertified class whose cost is required. Candidate generation is common work. The implementation scans up to $EC$ slots to identify varying ranks, charges certificate and key construction, and stores class scores in a pair-local linear memo. If $L$ exits require key lookup and they form $D$ unresolved classes, key comparisons alone can cost $O(LDC)$. When every exit is distinguishable and uncertified, classification adds work without saving replays. The focused kernel trades a scan to convert each residual witness for updates over tracked residents. The history index also records identities encountered over the episode, so a sixteen-cohort history does not bound its storage.
 
 \section{Experimental Evaluation}
 
@@ -138,85 +154,97 @@ Synthetic verification covered 3,287 decision inputs, 9,304 literal focused upda
 \subsection{Runtime and Replay Counts}
 
 \begin{table}[htbp]\centering\small
-\caption{Mean complete native CPU time ($\mu$s per measured cohort). Each method receives identical requests within an output interface. Includes parsing, candidate construction, historical evaluation and state maintenance. FULL = RANK-00.}
-\label{tab:timing}\par\vspace{4pt}
+\caption{Mean complete native CPU time ($\mu$s per cohort) over three repetitions. Timing includes parsing, candidate construction, historical evaluation and state maintenance. Lower is better. Bold marks the lowest mean per row. Ratio = FOCUSED/RANK-11.}
+\label{tab:timing}\par\vspace{3pt}
 \setlength{\tabcolsep}{4pt}
-\begin{tabular}{@{}llrrrrrr@{}}\toprule
-Output & Traffic & Blocks & FULL & RANK-10 & RANK-01 & RANK-11 & FOCUSED\\\midrule
+\begin{tabular}{@{}llrrrrrrr@{}}\toprule
+Output & Traffic & Blocks & FULL & RANK-10 & RANK-01 & RANK-11 & FOCUSED & Ratio\\\midrule
+Decision & Conversation & 128 & 269.94 & 172.05 & \textbf{29.85} & 29.94 & 30.02 & 1.003\\
+Decision & Conversation & 32 & 57.00 & 55.70 & 14.05 & \textbf{13.77} & 14.28 & 1.037\\
+Decision & Tool/agent & 128 & 281.63 & 146.02 & 156.37 & 89.00 & \textbf{66.59} & 0.748\\
+Decision & Tool/agent & 32 & 54.79 & 53.29 & 40.30 & 39.72 & \textbf{33.69} & 0.848\\
+Absolute & Conversation & 128 & 273.19 & 174.75 & 51.04 & 42.50 & \textbf{37.65} & 0.886\\
+Absolute & Conversation & 32 & 57.60 & 57.32 & 20.57 & 20.48 & \textbf{18.54} & 0.905\\
+Absolute & Tool/agent & 128 & 279.21 & 145.53 & 157.24 & 90.07 & \textbf{67.78} & 0.753\\
+Absolute & Tool/agent & 32 & 56.32 & 54.77 & 42.58 & 42.27 & \textbf{35.89} & 0.849\\
+\bottomrule\end{tabular}\\[2pt]
+\parbox{0.96\linewidth}{\footnotesize In repetition order the FOCUSED/RANK-11 ratios in the 128-block tool/agent decision condition were 0.758, 0.725 and 0.762.}
+\end{table}
 
-Decision & Conversation & 128 & 269.94 & 172.05 & 29.85 & 29.94 & 30.02\\
+\textbf{Replay counts.} Table~\ref{tab:counts} reconciles every pair--exit evaluation in the 128-block tool/agent decision condition. Skipping 2,648 common pair terms before scoring avoided 26,391 evaluations when weighted by the number of eligible exits. Adding certification to sharing eliminated 71,483 replays, and adding sharing to certification eliminated 68,095. Adding the two standalone savings would double-count 81,484 replays. The two implementations with both shortcuts performed 46,610 replays in this condition, 82.6\% fewer than FULL. Their replay counts agreed in each of the eight conditions, as expected from their shared logic. Complete-state propagation used more mean native CPU in six of the eight (Table~\ref{tab:timing}).
 
-Decision & Conversation & 32 & 57.00 & 55.70 & 14.05 & 13.77 & 14.28\\
-
-Decision & Tool/agent & 128 & 281.63 & 146.02 & 156.37 & 89.00 & 66.59\\
-
-Decision & Tool/agent & 32 & 54.79 & 53.29 & 40.30 & 39.72 & 33.69\\
-
-Absolute & Conversation & 128 & 273.19 & 174.75 & 51.04 & 42.50 & 37.65\\
-
-Absolute & Conversation & 32 & 57.60 & 57.32 & 20.57 & 20.48 & 18.54\\
-
-Absolute & Tool/agent & 128 & 279.21 & 145.53 & 157.24 & 90.07 & 67.78\\
-
-Absolute & Tool/agent & 32 & 56.32 & 54.77 & 42.58 & 42.27 & 35.89\\
-
-\bottomrule\end{tabular}\end{table}
-
-\textbf{Replay counts.} In the 128-block tool/agent decision cell, FULL performed 267,672 pair-by-exit replays, certification alone 114,705 and sharing alone 118,093. Both strong implementations performed 46,610 (82.6\% fewer than FULL in this cell). The counters reconcile cohort by cohort: 2,648 common pair terms were skipped before certification; weighting each by its number of eligible full exits accounts for 26,391 evaluations. The remaining 241,281 checks yielded 139,871 direct scores; of the other 101,410, memo reuse supplied 54,800 and replay supplied 46,610. Adding certification to sharing eliminated 71,483 replays; adding sharing to certification eliminated 68,095. Their standalone reductions overlap by 81,484. RANK-11 eliminated \textbf{zero} additional replays relative to FOCUSED in any of the eight cells and used more mean complete native CPU in six.
+\begin{table}[htbp]\centering\small
+\caption{Historical pair--exit evaluations in the highlighted condition. Each row accounts for 267,672 evaluations as the sum of common terms skipped, direct scores, memo hits and residual replays. Checks are shown separately.}
+\label{tab:counts}\par\vspace{3pt}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}lrrrrr@{}}\toprule
+Method & Common skipped & Checks & Direct & Memo hits & Residual replays\\\midrule
+FULL & 0 & 0 & 0 & 0 & 267,672\\
+Certification & 0 & 267,672 & 152,967 & 0 & 114,705\\
+Sharing & 26,391 & 0 & 0 & 123,188 & 118,093\\
+Both (each kernel) & 26,391 & 241,281 & 139,871 & 54,800 & 46,610\\
+\bottomrule\end{tabular}\\[3pt]
+\footnotesize $267{,}672=26{,}391+241{,}281$\qquad $241{,}281=139{,}871+54{,}800+46{,}610$.
+\end{table}
 
 \textbf{CPU and wall time.} In that same cell, FULL to FOCUSED reduced mean complete native CPU by 76.4\% (281.63 to 66.59 \ensuremath{\mu}s). At 32 blocks the corresponding tool/agent reductions were 38.5\% for decisions and 36.3\% for absolute scores. Comparing the two strong implementations at 128 blocks, the historical phase, including checks and sharing, took 38.42 \ensuremath{\mu}s for FOCUSED and 60.10 \ensuremath{\mu}s for RANK-11. Native work outside that phase accounted for 28.17 and 28.90 \ensuremath{\mu}s respectively. Complete native CPU fell 25.2\%, while caller wall, including IPC and response decoding, fell 16.9\% (133.35 to 110.80 \ensuremath{\mu}s). These clocks do not measure serving latency.
 
 \textbf{Effect of workload.} For conversation decisions at 32 blocks, adding certification to sharing saved zero replays (151 either way). At 128 it reduced 223 to 156, with no mean CPU gain: RANK-01 took 29.85 \ensuremath{\mu}s and RANK-11 took 29.94 \ensuremath{\mu}s. RANK-11 and FOCUSED both took about 30 \ensuremath{\mu}s there and about 14 \ensuremath{\mu}s at 32 blocks. For absolute scores on conversation at 128 blocks, the common terms still have to be valued: adding certification to sharing reduced replays from 12,182 to 6,975 and complete native CPU from 51.04 to 42.50 \ensuremath{\mu}s (RANK-01 to RANK-11).
 
-\textbf{Comparison with the pooled benchmark.} The preceding experiment pooled the 4,245 measured Mooncake cohorts across both traffic types at 128 blocks. Mean native evaluator CPU fell from 283.03 \ensuremath{\mu}s with full-state replay without the combined shortcuts to 68.72 \ensuremath{\mu}s with the optimized tie-only evaluator, a \textbf{4.12\ensuremath{\times} evaluator speedup}. Its corresponding local caller-wall speedup was 2.93\ensuremath{\times}. Table 1 gives the subsequent matched, traffic-specific comparison with FOCUSED. Neither experiment timed an end-to-end serving system.
+\textit{Earlier benchmark, different comparator, pooled traffic.} The preceding experiment pooled the 4,245 measured Mooncake cohorts across both traffic types at 128 blocks. Mean native evaluator CPU fell from 283.03 \ensuremath{\mu}s with full-state replay without the combined shortcuts to 68.72 \ensuremath{\mu}s with the optimized tie-only evaluator, a 4.12\ensuremath{\times} evaluator speedup. The local caller ran 2.93\ensuremath{\times} faster. Table~\ref{tab:timing} reports the later matched timing by workload.
 
-\subsection{Scheduling Results}
+\subsection{Scheduling Results}\label{sec:policy}
 
-Exact evaluation guarantees the registered policy's choice. A selection that minimizes immediate work from one entry state can still increase complete-episode work. In the earlier immediate-order study with queue-aware eviction, the root bound certified 2,452 of 2,453 measured cohorts. In the remaining case the chosen order saved 512 positions immediately and incurred 2,048 additional positions two cohorts later. The result motivated pricing the exit a decision leaves behind.
+Table~\ref{tab:scheduling} distinguishes exact evaluation of a historical objective from the scheduling value of that objective. On Mooncake the tie-breaker saved 478 blocks at capacity 128 and 2,459 at capacity 32 over the same 15,432 requests. All 128-block savings occurred on tool/agent traffic. On Qwen chat, 4,643 of 5,200 primary cohorts offered multiple immediately optimal exits. History always retained the incumbent, although two of three frozen random tie controls achieved lower episode work. On Qwen API, each selected request had its own chat root, precluding cross-request hits under the frozen lineage rule.
 
-In the subsequent ordinary-LRU study, the 56 Mooncake bins were a census of the then-unexposed bins remaining in the two traces. At 128 blocks, the historical tie-breaker saved 244,736 modeled prefill positions over exact immediate ordering across 15,432 measured requests: \textbf{478 blocks of 512 positions, or 0.204\%} of the comparator's 119,746,315 positions. All savings were on tool/agent traffic; conversation tied. The different planner permitted to sacrifice immediate work saved 249,344 positions pooled. Its separately registered mean saving was 12.23 positions per request with requests averaged within bins, then bins and traffic types weighted equally.
+\begin{table}[htbp]\centering\small
+\caption{Scheduling evidence across four studies. Capacity is measured in 512-token blocks unless otherwise stated. The Mooncake and Qwen percentages compare modeled prefill positions within each episode or pooled sample.}
+\label{tab:scheduling}\par\vspace{3pt}
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.225\linewidth}>{\raggedright\arraybackslash}p{0.16\linewidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.235\linewidth}@{}}\toprule
+Study and trace & Capacity & Comparison & Outcome\\\midrule
+Queue-aware eviction, Mooncake & 128 & Immediate search versus incumbent, root optimality bound & 2,452/2,453 cohorts certified\\
+LRU tie-breaker, Mooncake & 128 / 32 & History versus exact immediate ordering & 0.204\% / 1.001\% saved\\
+LRU tie-breaker, Qwen chat / API~\cite{qwen} & 128 & History versus exact immediate ordering, 20,000 requests each & 0\% / 0\% saved\\
+Ordering pilot, FreeInference~\cite{fancy} & 4 pools, 28.3--282.7 GiB & Best tested LRU order versus FCFS, 3,000 requests & At most 1.323\% saved, 0/36 reached 3\%\\
+\bottomrule\end{tabularx}
+\end{table}
 
-The external Qwen/Bailian study~\cite{qwen} used one continuous episode per workload, each with 1,000 FCFS warm-up requests followed by 20,000 measured requests. In the primary 512-token, 128-block chat condition, history-informed and exact immediate ordering both consumed \textbf{43,320,479 positions}. Although 4,643 of 5,200 cohorts offered multiple immediately optimal exits, history retained the incumbent in every primary chat cohort. Two of three frozen random tie controls obtained lower episode work, demonstrating that another exit choice could matter on that episode. On API traffic both policies consumed \textbf{17,516,341 positions}. All selected requests had distinct chat roots. The release lacked tenant identities, and the frozen lineage-isolation rule precluded cross-request hits in that episode. The API episode thus measures overhead under lineage isolation. At both resolutions and capacities, neither external workload saved prefill work over immediate ordering.
-
-A separate CPU replay of 3,000 held-out FreeInference requests allowed each request to start prefill up to 500 ms later than under first-come, first-served (FCFS). Across 36 primary configurations, the best tested order with LRU eviction saved at most 1.323\% of modeled prefill work relative to FCFS. None reached the prespecified 3\% threshold through ordering alone. Nine configurations met the criterion when the offline reference could also change eviction. The \href{https://github.com/smahmoud66/prefix-cache-studies/blob/3eef1af863cb97f130cc12dfe7bd35aae98e3902/research/prefix_order_pilot_20261112/result.md}{full ordering pilot on GitHub} gives the protocol, per-configuration results and independent audit.
+The held-out FreeInference pilot allowed each request to start prefill up to 500 ms after its FCFS start. All nine configurations that qualified when the offline reference could also change eviction used the smallest pool (402 blocks, 28.3 GiB), the only tested pool that fits alongside the modeled BF16 weights on an 80 GB H100. In the 60\%-utilization, 16-request queue condition, the reference order saved 0.591 percentage points beyond the best online order with LRU. Holding that order fixed and changing eviction added 7.174 points, for 7.765 points total with FCFS as the denominator. The additional saving is attributable to future-informed eviction. This feasible reference establishes an attained saving, with no proof of optimality or guarantee for an online policy. The \href{https://github.com/smahmoud66/prefix-cache-studies/blob/3eef1af863cb97f130cc12dfe7bd35aae98e3902/research/prefix_order_pilot_20261112/result.md}{full ordering pilot on GitHub} gives the frozen protocol and per-configuration audit.
 
 \section{Discussion and Limitations}
 
-Mooncake reset the cache by bin and warmed it over each bin's first quarter. Qwen/Bailian used continuous measured state and reconstructed prefix identities within documented chat lineages. Source, namespace, warm-up and episode boundaries changed together. Mean intentional cohort collection waits on external chat and API were 272.4 and 68.2 ms per request. Those waits are separate from local scheduling time. At native resolution on continuous chat, the optimized index ended with 1,620,275 slots including its sentinel, with only 5,696 identities active in the retained history. The experiments measure modeled prefill and local CPU, wall time and memory. Live accelerator latency, production throughput, energy and monetary benefit remain unmeasured.
+Both timing implementations were written by the same author and share code. Consequently the comparison measures the cost of two state representations within one implementation family. The timing bins were reused after their scheduling outcomes were known. Three fresh-process repetitions on one Apple M2 measure machine variation on identical inputs and provide no cross-machine estimate. Neither the evaluator benchmark nor the ordering pilot measured end-to-end serving latency. Mooncake reset each bin and warmed over its first quarter, while Qwen supplied continuous episodes with reconstructed chat lineages. Trace source, namespace, warm-up and episode boundaries therefore vary together.
 
-The historical scheduler consumes only the winning action and its full exit. Our verification uses the complete vector of scores. For a decision-only caller the fair comparator is the fastest method that returns the same action, including the deterministic tie and full exit. Bounds or early termination are eligible even if they never materialize losing scores. The experiment did not benchmark such a method. The measured microseconds per cohort also do not remove the external cohort collection waits of 68--272 ms per request. We screened three independent planners. WAKMan replays recent traffic to choose an eviction policy. Optimal Prefix Hit Recursion scores the leading fields shared by consecutive rows in a proposed table layout. KVSET obtains hit rates at different capacities from one LRU history. None of the three requires exact continuation costs from alternative cache states at a fixed capacity. The screen found no qualifying planner to profile~\cite{wakman,liu,kvset}.
+The historical scheduler consumes only the winning action and its full exit. Bounds and early termination that return the same action and preserve its tie rule are eligible decision-only baselines. The benchmark did not time such alternatives. A targeted search of published cache planners and LLM query optimizers looked for a caller requiring exact continuation costs from alternative cache states at one fixed capacity. Three near matches illustrate the distinction. WAKMan replays recent traffic to choose an eviction policy~\cite{wakman}. Optimal Prefix Hit Recursion scores shared leading fields in a proposed row layout~\cite{liu}. KVSET derives hit rates across capacities from a single LRU history~\cite{kvset}. The screen found no qualifying independent caller to profile.
 
 \section{Conclusion}
 
-The demonstrated contribution is a specialization for exact, multi-exit evaluation: entry-charged paths, known finite continuation support, and a selector whose cache observations are preserved. It measures how certification and sharing overlap, and where reduced-state propagation lowers local CPU. It provides limited incremental novelty over focused LRU and no demonstrated deployment benefit.
+Under entry-charged whole-path LRU, the two propositions give an exact evaluator for known finite continuations whose selector observes recoverable cache hits. The implementations reproduced 90,954 reference candidate scores. In the 128-block Mooncake tool/agent decision condition, certification and score sharing required 82.6\% fewer replays than FULL, and focused-state propagation used 25.2\% less complete native CPU than complete-state propagation. This specialization offers limited incremental novelty over focused LRU. No deployment benefit has been demonstrated.
 
 \section*{Artifact Availability}
 
-The eight timing cells, evaluator implementation, verification code, trace sources and build instructions are available in the \href{https://github.com/smahmoud66/prefix-cache-studies/blob/7a2f9a970a0bb851a5517bf48c3c95dd73cb538b/docs/evaluator.md}{public GitHub artifact} (revision \href{https://github.com/smahmoud66/prefix-cache-studies/commit/7a2f9a970a0bb851a5517bf48c3c95dd73cb538b}{\texttt{7a2f9a970a}}). Repository: \url{https://github.com/smahmoud66/prefix-cache-studies}.
+The eight timing cells, evaluator implementation, verification code, trace sources and build instructions are available in the \href{https://github.com/smahmoud66/prefix-cache-studies/blob/7a2f9a970a0bb851a5517bf48c3c95dd73cb538b/docs/evaluator.md}{public GitHub artifact} (revision \href{https://github.com/smahmoud66/prefix-cache-studies/commit/7a2f9a970a0bb851a5517bf48c3c95dd73cb538b}{\texttt{7a2f9a970a}}) at \url{https://github.com/smahmoud66/prefix-cache-studies}.
+
+The manuscript is distributed under \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0 International}.
 
 \noindent\textbf{Tool use.} OpenAI Codex assisted with preparing the manuscript and computational artifact and with running the release checks. The reported measurements come from the archived experiments.
 
 \begin{thebibliography}{99}
 
-\bibitem{mattson} Mattson, Gecsei, Slutz and Traiger. \href{https://doi.org/10.1147/sj.92.0078}{Evaluation Techniques for Storage Hierarchies}. IBM Systems Journal, 1970.
-
-\bibitem{touzeau} Touzeau, Maïza, Monniaux and Reineke. \href{https://valentintouzeau.fr/papers/POPL2019.pdf}{Fast and Exact Analysis for LRU Caches}. POPL, 2019.
-
-\bibitem{stock} Stock, Hahn and Reineke. \href{https://arxiv.org/abs/1909.04374}{Cache Persistence Analysis: Finally Exact}. RTSS, 2019.
-
-\bibitem{givan} Givan, Dean and Greig. \href{https://ics.uci.edu/~dechter/courses/ics-295/fall-2019/papers/givan-dean-greig.pdf}{Equivalence Notions and Model Minimization in Markov Decision Processes}. Artificial Intelligence, 2003.
-
-\bibitem{dexter} Dexter et al. \href{https://proceedings.neurips.cc/paper_files/paper/2025/hash/878bbdf6227315995c207561211ddb53-Abstract-Conference.html}{LLM Query Scheduling with Prefix Reuse and Latency Constraints}. NeurIPS, 2025.
-
-\bibitem{wakman} Morisetty et al. \href{https://arxiv.org/abs/2610.36355v1}{WAKMan: Workload Aware KVCache Manager}. arXiv:2610.36355, 2026.
-
-\bibitem{liu} Liu et al. \href{https://proceedings.mlsys.org/paper_files/paper/2025/file/b5dc49f44db2fadc5c4d717c57f4a424-Paper-Conference.pdf}{Optimizing LLM Queries in Relational Data Analytics Workloads}. MLSys, 2025.
-
-\bibitem{kvset} Li et al. \href{https://arxiv.org/abs/2609.27746v1}{The KV Cache Working Set: Online Capacity Planning for LLM Inference Systems}. arXiv:2609.27746, 2026.
-
-\bibitem{moon} Mooncake trace authors. \href{https://github.com/kvcache-ai/Mooncake/tree/3cca71daccf2a7afb8fe3f0295358f70e3a69fdb/FAST25-release/traces}{Mooncake FAST 2025 release: production conversation and tool/agent traces}. Dataset, revision 3cca71d.
-
-\bibitem{qwen} Qwen/Bailian trace authors. \href{https://github.com/alibaba-edu/qwen-bailian-usagetraces-anon/tree/5f7439c51ec248a0c585f7d90a41a6f57773b912}{Qwen/Bailian anonymized usage traces}. Dataset, revision 5f7439c.
+\bibitem{mattson} R. L. Mattson, J. Gecsei, D. R. Slutz, and I. L. Traiger. Evaluation techniques for storage hierarchies. \emph{IBM Systems Journal}, 9(2), 78--117, 1970. \href{https://doi.org/10.1147/sj.92.0078}{doi:10.1147/sj.92.0078}.
+\bibitem{touzeau} V. Touzeau, C. Maïza, D. Monniaux, and J. Reineke. Fast and exact analysis for LRU caches. \emph{Proceedings of the ACM on Programming Languages}, 3(POPL), 1--29, 2019. \href{https://doi.org/10.1145/3290367}{doi:10.1145/3290367}.
+\bibitem{stock} G. Stock, S. Hahn, and J. Reineke. Cache persistence analysis: Finally exact. \emph{IEEE Real-Time Systems Symposium}, 2019. \href{https://arxiv.org/abs/1909.04374}{arXiv:1909.04374}.
+\bibitem{givan} R. Givan, T. Dean, and M. Greig. Equivalence notions and model minimization in Markov decision processes. \emph{Artificial Intelligence}, 147, 163--223, 2003. \href{https://doi.org/10.1016/S0004-3702(02)00376-4}{doi:10.1016/S0004-3702(02)00376-4}.
+\bibitem{sglang} L. Zheng et al. SGLang: Efficient execution of structured language model programs. \emph{Advances in Neural Information Processing Systems}, 37, 2024. \href{https://arxiv.org/abs/2312.07104}{arXiv:2312.07104}.
+\bibitem{dexter} G. Dexter, S. Tang, A. Fatahi Baarzi, Q. Song, T. Dharamsi, and A. Gupta. LLM query scheduling with prefix reuse and latency constraints. \emph{Advances in Neural Information Processing Systems}, 38, 2025. \href{https://arxiv.org/abs/2502.04677}{arXiv:2502.04677}.
+\bibitem{peek} B. Xie, Z. Wang, M. Tanaka, and Z. Zheng. PEEK: Predictive queue-informed KV cache management for LLM serving. 2026. \href{https://arxiv.org/abs/2607.02525v2}{arXiv:2607.02525v2}.
+\bibitem{fancy} Y. Liu, M. Yu, and J. Yang. When fancy eviction fails: Rethinking cache replacement for LLM prefix reuse. 2026. \href{https://arxiv.org/abs/2609.28870v3}{arXiv:2609.28870v3}. \href{https://huggingface.co/datasets/harvardMadsys/2026_prefixcache/tree/ba89a343a048073dda72617bb6087910da6214d0}{FreeInference dataset, revision \texttt{ba89a343}}.
+\bibitem{moon} R. Qin, Z. Li, W. He, J. Cui, F. Ren, M. Zhang, Y. Wu, W. Zheng, and X. Xu. \href{https://www.usenix.org/conference/fast25/presentation/qin}{Mooncake: Trading more storage for less computation---a KVCache-centric architecture for serving LLM chatbot}. \emph{23rd USENIX Conference on File and Storage Technologies}, 155--170, 2025. \href{https://arxiv.org/abs/2407.00079}{Preprint: arXiv:2407.00079}. \href{https://github.com/kvcache-ai/Mooncake/tree/3cca71daccf2a7afb8fe3f0295358f70e3a69fdb/FAST25-release/traces}{Released traces, revision \texttt{3cca71d}}.
+\bibitem{qwen} J. Wang, J. Han, X. Wei, S. Shen, D. Zhang, C. Fang, R. Chen, W. Yu, and H. Chen. \href{https://www.usenix.org/conference/atc25/presentation/wang-jiahao}{KVCache cache in the wild: Characterizing and optimizing KVCache cache at a large cloud provider}. \emph{2025 USENIX Annual Technical Conference}, 465--482, 2025. \href{https://arxiv.org/abs/2506.02634}{arXiv:2506.02634}. \href{https://github.com/alibaba-edu/qwen-bailian-usagetraces-anon/tree/5f7439c51ec248a0c585f7d90a41a6f57773b912}{Qwen/Bailian traces, revision \texttt{5f7439c}}.
+\bibitem{wakman} S. K. Morisetty, V. Lokegaonkar, S. M. Varghese, and W. Harris. WAKMan: Workload aware KVCache manager. 2026. \href{https://arxiv.org/abs/2610.36355v1}{arXiv:2610.36355v1}.
+\bibitem{liu} S. Liu et al. \href{https://proceedings.mlsys.org/paper_files/paper/2025/hash/b5dc49f44db2fadc5c4d717c57f4a424-Abstract-Conference.html}{Optimizing LLM queries in relational data analytics workloads}. \emph{Proceedings of Machine Learning and Systems}, 7, 2025. \href{https://arxiv.org/abs/2403.05821}{Preprint: arXiv:2403.05821}.
+\bibitem{kvset} L. Li, S. Wang, Z. Ruan, D. Li, and B. Gong. The KV cache working set: Online capacity planning for LLM inference systems. 2026. \href{https://arxiv.org/abs/2609.27746v1}{arXiv:2609.27746v1}.
 
 \end{thebibliography}
 
