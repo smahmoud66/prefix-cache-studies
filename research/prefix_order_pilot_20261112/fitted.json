@@ -1,0 +1,41 @@
+{
+  "k": 2,
+  "k_dev_relative_cost": {
+    "2": 0.9999959573167191,
+    "4": 0.9999959573167191
+  },
+  "models": {
+    "material": {
+      "rule": {
+        "feature": "none"
+      },
+      "development": {
+        "n": 72,
+        "material": 0,
+        "flagged": 0,
+        "correct_flags": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": null,
+        "recall": null,
+        "f1": 0
+      }
+    },
+    "literal_material": {
+      "rule": {
+        "feature": "all"
+      },
+      "development": {
+        "n": 72,
+        "material": 72,
+        "flagged": 72,
+        "correct_flags": 72,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    }
+  }
+}

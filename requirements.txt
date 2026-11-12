@@ -1,0 +1,7 @@
+# For the independent schedule audit; summary and native evaluator need only stdlib.
+numpy>=1.26,<3
+# Optional: regenerating figures and refitting the frozen component calibration.
+matplotlib>=3.8,<4
+scipy>=1.11,<2
+# Optional: extracting source H100 performance points from NVIDIA Parquet.
+duckdb>=1.1,<2

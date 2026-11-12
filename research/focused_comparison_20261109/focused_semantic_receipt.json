@@ -1,0 +1,14 @@
+{
+  "literal_focused_update_vs_leaf": 9304,
+  "distinct_literal_pair_runs": 2000,
+  "native_continuation_trajectories": 4000,
+  "synthetic_decisions": 3287,
+  "eligible_candidate_scores": 3928,
+  "native_choice_score_checks": 39444,
+  "certified_literal_pairs": 499,
+  "cpu_seconds": 1.543109,
+  "wall_seconds": 1.5500670420005918,
+  "status": "PASS",
+  "verifier_sha256": "f54cc2696f674b135eee0486fdb45b10c35a5cbfba2c31599331a40aa14ec223",
+  "binary_sha256": "9b61c369c3b02d4ae58dba1ef32a479569a06717aceba200cf8af1fa8e77d0da"
+}

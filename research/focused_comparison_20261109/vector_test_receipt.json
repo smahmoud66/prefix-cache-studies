@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "binary_sha256": "9b61c369c3b02d4ae58dba1ef32a479569a06717aceba200cf8af1fa8e77d0da",
+  "leaf_oracle_sha256": "76ccb42bd9f9600f87d4e2207aa7325695401a069130b495540191b237f1965b",
+  "fixtures": 3287,
+  "unique_exit_scores_across_fixtures": 3928,
+  "method_names": 6,
+  "absolute_decision_checks": 39444,
+  "python_cpu_s": 0.820102,
+  "child_cpu_s": 0.616478,
+  "wall_s": 1.9100919589982368
+}

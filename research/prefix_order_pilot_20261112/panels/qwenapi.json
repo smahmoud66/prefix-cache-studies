@@ -1,0 +1,7 @@
+{
+  "source_sha256": "257c474c50ce7fa971ea6ee7f92dfab71e3d588f4c446bbccfb51f97afb9d49c",
+  "panel_sha256": "36570df856e8b19d86b401953241dd5a0e0cf1c1a5166a1b77deb92e53326dbb",
+  "n": 5000,
+  "warm": 2000,
+  "measured": 3000
+}

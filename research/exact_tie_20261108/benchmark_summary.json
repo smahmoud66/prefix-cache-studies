@@ -1,0 +1,2537 @@
+{
+  "methods": {
+    "conversation_128": {
+      "K": {
+        "cohorts_each": 1500,
+        "prefill_each": 59702504,
+        "reps": [
+          {
+            "rep": 1,
+            "cohorts": 1500,
+            "prefill": 59702504,
+            "kernel_cpu_s": 0.002623,
+            "native_measured_cpu_s": 0.014383,
+            "wrapper_decision_cpu_s": 0.026611,
+            "decision_wall_s": 0.076988364,
+            "child_all_s": 0.064494,
+            "wrapper_all_s": 0.05491199999999985,
+            "whole_cells_wall_s": 0.12115049999556504
+          },
+          {
+            "rep": 2,
+            "cohorts": 1500,
+            "prefill": 59702504,
+            "kernel_cpu_s": 0.002895,
+            "native_measured_cpu_s": 0.015968,
+            "wrapper_decision_cpu_s": 0.029791,
+            "decision_wall_s": 0.086750561,
+            "child_all_s": 0.072379,
+            "wrapper_all_s": 0.06063200000000002,
+            "whole_cells_wall_s": 0.13490091697894968
+          },
+          {
+            "rep": 3,
+            "cohorts": 1500,
+            "prefill": 59702504,
+            "kernel_cpu_s": 0.002814,
+            "native_measured_cpu_s": 0.01559,
+            "wrapper_decision_cpu_s": 0.028174,
+            "decision_wall_s": 0.083130973,
+            "child_all_s": 0.070103,
+            "wrapper_all_s": 0.05776199999999854,
+            "whole_cells_wall_s": 0.129144707985688
+          }
+        ],
+        "kernel": {
+          "total_sec": 0.008332,
+          "mean_us": 1.8515555555555556,
+          "p95_us": 3.0,
+          "p99_us": 4.0,
+          "max_us": 17.0
+        },
+        "native_including_parse_and_update": {
+          "total_sec": 0.045941,
+          "mean_us": 10.209111111111111,
+          "p95_us": 21.0,
+          "p99_us": 27.0,
+          "max_us": 49.0
+        },
+        "wall": {
+          "total_sec": 0.246869898,
+          "mean_us": 54.85997733333333,
+          "p95_us": 82.417,
+          "p99_us": 101.833,
+          "max_us": 216.959
+        },
+        "wrapper_cpu": {
+          "total_sec": 0.084576,
+          "mean_us": 18.794666666666668,
+          "p95_us": 24.0,
+          "p99_us": 31.0,
+          "max_us": 75.0
+        },
+        "parse": {
+          "total_sec": 0.035453,
+          "mean_us": 7.878444444444444,
+          "p95_us": 18.0,
+          "p99_us": 24.0,
+          "max_us": 45.0
+        },
+        "update": {
+          "total_sec": 0.002156,
+          "mean_us": 0.4791111111111111,
+          "p95_us": 2.0,
+          "p99_us": 2.0,
+          "max_us": 8.0
+        },
+        "counters_one_rep": {
+          "current_transitions": 5221,
+          "rollout_transitions": 0,
+          "rollouts": 0,
+          "candidate_states": 1500,
+          "eligible_orders": 0,
+          "visited_actions": 1500,
+          "common_pairs": 0,
+          "form_scores": 0,
+          "memo_hits": 0
+        },
+        "maxima": {
+          "memo_bytes": 0,
+          "memo_entries": 0,
+          "history_bytes": 0,
+          "index_bytes": 0,
+          "interned_nodes": 6073,
+          "current_cache_bytes": 0,
+          "current_cache_entries": 0
+        },
+        "child_rss_max_bytes": 3670016
+      },
+      "IMM": {
+        "cohorts_each": 1500,
+        "prefill_each": 59702504,
+        "reps": [
+          {
+            "rep": 1,
+            "cohorts": 1500,
+            "prefill": 59702504,
+            "kernel_cpu_s": 0.003272,
+            "native_measured_cpu_s": 0.015581,
+            "wrapper_decision_cpu_s": 0.027639,
+            "decision_wall_s": 0.081337661,
+            "child_all_s": 0.06813,
+            "wrapper_all_s": 0.05709799999999987,
+            "whole_cells_wall_s": 0.12699262500973418
+          },
+          {
+            "rep": 2,
+            "cohorts": 1500,
+            "prefill": 59702504,
+            "kernel_cpu_s": 0.003327,
+            "native_measured_cpu_s": 0.015689,
+            "wrapper_decision_cpu_s": 0.028334,
+            "decision_wall_s": 0.08319095,
+            "child_all_s": 0.069176,
+            "wrapper_all_s": 0.05722800000000028,
+            "whole_cells_wall_s": 0.12778199999593198
+          },
+          {
+            "rep": 3,
+            "cohorts": 1500,
+            "prefill": 59702504,
+            "kernel_cpu_s": 0.003204,
+            "native_measured_cpu_s": 0.014967,
+            "wrapper_decision_cpu_s": 0.026681,
+            "decision_wall_s": 0.08004028,
+            "child_all_s": 0.066202,
+            "wrapper_all_s": 0.05432599999999965,
+            "whole_cells_wall_s": 0.12407579200225882
+          }
+        ],
+        "kernel": {
+          "total_sec": 0.009803,
+          "mean_us": 2.178444444444444,
+          "p95_us": 4.0,
+          "p99_us": 5.0,
+          "max_us": 32.0
+        },
+        "native_including_parse_and_update": {
+          "total_sec": 0.046237,
+          "mean_us": 10.274888888888889,
+          "p95_us": 20.0,
+          "p99_us": 27.0,
+          "max_us": 54.0
+        },
+        "wall": {
+          "total_sec": 0.244568891,
+          "mean_us": 54.348642444444444,
+          "p95_us": 83.916,
+          "p99_us": 106.25,
+          "max_us": 487.042
+        },
+        "wrapper_cpu": {
+          "total_sec": 0.082654,
+          "mean_us": 18.367555555555555,
+          "p95_us": 24.0,
+          "p99_us": 34.0,
+          "max_us": 112.0
+        },
+        "parse": {
+          "total_sec": 0.034386,
+          "mean_us": 7.641333333333333,
+          "p95_us": 17.0,
+          "p99_us": 24.0,
+          "max_us": 39.0
+        },
+        "update": {
+          "total_sec": 0.002048,
+          "mean_us": 0.4551111111111111,
+          "p95_us": 2.0,
+          "p99_us": 2.0,
+          "max_us": 7.0
+        },
+        "counters_one_rep": {
+          "current_transitions": 5221,
+          "rollout_transitions": 0,
+          "rollouts": 0,
+          "candidate_states": 1500,
+          "eligible_orders": 0,
+          "visited_actions": 1500,
+          "common_pairs": 0,
+          "form_scores": 0,
+          "memo_hits": 0
+        },
+        "maxima": {
+          "memo_bytes": 0,
+          "memo_entries": 0,
+          "history_bytes": 0,
+          "index_bytes": 0,
+          "interned_nodes": 6073,
+          "current_cache_bytes": 35100,
+          "current_cache_entries": 5
+        },
+        "child_rss_max_bytes": 3637248
+      },
+      "REF": {
+        "cohorts_each": 1500,
+        "prefill_each": 59702504,
+        "reps": [
+          {
+            "rep": 1,
+            "cohorts": 1500,
+            "prefill": 59702504,
+            "kernel_cpu_s": 0.408005,
+            "native_measured_cpu_s": 0.421702,
+            "wrapper_decision_cpu_s": 0.029567,
+            "decision_wall_s": 0.495156049,
+            "child_all_s": 0.477369,
+            "wrapper_all_s": 0.06421900000000136,
+            "whole_cells_wall_s": 0.5468772499880288
+          },
+          {
+            "rep": 2,
+            "cohorts": 1500,
+            "prefill": 59702504,
+            "kernel_cpu_s": 0.408595,
+            "native_measured_cpu_s": 0.422137,
+            "wrapper_decision_cpu_s": 0.029733,
+            "decision_wall_s": 0.496482665,
+            "child_all_s": 0.47813599999999995,
+            "wrapper_all_s": 0.06366900000000086,
+            "whole_cells_wall_s": 0.5474165409978013
+          },
+          {
+            "rep": 3,
+            "cohorts": 1500,
+            "prefill": 59702504,
+            "kernel_cpu_s": 0.406522,
+            "native_measured_cpu_s": 0.419608,
+            "wrapper_decision_cpu_s": 0.028832,
+            "decision_wall_s": 0.493395378,
+            "child_all_s": 0.474703,
+            "wrapper_all_s": 0.06108099999999972,
+            "whole_cells_wall_s": 0.542859209002927
+          }
+        ],
+        "kernel": {
+          "total_sec": 1.223122,
+          "mean_us": 271.80488888888885,
+          "p95_us": 539.0,
+          "p99_us": 565.0,
+          "max_us": 653.0
+        },
+        "native_including_parse_and_update": {
+          "total_sec": 1.263447,
+          "mean_us": 280.766,
+          "p95_us": 548.0,
+          "p99_us": 575.0,
+          "max_us": 668.0
+        },
+        "wall": {
+          "total_sec": 1.485034092,
+          "mean_us": 330.00757600000003,
+          "p95_us": 604.083,
+          "p99_us": 648.167,
+          "max_us": 1733.875
+        },
+        "wrapper_cpu": {
+          "total_sec": 0.088132,
+          "mean_us": 19.58488888888889,
+          "p95_us": 25.0,
+          "p99_us": 32.0,
+          "max_us": 81.0
+        },
+        "parse": {
+          "total_sec": 0.036385,
+          "mean_us": 8.085555555555556,
+          "p95_us": 18.0,
+          "p99_us": 24.0,
+          "max_us": 41.0
+        },
+        "update": {
+          "total_sec": 0.00394,
+          "mean_us": 0.8755555555555555,
+          "p95_us": 4.0,
+          "p99_us": 5.0,
+          "max_us": 10.0
+        },
+        "counters_one_rep": {
+          "current_transitions": 74333,
+          "rollout_transitions": 1066293,
+          "rollouts": 153238,
+          "candidate_states": 19352,
+          "eligible_orders": 27922,
+          "visited_actions": 28066,
+          "common_pairs": 1448,
+          "form_scores": 0,
+          "memo_hits": 0
+        },
+        "maxima": {
+          "memo_bytes": 0,
+          "memo_entries": 0,
+          "history_bytes": 9640,
+          "index_bytes": 0,
+          "interned_nodes": 6073,
+          "current_cache_bytes": 35100,
+          "current_cache_entries": 65
+        },
+        "child_rss_max_bytes": 3833856
+      },
+      "OPT": {
+        "cohorts_each": 1500,
+        "prefill_each": 59702504,
+        "reps": [
+          {
+            "rep": 1,
+            "cohorts": 1500,
+            "prefill": 59702504,
+            "kernel_cpu_s": 0.033686,
+            "native_measured_cpu_s": 0.0471,
+            "wrapper_decision_cpu_s": 0.029413,
+            "decision_wall_s": 0.118639128,
+            "child_all_s": 0.10302399999999999,
+            "wrapper_all_s": 0.06131099999999989,
+            "whole_cells_wall_s": 0.1676599999773316
+          },
+          {
+            "rep": 2,
+            "cohorts": 1500,
+            "prefill": 59702504,
+            "kernel_cpu_s": 0.032921,
+            "native_measured_cpu_s": 0.045917,
+            "wrapper_decision_cpu_s": 0.02877,
+            "decision_wall_s": 0.114667567,
+            "child_all_s": 0.100327,
+            "wrapper_all_s": 0.0595289999999995,
+            "whole_cells_wall_s": 0.16207925000344403
+          },
+          {
+            "rep": 3,
+            "cohorts": 1500,
+            "prefill": 59702504,
+            "kernel_cpu_s": 0.034,
+            "native_measured_cpu_s": 0.047436,
+            "wrapper_decision_cpu_s": 0.028665,
+            "decision_wall_s": 0.116752177,
+            "child_all_s": 0.10269199999999999,
+            "wrapper_all_s": 0.06017199999999967,
+            "whole_cells_wall_s": 0.16484316700370982
+          }
+        ],
+        "kernel": {
+          "total_sec": 0.100607,
+          "mean_us": 22.35711111111111,
+          "p95_us": 35.0,
+          "p99_us": 49.0,
+          "max_us": 85.0
+        },
+        "native_including_parse_and_update": {
+          "total_sec": 0.140453,
+          "mean_us": 31.211777777777776,
+          "p95_us": 50.0,
+          "p99_us": 61.0,
+          "max_us": 97.0
+        },
+        "wall": {
+          "total_sec": 0.350058872,
+          "mean_us": 77.79086044444445,
+          "p95_us": 114.5,
+          "p99_us": 135.041,
+          "max_us": 240.584
+        },
+        "wrapper_cpu": {
+          "total_sec": 0.086848,
+          "mean_us": 19.299555555555553,
+          "p95_us": 25.0,
+          "p99_us": 35.0,
+          "max_us": 72.0
+        },
+        "parse": {
+          "total_sec": 0.036345,
+          "mean_us": 8.076666666666666,
+          "p95_us": 18.0,
+          "p99_us": 24.0,
+          "max_us": 38.0
+        },
+        "update": {
+          "total_sec": 0.003501,
+          "mean_us": 0.778,
+          "p95_us": 2.0,
+          "p99_us": 3.0,
+          "max_us": 19.0
+        },
+        "counters_one_rep": {
+          "current_transitions": 74333,
+          "rollout_transitions": 1156,
+          "rollouts": 156,
+          "candidate_states": 19352,
+          "eligible_orders": 27922,
+          "visited_actions": 28066,
+          "common_pairs": 11959,
+          "form_scores": 182,
+          "memo_hits": 295
+        },
+        "maxima": {
+          "memo_bytes": 4160,
+          "memo_entries": 8,
+          "history_bytes": 29080,
+          "index_bytes": 22144,
+          "interned_nodes": 6073,
+          "current_cache_bytes": 35100,
+          "current_cache_entries": 65
+        },
+        "child_rss_max_bytes": 4096000
+      }
+    },
+    "toolagent_128": {
+      "K": {
+        "cohorts_each": 2745,
+        "prefill_each": 60278307,
+        "reps": [
+          {
+            "rep": 1,
+            "cohorts": 2745,
+            "prefill": 60278307,
+            "kernel_cpu_s": 0.00526,
+            "native_measured_cpu_s": 0.023973,
+            "wrapper_decision_cpu_s": 0.051185,
+            "decision_wall_s": 0.137721251,
+            "child_all_s": 0.10572799999999999,
+            "wrapper_all_s": 0.10190200000000083,
+            "whole_cells_wall_s": 0.20934912501252256
+          },
+          {
+            "rep": 2,
+            "cohorts": 2745,
+            "prefill": 60278307,
+            "kernel_cpu_s": 0.005305,
+            "native_measured_cpu_s": 0.023883,
+            "wrapper_decision_cpu_s": 0.051694,
+            "decision_wall_s": 0.13933451,
+            "child_all_s": 0.10744,
+            "wrapper_all_s": 0.10305699999999973,
+            "whole_cells_wall_s": 0.2124590419989545
+          },
+          {
+            "rep": 3,
+            "cohorts": 2745,
+            "prefill": 60278307,
+            "kernel_cpu_s": 0.00526,
+            "native_measured_cpu_s": 0.023818,
+            "wrapper_decision_cpu_s": 0.050701,
+            "decision_wall_s": 0.136806028,
+            "child_all_s": 0.10550299999999999,
+            "wrapper_all_s": 0.1011109999999995,
+            "whole_cells_wall_s": 0.2085089999891352
+          }
+        ],
+        "kernel": {
+          "total_sec": 0.015825,
+          "mean_us": 1.9216757741347905,
+          "p95_us": 3.0,
+          "p99_us": 4.0,
+          "max_us": 18.0
+        },
+        "native_including_parse_and_update": {
+          "total_sec": 0.071674,
+          "mean_us": 8.703582270795385,
+          "p95_us": 17.0,
+          "p99_us": 23.0,
+          "max_us": 51.0
+        },
+        "wall": {
+          "total_sec": 0.413861789,
+          "mean_us": 50.25644068002428,
+          "p95_us": 73.208,
+          "p99_us": 91.125,
+          "max_us": 161.291
+        },
+        "wrapper_cpu": {
+          "total_sec": 0.15358,
+          "mean_us": 18.649666059502124,
+          "p95_us": 24.0,
+          "p99_us": 31.0,
+          "max_us": 57.0
+        },
+        "parse": {
+          "total_sec": 0.051901,
+          "mean_us": 6.302489374620523,
+          "p95_us": 14.0,
+          "p99_us": 20.0,
+          "max_us": 47.0
+        },
+        "update": {
+          "total_sec": 0.003948,
+          "mean_us": 0.47941712204007286,
+          "p95_us": 2.0,
+          "p99_us": 2.0,
+          "max_us": 11.0
+        },
+        "counters_one_rep": {
+          "current_transitions": 10211,
+          "rollout_transitions": 0,
+          "rollouts": 0,
+          "candidate_states": 2745,
+          "eligible_orders": 0,
+          "visited_actions": 2745,
+          "common_pairs": 0,
+          "form_scores": 0,
+          "memo_hits": 0
+        },
+        "maxima": {
+          "memo_bytes": 0,
+          "memo_entries": 0,
+          "history_bytes": 0,
+          "index_bytes": 0,
+          "interned_nodes": 5693,
+          "current_cache_bytes": 0,
+          "current_cache_entries": 0
+        },
+        "child_rss_max_bytes": 3670016
+      },
+      "IMM": {
+        "cohorts_each": 2745,
+        "prefill_each": 60043811,
+        "reps": [
+          {
+            "rep": 1,
+            "cohorts": 2745,
+            "prefill": 60043811,
+            "kernel_cpu_s": 0.006911,
+            "native_measured_cpu_s": 0.025932,
+            "wrapper_decision_cpu_s": 0.053103,
+            "decision_wall_s": 0.144757754,
+            "child_all_s": 0.109623,
+            "wrapper_all_s": 0.10647699999999993,
+            "whole_cells_wall_s": 0.21994512499077246
+          },
+          {
+            "rep": 2,
+            "cohorts": 2745,
+            "prefill": 60043811,
+            "kernel_cpu_s": 0.006792,
+            "native_measured_cpu_s": 0.025647,
+            "wrapper_decision_cpu_s": 0.051886,
+            "decision_wall_s": 0.142664077,
+            "child_all_s": 0.10949599999999998,
+            "wrapper_all_s": 0.10316199999999931,
+            "whole_cells_wall_s": 0.21561441701487638
+          },
+          {
+            "rep": 3,
+            "cohorts": 2745,
+            "prefill": 60043811,
+            "kernel_cpu_s": 0.006858,
+            "native_measured_cpu_s": 0.026193,
+            "wrapper_decision_cpu_s": 0.054571,
+            "decision_wall_s": 0.149809706,
+            "child_all_s": 0.11298899999999999,
+            "wrapper_all_s": 0.10837300000000027,
+            "whole_cells_wall_s": 0.22695837501669303
+          }
+        ],
+        "kernel": {
+          "total_sec": 0.020561,
+          "mean_us": 2.496782027929569,
+          "p95_us": 4.0,
+          "p99_us": 7.0,
+          "max_us": 38.0
+        },
+        "native_including_parse_and_update": {
+          "total_sec": 0.077772,
+          "mean_us": 9.44408014571949,
+          "p95_us": 18.0,
+          "p99_us": 25.0,
+          "max_us": 54.0
+        },
+        "wall": {
+          "total_sec": 0.437231537,
+          "mean_us": 53.09429714632665,
+          "p95_us": 77.875,
+          "p99_us": 101.167,
+          "max_us": 1334.375
+        },
+        "wrapper_cpu": {
+          "total_sec": 0.15956,
+          "mean_us": 19.375834851244687,
+          "p95_us": 25.0,
+          "p99_us": 35.0,
+          "max_us": 99.0
+        },
+        "parse": {
+          "total_sec": 0.053029,
+          "mean_us": 6.4394656952034,
+          "p95_us": 14.0,
+          "p99_us": 20.0,
+          "max_us": 38.0
+        },
+        "update": {
+          "total_sec": 0.004182,
+          "mean_us": 0.507832422586521,
+          "p95_us": 2.0,
+          "p99_us": 2.0,
+          "max_us": 15.0
+        },
+        "counters_one_rep": {
+          "current_transitions": 10995,
+          "rollout_transitions": 0,
+          "rollouts": 0,
+          "candidate_states": 2745,
+          "eligible_orders": 0,
+          "visited_actions": 2976,
+          "common_pairs": 0,
+          "form_scores": 0,
+          "memo_hits": 0
+        },
+        "maxima": {
+          "memo_bytes": 0,
+          "memo_entries": 0,
+          "history_bytes": 0,
+          "index_bytes": 0,
+          "interned_nodes": 5693,
+          "current_cache_bytes": 35100,
+          "current_cache_entries": 19
+        },
+        "child_rss_max_bytes": 3670016
+      },
+      "REF": {
+        "cohorts_each": 2745,
+        "prefill_each": 59799075,
+        "reps": [
+          {
+            "rep": 1,
+            "cohorts": 2745,
+            "prefill": 59799075,
+            "kernel_cpu_s": 0.761034,
+            "native_measured_cpu_s": 0.781623,
+            "wrapper_decision_cpu_s": 0.055009,
+            "decision_wall_s": 0.913472958,
+            "child_all_s": 0.8674369999999999,
+            "wrapper_all_s": 0.11510300000000129,
+            "whole_cells_wall_s": 0.9954083329939749
+          },
+          {
+            "rep": 2,
+            "cohorts": 2745,
+            "prefill": 59799075,
+            "kernel_cpu_s": 0.766321,
+            "native_measured_cpu_s": 0.787052,
+            "wrapper_decision_cpu_s": 0.056007,
+            "decision_wall_s": 0.922865101,
+            "child_all_s": 0.874112,
+            "wrapper_all_s": 0.11236099999999993,
+            "whole_cells_wall_s": 1.0020962500129826
+          },
+          {
+            "rep": 3,
+            "cohorts": 2745,
+            "prefill": 59799075,
+            "kernel_cpu_s": 0.752167,
+            "native_measured_cpu_s": 0.772231,
+            "wrapper_decision_cpu_s": 0.054988,
+            "decision_wall_s": 0.908357685,
+            "child_all_s": 0.857097,
+            "wrapper_all_s": 0.11247799999999941,
+            "whole_cells_wall_s": 0.9881523750082124
+          }
+        ],
+        "kernel": {
+          "total_sec": 2.279522,
+          "mean_us": 276.8089860352155,
+          "p95_us": 558.0,
+          "p99_us": 586.0,
+          "max_us": 739.0
+        },
+        "native_including_parse_and_update": {
+          "total_sec": 2.340906,
+          "mean_us": 284.26302367941713,
+          "p95_us": 566.0,
+          "p99_us": 596.0,
+          "max_us": 769.0
+        },
+        "wall": {
+          "total_sec": 2.744695744,
+          "mean_us": 333.29638664238007,
+          "p95_us": 621.0,
+          "p99_us": 672.959,
+          "max_us": 2122.709
+        },
+        "wrapper_cpu": {
+          "total_sec": 0.166004,
+          "mean_us": 20.15834851244687,
+          "p95_us": 26.0,
+          "p99_us": 38.0,
+          "max_us": 90.0
+        },
+        "parse": {
+          "total_sec": 0.054404,
+          "mean_us": 6.606435944140863,
+          "p95_us": 15.0,
+          "p99_us": 21.0,
+          "max_us": 58.0
+        },
+        "update": {
+          "total_sec": 0.00698,
+          "mean_us": 0.8476017000607164,
+          "p95_us": 4.0,
+          "p99_us": 5.0,
+          "max_us": 16.0
+        },
+        "counters_one_rep": {
+          "current_transitions": 151849,
+          "rollout_transitions": 1987151,
+          "rollouts": 267672,
+          "candidate_states": 33661,
+          "eligible_orders": 54109,
+          "visited_actions": 56427,
+          "common_pairs": 1616,
+          "form_scores": 0,
+          "memo_hits": 0
+        },
+        "maxima": {
+          "memo_bytes": 0,
+          "memo_entries": 0,
+          "history_bytes": 8552,
+          "index_bytes": 0,
+          "interned_nodes": 5693,
+          "current_cache_bytes": 35100,
+          "current_cache_entries": 65
+        },
+        "child_rss_max_bytes": 3784704
+      },
+      "OPT": {
+        "cohorts_each": 2745,
+        "prefill_each": 59799075,
+        "reps": [
+          {
+            "rep": 1,
+            "cohorts": 2745,
+            "prefill": 59799075,
+            "kernel_cpu_s": 0.225281,
+            "native_measured_cpu_s": 0.245282,
+            "wrapper_decision_cpu_s": 0.052659,
+            "decision_wall_s": 0.363577661,
+            "child_all_s": 0.32903,
+            "wrapper_all_s": 0.11007200000000061,
+            "whole_cells_wall_s": 0.44252362500992604
+          },
+          {
+            "rep": 2,
+            "cohorts": 2745,
+            "prefill": 59799075,
+            "kernel_cpu_s": 0.227867,
+            "native_measured_cpu_s": 0.247675,
+            "wrapper_decision_cpu_s": 0.052249,
+            "decision_wall_s": 0.365891179,
+            "child_all_s": 0.331907,
+            "wrapper_all_s": 0.1094109999999997,
+            "whole_cells_wall_s": 0.4448055000102613
+          },
+          {
+            "rep": 3,
+            "cohorts": 2745,
+            "prefill": 59799075,
+            "kernel_cpu_s": 0.222271,
+            "native_measured_cpu_s": 0.241688,
+            "wrapper_decision_cpu_s": 0.052083,
+            "decision_wall_s": 0.361782168,
+            "child_all_s": 0.32440800000000003,
+            "wrapper_all_s": 0.10932900000000068,
+            "whole_cells_wall_s": 0.44130441700690426
+          }
+        ],
+        "kernel": {
+          "total_sec": 0.675419,
+          "mean_us": 82.0180935033394,
+          "p95_us": 192.0,
+          "p99_us": 261.0,
+          "max_us": 387.0
+        },
+        "native_including_parse_and_update": {
+          "total_sec": 0.734645,
+          "mean_us": 89.21007893139041,
+          "p95_us": 200.0,
+          "p99_us": 269.0,
+          "max_us": 399.0
+        },
+        "wall": {
+          "total_sec": 1.091251008,
+          "mean_us": 132.51378360655738,
+          "p95_us": 250.0,
+          "p99_us": 323.875,
+          "max_us": 597.292
+        },
+        "wrapper_cpu": {
+          "total_sec": 0.156991,
+          "mean_us": 19.063873709775347,
+          "p95_us": 24.0,
+          "p99_us": 32.0,
+          "max_us": 84.0
+        },
+        "parse": {
+          "total_sec": 0.052472,
+          "mean_us": 6.371827565270189,
+          "p95_us": 14.0,
+          "p99_us": 20.0,
+          "max_us": 83.0
+        },
+        "update": {
+          "total_sec": 0.006754,
+          "mean_us": 0.8201578627808136,
+          "p95_us": 2.0,
+          "p99_us": 4.0,
+          "max_us": 15.0
+        },
+        "counters_one_rep": {
+          "current_transitions": 151849,
+          "rollout_transitions": 354068,
+          "rollouts": 46610,
+          "candidate_states": 33661,
+          "eligible_orders": 54109,
+          "visited_actions": 56427,
+          "common_pairs": 4264,
+          "form_scores": 139871,
+          "memo_hits": 54800
+        },
+        "maxima": {
+          "memo_bytes": 4736,
+          "memo_entries": 24,
+          "history_bytes": 28044,
+          "index_bytes": 22272,
+          "interned_nodes": 5693,
+          "current_cache_bytes": 35100,
+          "current_cache_entries": 65
+        },
+        "child_rss_max_bytes": 4161536
+      }
+    },
+    "both_128": {
+      "K": {
+        "cohorts_each": 4245,
+        "prefill_each": 119980811,
+        "reps": [
+          {
+            "rep": 1,
+            "cohorts": 4245,
+            "prefill": 119980811,
+            "kernel_cpu_s": 0.007883,
+            "native_measured_cpu_s": 0.038356,
+            "wrapper_decision_cpu_s": 0.077796,
+            "decision_wall_s": 0.214709615,
+            "child_all_s": 0.17022199999999998,
+            "wrapper_all_s": 0.15681400000000068,
+            "whole_cells_wall_s": 0.3304996250080876
+          },
+          {
+            "rep": 2,
+            "cohorts": 4245,
+            "prefill": 119980811,
+            "kernel_cpu_s": 0.0082,
+            "native_measured_cpu_s": 0.039851,
+            "wrapper_decision_cpu_s": 0.081485,
+            "decision_wall_s": 0.226085071,
+            "child_all_s": 0.179819,
+            "wrapper_all_s": 0.16368899999999975,
+            "whole_cells_wall_s": 0.34735995897790417
+          },
+          {
+            "rep": 3,
+            "cohorts": 4245,
+            "prefill": 119980811,
+            "kernel_cpu_s": 0.008074,
+            "native_measured_cpu_s": 0.039408,
+            "wrapper_decision_cpu_s": 0.078875,
+            "decision_wall_s": 0.219937001,
+            "child_all_s": 0.17560599999999998,
+            "wrapper_all_s": 0.15887299999999804,
+            "whole_cells_wall_s": 0.3376537079748232
+          }
+        ],
+        "kernel": {
+          "total_sec": 0.024157,
+          "mean_us": 1.896898311739301,
+          "p95_us": 3.0,
+          "p99_us": 4.0,
+          "max_us": 18.0
+        },
+        "native_including_parse_and_update": {
+          "total_sec": 0.117615,
+          "mean_us": 9.235571260306243,
+          "p95_us": 18.0,
+          "p99_us": 25.0,
+          "max_us": 51.0
+        },
+        "wall": {
+          "total_sec": 0.660731687,
+          "mean_us": 51.883132076953274,
+          "p95_us": 76.709,
+          "p99_us": 94.708,
+          "max_us": 216.959
+        },
+        "wrapper_cpu": {
+          "total_sec": 0.238156,
+          "mean_us": 18.700903023164507,
+          "p95_us": 24.0,
+          "p99_us": 31.0,
+          "max_us": 75.0
+        },
+        "parse": {
+          "total_sec": 0.087354,
+          "mean_us": 6.859363957597173,
+          "p95_us": 16.0,
+          "p99_us": 22.0,
+          "max_us": 47.0
+        },
+        "update": {
+          "total_sec": 0.006104,
+          "mean_us": 0.4793089909697683,
+          "p95_us": 2.0,
+          "p99_us": 2.0,
+          "max_us": 11.0
+        },
+        "counters_one_rep": {
+          "current_transitions": 15432,
+          "rollout_transitions": 0,
+          "rollouts": 0,
+          "candidate_states": 4245,
+          "eligible_orders": 0,
+          "visited_actions": 4245,
+          "common_pairs": 0,
+          "form_scores": 0,
+          "memo_hits": 0
+        },
+        "maxima": {
+          "memo_bytes": 0,
+          "memo_entries": 0,
+          "history_bytes": 0,
+          "index_bytes": 0,
+          "interned_nodes": 6073,
+          "current_cache_bytes": 0,
+          "current_cache_entries": 0
+        },
+        "child_rss_max_bytes": 3670016
+      },
+      "IMM": {
+        "cohorts_each": 4245,
+        "prefill_each": 119746315,
+        "reps": [
+          {
+            "rep": 1,
+            "cohorts": 4245,
+            "prefill": 119746315,
+            "kernel_cpu_s": 0.010183,
+            "native_measured_cpu_s": 0.041513,
+            "wrapper_decision_cpu_s": 0.080742,
+            "decision_wall_s": 0.226095415,
+            "child_all_s": 0.177753,
+            "wrapper_all_s": 0.1635749999999998,
+            "whole_cells_wall_s": 0.34693775000050664
+          },
+          {
+            "rep": 2,
+            "cohorts": 4245,
+            "prefill": 119746315,
+            "kernel_cpu_s": 0.010119,
+            "native_measured_cpu_s": 0.041336,
+            "wrapper_decision_cpu_s": 0.08022,
+            "decision_wall_s": 0.225855027,
+            "child_all_s": 0.178672,
+            "wrapper_all_s": 0.1603899999999996,
+            "whole_cells_wall_s": 0.34339641701080836
+          },
+          {
+            "rep": 3,
+            "cohorts": 4245,
+            "prefill": 119746315,
+            "kernel_cpu_s": 0.010062,
+            "native_measured_cpu_s": 0.04116,
+            "wrapper_decision_cpu_s": 0.081252,
+            "decision_wall_s": 0.229849986,
+            "child_all_s": 0.179191,
+            "wrapper_all_s": 0.16269899999999993,
+            "whole_cells_wall_s": 0.35103416701895185
+          }
+        ],
+        "kernel": {
+          "total_sec": 0.030364,
+          "mean_us": 2.3842952493129173,
+          "p95_us": 4.0,
+          "p99_us": 6.0,
+          "max_us": 38.0
+        },
+        "native_including_parse_and_update": {
+          "total_sec": 0.124009,
+          "mean_us": 9.737652139772282,
+          "p95_us": 19.0,
+          "p99_us": 26.0,
+          "max_us": 54.0
+        },
+        "wall": {
+          "total_sec": 0.681800428,
+          "mean_us": 53.537528700431885,
+          "p95_us": 80.375,
+          "p99_us": 102.875,
+          "max_us": 1334.375
+        },
+        "wrapper_cpu": {
+          "total_sec": 0.242214,
+          "mean_us": 19.01955241460542,
+          "p95_us": 25.0,
+          "p99_us": 35.0,
+          "max_us": 112.0
+        },
+        "parse": {
+          "total_sec": 0.087415,
+          "mean_us": 6.864153906556733,
+          "p95_us": 16.0,
+          "p99_us": 21.0,
+          "max_us": 39.0
+        },
+        "update": {
+          "total_sec": 0.00623,
+          "mean_us": 0.48920298390263056,
+          "p95_us": 2.0,
+          "p99_us": 2.0,
+          "max_us": 15.0
+        },
+        "counters_one_rep": {
+          "current_transitions": 16216,
+          "rollout_transitions": 0,
+          "rollouts": 0,
+          "candidate_states": 4245,
+          "eligible_orders": 0,
+          "visited_actions": 4476,
+          "common_pairs": 0,
+          "form_scores": 0,
+          "memo_hits": 0
+        },
+        "maxima": {
+          "memo_bytes": 0,
+          "memo_entries": 0,
+          "history_bytes": 0,
+          "index_bytes": 0,
+          "interned_nodes": 6073,
+          "current_cache_bytes": 35100,
+          "current_cache_entries": 19
+        },
+        "child_rss_max_bytes": 3670016
+      },
+      "REF": {
+        "cohorts_each": 4245,
+        "prefill_each": 119501579,
+        "reps": [
+          {
+            "rep": 1,
+            "cohorts": 4245,
+            "prefill": 119501579,
+            "kernel_cpu_s": 1.169039,
+            "native_measured_cpu_s": 1.203325,
+            "wrapper_decision_cpu_s": 0.084576,
+            "decision_wall_s": 1.408629007,
+            "child_all_s": 1.344806,
+            "wrapper_all_s": 0.17932200000000265,
+            "whole_cells_wall_s": 1.5422855829820037
+          },
+          {
+            "rep": 2,
+            "cohorts": 4245,
+            "prefill": 119501579,
+            "kernel_cpu_s": 1.174916,
+            "native_measured_cpu_s": 1.209189,
+            "wrapper_decision_cpu_s": 0.08574,
+            "decision_wall_s": 1.419347766,
+            "child_all_s": 1.352248,
+            "wrapper_all_s": 0.1760300000000008,
+            "whole_cells_wall_s": 1.549512791010784
+          },
+          {
+            "rep": 3,
+            "cohorts": 4245,
+            "prefill": 119501579,
+            "kernel_cpu_s": 1.158689,
+            "native_measured_cpu_s": 1.191839,
+            "wrapper_decision_cpu_s": 0.08382,
+            "decision_wall_s": 1.401753063,
+            "child_all_s": 1.3317999999999999,
+            "wrapper_all_s": 0.17355899999999913,
+            "whole_cells_wall_s": 1.5310115840111393
+          }
+        ],
+        "kernel": {
+          "total_sec": 3.502644,
+          "mean_us": 275.04075382803296,
+          "p95_us": 553.0,
+          "p99_us": 582.0,
+          "max_us": 739.0
+        },
+        "native_including_parse_and_update": {
+          "total_sec": 3.604353,
+          "mean_us": 283.02732626619553,
+          "p95_us": 561.0,
+          "p99_us": 591.0,
+          "max_us": 769.0
+        },
+        "wall": {
+          "total_sec": 4.229729836,
+          "mean_us": 332.13426274047896,
+          "p95_us": 616.041,
+          "p99_us": 668.625,
+          "max_us": 2122.709
+        },
+        "wrapper_cpu": {
+          "total_sec": 0.254136,
+          "mean_us": 19.955712603062427,
+          "p95_us": 25.0,
+          "p99_us": 35.0,
+          "max_us": 90.0
+        },
+        "parse": {
+          "total_sec": 0.090789,
+          "mean_us": 7.129093050647821,
+          "p95_us": 16.0,
+          "p99_us": 23.0,
+          "max_us": 58.0
+        },
+        "update": {
+          "total_sec": 0.01092,
+          "mean_us": 0.8574793875147232,
+          "p95_us": 4.0,
+          "p99_us": 5.0,
+          "max_us": 16.0
+        },
+        "counters_one_rep": {
+          "current_transitions": 226182,
+          "rollout_transitions": 3053444,
+          "rollouts": 420910,
+          "candidate_states": 53013,
+          "eligible_orders": 82031,
+          "visited_actions": 84493,
+          "common_pairs": 3064,
+          "form_scores": 0,
+          "memo_hits": 0
+        },
+        "maxima": {
+          "memo_bytes": 0,
+          "memo_entries": 0,
+          "history_bytes": 9640,
+          "index_bytes": 0,
+          "interned_nodes": 6073,
+          "current_cache_bytes": 35100,
+          "current_cache_entries": 65
+        },
+        "child_rss_max_bytes": 3833856
+      },
+      "OPT": {
+        "cohorts_each": 4245,
+        "prefill_each": 119501579,
+        "reps": [
+          {
+            "rep": 1,
+            "cohorts": 4245,
+            "prefill": 119501579,
+            "kernel_cpu_s": 0.258967,
+            "native_measured_cpu_s": 0.292382,
+            "wrapper_decision_cpu_s": 0.082072,
+            "decision_wall_s": 0.482216789,
+            "child_all_s": 0.432054,
+            "wrapper_all_s": 0.1713830000000005,
+            "whole_cells_wall_s": 0.6101836249872576
+          },
+          {
+            "rep": 2,
+            "cohorts": 4245,
+            "prefill": 119501579,
+            "kernel_cpu_s": 0.260788,
+            "native_measured_cpu_s": 0.293592,
+            "wrapper_decision_cpu_s": 0.081019,
+            "decision_wall_s": 0.480558746,
+            "child_all_s": 0.432234,
+            "wrapper_all_s": 0.1689399999999992,
+            "whole_cells_wall_s": 0.6068847500137053
+          },
+          {
+            "rep": 3,
+            "cohorts": 4245,
+            "prefill": 119501579,
+            "kernel_cpu_s": 0.256271,
+            "native_measured_cpu_s": 0.289124,
+            "wrapper_decision_cpu_s": 0.080748,
+            "decision_wall_s": 0.478534345,
+            "child_all_s": 0.42710000000000004,
+            "wrapper_all_s": 0.16950100000000035,
+            "whole_cells_wall_s": 0.6061475840106141
+          }
+        ],
+        "kernel": {
+          "total_sec": 0.776026,
+          "mean_us": 60.93647428347075,
+          "p95_us": 171.0,
+          "p99_us": 240.0,
+          "max_us": 387.0
+        },
+        "native_including_parse_and_update": {
+          "total_sec": 0.875098,
+          "mean_us": 68.71597958382411,
+          "p95_us": 179.0,
+          "p99_us": 251.0,
+          "max_us": 399.0
+        },
+        "wall": {
+          "total_sec": 1.44130988,
+          "mean_us": 113.17706164114644,
+          "p95_us": 229.0,
+          "p99_us": 300.75,
+          "max_us": 597.292
+        },
+        "wrapper_cpu": {
+          "total_sec": 0.243839,
+          "mean_us": 19.147153513937965,
+          "p95_us": 24.0,
+          "p99_us": 33.0,
+          "max_us": 84.0
+        },
+        "parse": {
+          "total_sec": 0.088817,
+          "mean_us": 6.974244208873184,
+          "p95_us": 16.0,
+          "p99_us": 22.0,
+          "max_us": 83.0
+        },
+        "update": {
+          "total_sec": 0.010255,
+          "mean_us": 0.8052610914801728,
+          "p95_us": 2.0,
+          "p99_us": 4.0,
+          "max_us": 19.0
+        },
+        "counters_one_rep": {
+          "current_transitions": 226182,
+          "rollout_transitions": 355224,
+          "rollouts": 46766,
+          "candidate_states": 53013,
+          "eligible_orders": 82031,
+          "visited_actions": 84493,
+          "common_pairs": 16223,
+          "form_scores": 140053,
+          "memo_hits": 55095
+        },
+        "maxima": {
+          "memo_bytes": 4736,
+          "memo_entries": 24,
+          "history_bytes": 29080,
+          "index_bytes": 22272,
+          "interned_nodes": 6073,
+          "current_cache_bytes": 35100,
+          "current_cache_entries": 65
+        },
+        "child_rss_max_bytes": 4161536
+      }
+    },
+    "conversation_32": {
+      "K": {
+        "cohorts_each": 1500,
+        "prefill_each": 59702504,
+        "reps": [
+          {
+            "rep": 1,
+            "cohorts": 1500,
+            "prefill": 59702504,
+            "kernel_cpu_s": 0.001412,
+            "native_measured_cpu_s": 0.011515,
+            "wrapper_decision_cpu_s": 0.019479,
+            "decision_wall_s": 0.057081532,
+            "child_all_s": 0.04974,
+            "wrapper_all_s": 0.04712299999999914,
+            "whole_cells_wall_s": 0.09779475000686944
+          },
+          {
+            "rep": 2,
+            "cohorts": 1500,
+            "prefill": 59702504,
+            "kernel_cpu_s": 0.001476,
+            "native_measured_cpu_s": 0.011676,
+            "wrapper_decision_cpu_s": 0.020739,
+            "decision_wall_s": 0.060148961,
+            "child_all_s": 0.050911,
+            "wrapper_all_s": 0.049491000000001506,
+            "whole_cells_wall_s": 0.10326075000921264
+          },
+          {
+            "rep": 3,
+            "cohorts": 1500,
+            "prefill": 59702504,
+            "kernel_cpu_s": 0.001367,
+            "native_measured_cpu_s": 0.011529,
+            "wrapper_decision_cpu_s": 0.019771,
+            "decision_wall_s": 0.058195546,
+            "child_all_s": 0.050475,
+            "wrapper_all_s": 0.04813900000000082,
+            "whole_cells_wall_s": 0.09992983299889602
+          }
+        ],
+        "kernel": {
+          "total_sec": 0.004255,
+          "mean_us": 0.9455555555555556,
+          "p95_us": 2.0,
+          "p99_us": 2.0,
+          "max_us": 18.0
+        },
+        "native_including_parse_and_update": {
+          "total_sec": 0.03472,
+          "mean_us": 7.7155555555555555,
+          "p95_us": 13.0,
+          "p99_us": 19.0,
+          "max_us": 42.0
+        },
+        "wall": {
+          "total_sec": 0.175426039,
+          "mean_us": 38.98356422222222,
+          "p95_us": 54.458,
+          "p99_us": 70.083,
+          "max_us": 169.208
+        },
+        "wrapper_cpu": {
+          "total_sec": 0.059989,
+          "mean_us": 13.33088888888889,
+          "p95_us": 18.0,
+          "p99_us": 25.0,
+          "max_us": 83.0
+        },
+        "parse": {
+          "total_sec": 0.028449,
+          "mean_us": 6.322,
+          "p95_us": 12.0,
+          "p99_us": 17.0,
+          "max_us": 40.0
+        },
+        "update": {
+          "total_sec": 0.002016,
+          "mean_us": 0.448,
+          "p95_us": 2.0,
+          "p99_us": 2.0,
+          "max_us": 15.0
+        },
+        "counters_one_rep": {
+          "current_transitions": 5221,
+          "rollout_transitions": 0,
+          "rollouts": 0,
+          "candidate_states": 1500,
+          "eligible_orders": 0,
+          "visited_actions": 1500,
+          "common_pairs": 0,
+          "form_scores": 0,
+          "memo_hits": 0
+        },
+        "maxima": {
+          "memo_bytes": 0,
+          "memo_entries": 0,
+          "history_bytes": 0,
+          "index_bytes": 0,
+          "interned_nodes": 4116,
+          "current_cache_bytes": 0,
+          "current_cache_entries": 0
+        },
+        "child_rss_max_bytes": 3293184
+      },
+      "IMM": {
+        "cohorts_each": 1500,
+        "prefill_each": 59702504,
+        "reps": [
+          {
+            "rep": 1,
+            "cohorts": 1500,
+            "prefill": 59702504,
+            "kernel_cpu_s": 0.001865,
+            "native_measured_cpu_s": 0.011198,
+            "wrapper_decision_cpu_s": 0.018006,
+            "decision_wall_s": 0.054586739,
+            "child_all_s": 0.046798,
+            "wrapper_all_s": 0.043988999999999834,
+            "whole_cells_wall_s": 0.0931178749888204
+          },
+          {
+            "rep": 2,
+            "cohorts": 1500,
+            "prefill": 59702504,
+            "kernel_cpu_s": 0.001967,
+            "native_measured_cpu_s": 0.012173,
+            "wrapper_decision_cpu_s": 0.020285,
+            "decision_wall_s": 0.058893268,
+            "child_all_s": 0.051258,
+            "wrapper_all_s": 0.04798700000000089,
+            "whole_cells_wall_s": 0.09984249999979511
+          },
+          {
+            "rep": 3,
+            "cohorts": 1500,
+            "prefill": 59702504,
+            "kernel_cpu_s": 0.001855,
+            "native_measured_cpu_s": 0.011399,
+            "wrapper_decision_cpu_s": 0.018621,
+            "decision_wall_s": 0.054656609,
+            "child_all_s": 0.04786,
+            "wrapper_all_s": 0.045099999999999696,
+            "whole_cells_wall_s": 0.09368037499370985
+          }
+        ],
+        "kernel": {
+          "total_sec": 0.005687,
+          "mean_us": 1.2637777777777779,
+          "p95_us": 2.0,
+          "p99_us": 3.0,
+          "max_us": 21.0
+        },
+        "native_including_parse_and_update": {
+          "total_sec": 0.03477,
+          "mean_us": 7.726666666666667,
+          "p95_us": 13.0,
+          "p99_us": 19.0,
+          "max_us": 48.0
+        },
+        "wall": {
+          "total_sec": 0.168136616,
+          "mean_us": 37.363692444444446,
+          "p95_us": 53.292,
+          "p99_us": 66.417,
+          "max_us": 1079.792
+        },
+        "wrapper_cpu": {
+          "total_sec": 0.056912,
+          "mean_us": 12.647111111111112,
+          "p95_us": 17.0,
+          "p99_us": 24.0,
+          "max_us": 62.0
+        },
+        "parse": {
+          "total_sec": 0.027003,
+          "mean_us": 6.000666666666667,
+          "p95_us": 11.0,
+          "p99_us": 16.0,
+          "max_us": 46.0
+        },
+        "update": {
+          "total_sec": 0.00208,
+          "mean_us": 0.4622222222222222,
+          "p95_us": 2.0,
+          "p99_us": 2.0,
+          "max_us": 13.0
+        },
+        "counters_one_rep": {
+          "current_transitions": 5221,
+          "rollout_transitions": 0,
+          "rollouts": 0,
+          "candidate_states": 1500,
+          "eligible_orders": 0,
+          "visited_actions": 1500,
+          "common_pairs": 0,
+          "form_scores": 0,
+          "memo_hits": 0
+        },
+        "maxima": {
+          "memo_bytes": 0,
+          "memo_entries": 0,
+          "history_bytes": 0,
+          "index_bytes": 0,
+          "interned_nodes": 4116,
+          "current_cache_bytes": 35100,
+          "current_cache_entries": 5
+        },
+        "child_rss_max_bytes": 3358720
+      },
+      "REF": {
+        "cohorts_each": 1500,
+        "prefill_each": 59702504,
+        "reps": [
+          {
+            "rep": 1,
+            "cohorts": 1500,
+            "prefill": 59702504,
+            "kernel_cpu_s": 0.079322,
+            "native_measured_cpu_s": 0.089744,
+            "wrapper_decision_cpu_s": 0.019806,
+            "decision_wall_s": 0.136243603,
+            "child_all_s": 0.12844,
+            "wrapper_all_s": 0.049672999999998524,
+            "whole_cells_wall_s": 0.17951587500283495
+          },
+          {
+            "rep": 2,
+            "cohorts": 1500,
+            "prefill": 59702504,
+            "kernel_cpu_s": 0.078235,
+            "native_measured_cpu_s": 0.08862,
+            "wrapper_decision_cpu_s": 0.019933,
+            "decision_wall_s": 0.134843904,
+            "child_all_s": 0.12770600000000001,
+            "wrapper_all_s": 0.048613999999998825,
+            "whole_cells_wall_s": 0.17728537501534447
+          },
+          {
+            "rep": 3,
+            "cohorts": 1500,
+            "prefill": 59702504,
+            "kernel_cpu_s": 0.07914,
+            "native_measured_cpu_s": 0.089485,
+            "wrapper_decision_cpu_s": 0.020103,
+            "decision_wall_s": 0.136369551,
+            "child_all_s": 0.127972,
+            "wrapper_all_s": 0.05100499999999997,
+            "whole_cells_wall_s": 0.18045154100400396
+          }
+        ],
+        "kernel": {
+          "total_sec": 0.236697,
+          "mean_us": 52.599333333333334,
+          "p95_us": 125.0,
+          "p99_us": 141.0,
+          "max_us": 167.0
+        },
+        "native_including_parse_and_update": {
+          "total_sec": 0.267849,
+          "mean_us": 59.522,
+          "p95_us": 131.0,
+          "p99_us": 146.0,
+          "max_us": 173.0
+        },
+        "wall": {
+          "total_sec": 0.407457058,
+          "mean_us": 90.54601288888888,
+          "p95_us": 161.875,
+          "p99_us": 178.625,
+          "max_us": 244.375
+        },
+        "wrapper_cpu": {
+          "total_sec": 0.059842,
+          "mean_us": 13.298222222222222,
+          "p95_us": 17.0,
+          "p99_us": 23.0,
+          "max_us": 46.0
+        },
+        "parse": {
+          "total_sec": 0.02854,
+          "mean_us": 6.342222222222222,
+          "p95_us": 11.0,
+          "p99_us": 17.0,
+          "max_us": 29.0
+        },
+        "update": {
+          "total_sec": 0.002612,
+          "mean_us": 0.5804444444444444,
+          "p95_us": 2.0,
+          "p99_us": 4.0,
+          "max_us": 9.0
+        },
+        "counters_one_rep": {
+          "current_transitions": 74333,
+          "rollout_transitions": 743534,
+          "rollouts": 106828,
+          "candidate_states": 13543,
+          "eligible_orders": 27922,
+          "visited_actions": 28066,
+          "common_pairs": 1448,
+          "form_scores": 0,
+          "memo_hits": 0
+        },
+        "maxima": {
+          "memo_bytes": 0,
+          "memo_entries": 0,
+          "history_bytes": 6772,
+          "index_bytes": 0,
+          "interned_nodes": 4116,
+          "current_cache_bytes": 35100,
+          "current_cache_entries": 65
+        },
+        "child_rss_max_bytes": 3407872
+      },
+      "OPT": {
+        "cohorts_each": 1500,
+        "prefill_each": 59702504,
+        "reps": [
+          {
+            "rep": 1,
+            "cohorts": 1500,
+            "prefill": 59702504,
+            "kernel_cpu_s": 0.01106,
+            "native_measured_cpu_s": 0.021672,
+            "wrapper_decision_cpu_s": 0.020207,
+            "decision_wall_s": 0.069212452,
+            "child_all_s": 0.061759,
+            "wrapper_all_s": 0.048987000000000336,
+            "whole_cells_wall_s": 0.11230816598981619
+          },
+          {
+            "rep": 2,
+            "cohorts": 1500,
+            "prefill": 59702504,
+            "kernel_cpu_s": 0.011007,
+            "native_measured_cpu_s": 0.021875,
+            "wrapper_decision_cpu_s": 0.020625,
+            "decision_wall_s": 0.071135275,
+            "child_all_s": 0.062075,
+            "wrapper_all_s": 0.051002000000000436,
+            "whole_cells_wall_s": 0.11623000001418404
+          },
+          {
+            "rep": 3,
+            "cohorts": 1500,
+            "prefill": 59702504,
+            "kernel_cpu_s": 0.011059,
+            "native_measured_cpu_s": 0.021646,
+            "wrapper_decision_cpu_s": 0.020719,
+            "decision_wall_s": 0.071469376,
+            "child_all_s": 0.060995999999999995,
+            "wrapper_all_s": 0.04974099999999915,
+            "whole_cells_wall_s": 0.11514874998829328
+          }
+        ],
+        "kernel": {
+          "total_sec": 0.033126,
+          "mean_us": 7.361333333333333,
+          "p95_us": 13.0,
+          "p99_us": 18.0,
+          "max_us": 45.0
+        },
+        "native_including_parse_and_update": {
+          "total_sec": 0.065193,
+          "mean_us": 14.487333333333334,
+          "p95_us": 23.0,
+          "p99_us": 30.0,
+          "max_us": 70.0
+        },
+        "wall": {
+          "total_sec": 0.211817103,
+          "mean_us": 47.07046733333333,
+          "p95_us": 64.791,
+          "p99_us": 89.416,
+          "max_us": 1451.708
+        },
+        "wrapper_cpu": {
+          "total_sec": 0.061551,
+          "mean_us": 13.678,
+          "p95_us": 19.0,
+          "p99_us": 28.0,
+          "max_us": 68.0
+        },
+        "parse": {
+          "total_sec": 0.029119,
+          "mean_us": 6.470888888888888,
+          "p95_us": 12.0,
+          "p99_us": 18.0,
+          "max_us": 34.0
+        },
+        "update": {
+          "total_sec": 0.002948,
+          "mean_us": 0.6551111111111111,
+          "p95_us": 2.0,
+          "p99_us": 2.0,
+          "max_us": 20.0
+        },
+        "counters_one_rep": {
+          "current_transitions": 74333,
+          "rollout_transitions": 1092,
+          "rollouts": 151,
+          "candidate_states": 13543,
+          "eligible_orders": 27922,
+          "visited_actions": 28066,
+          "common_pairs": 11959,
+          "form_scores": 0,
+          "memo_hits": 257
+        },
+        "maxima": {
+          "memo_bytes": 1568,
+          "memo_entries": 8,
+          "history_bytes": 19976,
+          "index_bytes": 14080,
+          "interned_nodes": 4116,
+          "current_cache_bytes": 35100,
+          "current_cache_entries": 65
+        },
+        "child_rss_max_bytes": 3620864
+      }
+    },
+    "toolagent_32": {
+      "K": {
+        "cohorts_each": 2745,
+        "prefill_each": 66675235,
+        "reps": [
+          {
+            "rep": 1,
+            "cohorts": 2745,
+            "prefill": 66675235,
+            "kernel_cpu_s": 0.00261,
+            "native_measured_cpu_s": 0.018647,
+            "wrapper_decision_cpu_s": 0.034555,
+            "decision_wall_s": 0.095065484,
+            "child_all_s": 0.078246,
+            "wrapper_all_s": 0.08285199999999904,
+            "whole_cells_wall_s": 0.16211087501142174
+          },
+          {
+            "rep": 2,
+            "cohorts": 2745,
+            "prefill": 66675235,
+            "kernel_cpu_s": 0.002637,
+            "native_measured_cpu_s": 0.018678,
+            "wrapper_decision_cpu_s": 0.034067,
+            "decision_wall_s": 0.094168297,
+            "child_all_s": 0.077103,
+            "wrapper_all_s": 0.08163799999999988,
+            "whole_cells_wall_s": 0.15915175000554882
+          },
+          {
+            "rep": 3,
+            "cohorts": 2745,
+            "prefill": 66675235,
+            "kernel_cpu_s": 0.002768,
+            "native_measured_cpu_s": 0.019523,
+            "wrapper_decision_cpu_s": 0.037265,
+            "decision_wall_s": 0.102195853,
+            "child_all_s": 0.081789,
+            "wrapper_all_s": 0.08834399999999931,
+            "whole_cells_wall_s": 0.1728600839851424
+          }
+        ],
+        "kernel": {
+          "total_sec": 0.008015,
+          "mean_us": 0.9732847601700061,
+          "p95_us": 2.0,
+          "p99_us": 2.0,
+          "max_us": 13.0
+        },
+        "native_including_parse_and_update": {
+          "total_sec": 0.056848,
+          "mean_us": 6.903217972070431,
+          "p95_us": 11.0,
+          "p99_us": 15.0,
+          "max_us": 51.0
+        },
+        "wall": {
+          "total_sec": 0.291429634,
+          "mean_us": 35.38914802671523,
+          "p95_us": 47.583,
+          "p99_us": 57.25,
+          "max_us": 101.75
+        },
+        "wrapper_cpu": {
+          "total_sec": 0.105887,
+          "mean_us": 12.858166363084395,
+          "p95_us": 17.0,
+          "p99_us": 22.0,
+          "max_us": 43.0
+        },
+        "parse": {
+          "total_sec": 0.045103,
+          "mean_us": 5.47698846387371,
+          "p95_us": 9.0,
+          "p99_us": 13.0,
+          "max_us": 50.0
+        },
+        "update": {
+          "total_sec": 0.00373,
+          "mean_us": 0.4529447480267152,
+          "p95_us": 2.0,
+          "p99_us": 2.0,
+          "max_us": 7.0
+        },
+        "counters_one_rep": {
+          "current_transitions": 10211,
+          "rollout_transitions": 0,
+          "rollouts": 0,
+          "candidate_states": 2745,
+          "eligible_orders": 0,
+          "visited_actions": 2745,
+          "common_pairs": 0,
+          "form_scores": 0,
+          "memo_hits": 0
+        },
+        "maxima": {
+          "memo_bytes": 0,
+          "memo_entries": 0,
+          "history_bytes": 0,
+          "index_bytes": 0,
+          "interned_nodes": 4077,
+          "current_cache_bytes": 0,
+          "current_cache_entries": 0
+        },
+        "child_rss_max_bytes": 3145728
+      },
+      "IMM": {
+        "cohorts_each": 2745,
+        "prefill_each": 66078755,
+        "reps": [
+          {
+            "rep": 1,
+            "cohorts": 2745,
+            "prefill": 66078755,
+            "kernel_cpu_s": 0.004141,
+            "native_measured_cpu_s": 0.019647,
+            "wrapper_decision_cpu_s": 0.033744,
+            "decision_wall_s": 0.09443075,
+            "child_all_s": 0.076335,
+            "wrapper_all_s": 0.08009900000000059,
+            "whole_cells_wall_s": 0.15783295899746008
+          },
+          {
+            "rep": 2,
+            "cohorts": 2745,
+            "prefill": 66078755,
+            "kernel_cpu_s": 0.004284,
+            "native_measured_cpu_s": 0.020523,
+            "wrapper_decision_cpu_s": 0.036075,
+            "decision_wall_s": 0.101029449,
+            "child_all_s": 0.080957,
+            "wrapper_all_s": 0.08419899999999991,
+            "whole_cells_wall_s": 0.16849999999976717
+          },
+          {
+            "rep": 3,
+            "cohorts": 2745,
+            "prefill": 66078755,
+            "kernel_cpu_s": 0.004455,
+            "native_measured_cpu_s": 0.02143,
+            "wrapper_decision_cpu_s": 0.039114,
+            "decision_wall_s": 0.107765669,
+            "child_all_s": 0.08447299999999999,
+            "wrapper_all_s": 0.0892799999999987,
+            "whole_cells_wall_s": 0.17725137501838617
+          }
+        ],
+        "kernel": {
+          "total_sec": 0.01288,
+          "mean_us": 1.5640558591378262,
+          "p95_us": 3.0,
+          "p99_us": 6.0,
+          "max_us": 31.0
+        },
+        "native_including_parse_and_update": {
+          "total_sec": 0.0616,
+          "mean_us": 7.4802671523983,
+          "p95_us": 12.0,
+          "p99_us": 17.0,
+          "max_us": 52.0
+        },
+        "wall": {
+          "total_sec": 0.303225868,
+          "mean_us": 36.82159902853674,
+          "p95_us": 51.584,
+          "p99_us": 72.917,
+          "max_us": 191.709
+        },
+        "wrapper_cpu": {
+          "total_sec": 0.108933,
+          "mean_us": 13.228051001821493,
+          "p95_us": 18.0,
+          "p99_us": 27.0,
+          "max_us": 89.0
+        },
+        "parse": {
+          "total_sec": 0.044791,
+          "mean_us": 5.4391013964784465,
+          "p95_us": 9.0,
+          "p99_us": 14.0,
+          "max_us": 42.0
+        },
+        "update": {
+          "total_sec": 0.003929,
+          "mean_us": 0.4771098967820279,
+          "p95_us": 2.0,
+          "p99_us": 2.0,
+          "max_us": 13.0
+        },
+        "counters_one_rep": {
+          "current_transitions": 13467,
+          "rollout_transitions": 0,
+          "rollouts": 0,
+          "candidate_states": 2745,
+          "eligible_orders": 0,
+          "visited_actions": 3694,
+          "common_pairs": 0,
+          "form_scores": 0,
+          "memo_hits": 0
+        },
+        "maxima": {
+          "memo_bytes": 0,
+          "memo_entries": 0,
+          "history_bytes": 0,
+          "index_bytes": 0,
+          "interned_nodes": 4077,
+          "current_cache_bytes": 35100,
+          "current_cache_entries": 31
+        },
+        "child_rss_max_bytes": 3194880
+      },
+      "REF": {
+        "cohorts_each": 2745,
+        "prefill_each": 64819747,
+        "reps": [
+          {
+            "rep": 1,
+            "cohorts": 2745,
+            "prefill": 64819747,
+            "kernel_cpu_s": 0.139546,
+            "native_measured_cpu_s": 0.156094,
+            "wrapper_decision_cpu_s": 0.035609,
+            "decision_wall_s": 0.236286642,
+            "child_all_s": 0.21552699999999997,
+            "wrapper_all_s": 0.08646699999999896,
+            "whole_cells_wall_s": 0.304921375005506
+          },
+          {
+            "rep": 2,
+            "cohorts": 2745,
+            "prefill": 64819747,
+            "kernel_cpu_s": 0.14331,
+            "native_measured_cpu_s": 0.160659,
+            "wrapper_decision_cpu_s": 0.038091,
+            "decision_wall_s": 0.247696498,
+            "child_all_s": 0.22328299999999998,
+            "wrapper_all_s": 0.09028600000000075,
+            "whole_cells_wall_s": 0.319694082980277
+          },
+          {
+            "rep": 3,
+            "cohorts": 2745,
+            "prefill": 64819747,
+            "kernel_cpu_s": 0.139893,
+            "native_measured_cpu_s": 0.156502,
+            "wrapper_decision_cpu_s": 0.036836,
+            "decision_wall_s": 0.237485853,
+            "child_all_s": 0.21675599999999998,
+            "wrapper_all_s": 0.08934300000000128,
+            "whole_cells_wall_s": 0.30803045799257234
+          }
+        ],
+        "kernel": {
+          "total_sec": 0.422749,
+          "mean_us": 51.33564055859138,
+          "p95_us": 143.0,
+          "p99_us": 155.0,
+          "max_us": 199.0
+        },
+        "native_including_parse_and_update": {
+          "total_sec": 0.473255,
+          "mean_us": 57.46873102610808,
+          "p95_us": 148.0,
+          "p99_us": 160.0,
+          "max_us": 202.0
+        },
+        "wall": {
+          "total_sec": 0.721468993,
+          "mean_us": 87.61007808136004,
+          "p95_us": 177.042,
+          "p99_us": 194.75,
+          "max_us": 1783.292
+        },
+        "wrapper_cpu": {
+          "total_sec": 0.110536,
+          "mean_us": 13.422707953855495,
+          "p95_us": 18.0,
+          "p99_us": 24.0,
+          "max_us": 52.0
+        },
+        "parse": {
+          "total_sec": 0.045515,
+          "mean_us": 5.527018822100789,
+          "p95_us": 9.0,
+          "p99_us": 14.0,
+          "max_us": 27.0
+        },
+        "update": {
+          "total_sec": 0.004991,
+          "mean_us": 0.6060716454159077,
+          "p95_us": 2.0,
+          "p99_us": 4.0,
+          "max_us": 16.0
+        },
+        "counters_one_rep": {
+          "current_transitions": 146023,
+          "rollout_transitions": 1256694,
+          "rollouts": 169224,
+          "candidate_states": 21505,
+          "eligible_orders": 41694,
+          "visited_actions": 51771,
+          "common_pairs": 2816,
+          "form_scores": 0,
+          "memo_hits": 0
+        },
+        "maxima": {
+          "memo_bytes": 0,
+          "memo_entries": 0,
+          "history_bytes": 6264,
+          "index_bytes": 0,
+          "interned_nodes": 4077,
+          "current_cache_bytes": 35100,
+          "current_cache_entries": 65
+        },
+        "child_rss_max_bytes": 3473408
+      },
+      "OPT": {
+        "cohorts_each": 2745,
+        "prefill_each": 64819747,
+        "reps": [
+          {
+            "rep": 1,
+            "cohorts": 2745,
+            "prefill": 64819747,
+            "kernel_cpu_s": 0.088175,
+            "native_measured_cpu_s": 0.104349,
+            "wrapper_decision_cpu_s": 0.034689,
+            "decision_wall_s": 0.180285442,
+            "child_all_s": 0.163176,
+            "wrapper_all_s": 0.08663099999999879,
+            "whole_cells_wall_s": 0.25116420799167827
+          },
+          {
+            "rep": 2,
+            "cohorts": 2745,
+            "prefill": 64819747,
+            "kernel_cpu_s": 0.095063,
+            "native_measured_cpu_s": 0.1128,
+            "wrapper_decision_cpu_s": 0.038681,
+            "decision_wall_s": 0.198398562,
+            "child_all_s": 0.176147,
+            "wrapper_all_s": 0.0925849999999997,
+            "whole_cells_wall_s": 0.2717226249806117
+          },
+          {
+            "rep": 3,
+            "cohorts": 2745,
+            "prefill": 64819747,
+            "kernel_cpu_s": 0.094346,
+            "native_measured_cpu_s": 0.111876,
+            "wrapper_decision_cpu_s": 0.038025,
+            "decision_wall_s": 0.197133043,
+            "child_all_s": 0.17393699999999998,
+            "wrapper_all_s": 0.09157699999999913,
+            "whole_cells_wall_s": 0.2698634580010548
+          }
+        ],
+        "kernel": {
+          "total_sec": 0.277584,
+          "mean_us": 33.70783242258652,
+          "p95_us": 93.0,
+          "p99_us": 135.0,
+          "max_us": 192.0
+        },
+        "native_including_parse_and_update": {
+          "total_sec": 0.329025,
+          "mean_us": 39.95446265938069,
+          "p95_us": 99.0,
+          "p99_us": 140.0,
+          "max_us": 200.0
+        },
+        "wall": {
+          "total_sec": 0.575817047,
+          "mean_us": 69.9231386763813,
+          "p95_us": 128.875,
+          "p99_us": 171.666,
+          "max_us": 1294.333
+        },
+        "wrapper_cpu": {
+          "total_sec": 0.111395,
+          "mean_us": 13.527018822100791,
+          "p95_us": 18.0,
+          "p99_us": 24.0,
+          "max_us": 66.0
+        },
+        "parse": {
+          "total_sec": 0.045738,
+          "mean_us": 5.554098360655737,
+          "p95_us": 9.0,
+          "p99_us": 14.0,
+          "max_us": 61.0
+        },
+        "update": {
+          "total_sec": 0.005703,
+          "mean_us": 0.6925318761384335,
+          "p95_us": 2.0,
+          "p99_us": 3.0,
+          "max_us": 21.0
+        },
+        "counters_one_rep": {
+          "current_transitions": 146023,
+          "rollout_transitions": 517298,
+          "rollouts": 69102,
+          "candidate_states": 21505,
+          "eligible_orders": 41694,
+          "visited_actions": 51771,
+          "common_pairs": 7623,
+          "form_scores": 8574,
+          "memo_hits": 64525
+        },
+        "maxima": {
+          "memo_bytes": 4016,
+          "memo_entries": 18,
+          "history_bytes": 20484,
+          "index_bytes": 15104,
+          "interned_nodes": 4077,
+          "current_cache_bytes": 35100,
+          "current_cache_entries": 65
+        },
+        "child_rss_max_bytes": 3571712
+      }
+    },
+    "both_32": {
+      "K": {
+        "cohorts_each": 4245,
+        "prefill_each": 126377739,
+        "reps": [
+          {
+            "rep": 1,
+            "cohorts": 4245,
+            "prefill": 126377739,
+            "kernel_cpu_s": 0.004022,
+            "native_measured_cpu_s": 0.030162,
+            "wrapper_decision_cpu_s": 0.054034,
+            "decision_wall_s": 0.152147016,
+            "child_all_s": 0.127986,
+            "wrapper_all_s": 0.12997499999999818,
+            "whole_cells_wall_s": 0.2599056250182912
+          },
+          {
+            "rep": 2,
+            "cohorts": 4245,
+            "prefill": 126377739,
+            "kernel_cpu_s": 0.004113,
+            "native_measured_cpu_s": 0.030354,
+            "wrapper_decision_cpu_s": 0.054806,
+            "decision_wall_s": 0.154317258,
+            "child_all_s": 0.12801400000000002,
+            "wrapper_all_s": 0.13112900000000138,
+            "whole_cells_wall_s": 0.26241250001476146
+          },
+          {
+            "rep": 3,
+            "cohorts": 4245,
+            "prefill": 126377739,
+            "kernel_cpu_s": 0.004135,
+            "native_measured_cpu_s": 0.031052,
+            "wrapper_decision_cpu_s": 0.057036,
+            "decision_wall_s": 0.160391399,
+            "child_all_s": 0.132264,
+            "wrapper_all_s": 0.13648300000000013,
+            "whole_cells_wall_s": 0.2727899169840384
+          }
+        ],
+        "kernel": {
+          "total_sec": 0.01227,
+          "mean_us": 0.9634864546525325,
+          "p95_us": 2.0,
+          "p99_us": 2.0,
+          "max_us": 18.0
+        },
+        "native_including_parse_and_update": {
+          "total_sec": 0.091568,
+          "mean_us": 7.190263054574008,
+          "p95_us": 12.0,
+          "p99_us": 17.0,
+          "max_us": 51.0
+        },
+        "wall": {
+          "total_sec": 0.466855673,
+          "mean_us": 36.65925975657636,
+          "p95_us": 50.333,
+          "p99_us": 63.291,
+          "max_us": 169.208
+        },
+        "wrapper_cpu": {
+          "total_sec": 0.165876,
+          "mean_us": 13.025206124852769,
+          "p95_us": 17.0,
+          "p99_us": 23.0,
+          "max_us": 83.0
+        },
+        "parse": {
+          "total_sec": 0.073552,
+          "mean_us": 5.775579112681586,
+          "p95_us": 10.0,
+          "p99_us": 15.0,
+          "max_us": 50.0
+        },
+        "update": {
+          "total_sec": 0.005746,
+          "mean_us": 0.45119748723989006,
+          "p95_us": 2.0,
+          "p99_us": 2.0,
+          "max_us": 15.0
+        },
+        "counters_one_rep": {
+          "current_transitions": 15432,
+          "rollout_transitions": 0,
+          "rollouts": 0,
+          "candidate_states": 4245,
+          "eligible_orders": 0,
+          "visited_actions": 4245,
+          "common_pairs": 0,
+          "form_scores": 0,
+          "memo_hits": 0
+        },
+        "maxima": {
+          "memo_bytes": 0,
+          "memo_entries": 0,
+          "history_bytes": 0,
+          "index_bytes": 0,
+          "interned_nodes": 4116,
+          "current_cache_bytes": 0,
+          "current_cache_entries": 0
+        },
+        "child_rss_max_bytes": 3293184
+      },
+      "IMM": {
+        "cohorts_each": 4245,
+        "prefill_each": 125781259,
+        "reps": [
+          {
+            "rep": 1,
+            "cohorts": 4245,
+            "prefill": 125781259,
+            "kernel_cpu_s": 0.006006,
+            "native_measured_cpu_s": 0.030845,
+            "wrapper_decision_cpu_s": 0.05175,
+            "decision_wall_s": 0.149017489,
+            "child_all_s": 0.12313299999999999,
+            "wrapper_all_s": 0.12408800000000042,
+            "whole_cells_wall_s": 0.2509508339862805
+          },
+          {
+            "rep": 2,
+            "cohorts": 4245,
+            "prefill": 125781259,
+            "kernel_cpu_s": 0.006251,
+            "native_measured_cpu_s": 0.032696,
+            "wrapper_decision_cpu_s": 0.05636,
+            "decision_wall_s": 0.159922717,
+            "child_all_s": 0.132215,
+            "wrapper_all_s": 0.1321860000000008,
+            "whole_cells_wall_s": 0.2683424999995623
+          },
+          {
+            "rep": 3,
+            "cohorts": 4245,
+            "prefill": 125781259,
+            "kernel_cpu_s": 0.00631,
+            "native_measured_cpu_s": 0.032829,
+            "wrapper_decision_cpu_s": 0.057735,
+            "decision_wall_s": 0.162422278,
+            "child_all_s": 0.13233299999999998,
+            "wrapper_all_s": 0.1343799999999984,
+            "whole_cells_wall_s": 0.270931750012096
+          }
+        ],
+        "kernel": {
+          "total_sec": 0.018567,
+          "mean_us": 1.4579505300353357,
+          "p95_us": 3.0,
+          "p99_us": 5.0,
+          "max_us": 31.0
+        },
+        "native_including_parse_and_update": {
+          "total_sec": 0.09637,
+          "mean_us": 7.567334118570868,
+          "p95_us": 13.0,
+          "p99_us": 18.0,
+          "max_us": 52.0
+        },
+        "wall": {
+          "total_sec": 0.471362484,
+          "mean_us": 37.01315147232038,
+          "p95_us": 52.541,
+          "p99_us": 70.584,
+          "max_us": 1079.792
+        },
+        "wrapper_cpu": {
+          "total_sec": 0.165845,
+          "mean_us": 13.02277188849627,
+          "p95_us": 18.0,
+          "p99_us": 25.0,
+          "max_us": 89.0
+        },
+        "parse": {
+          "total_sec": 0.071794,
+          "mean_us": 5.637534354142128,
+          "p95_us": 10.0,
+          "p99_us": 15.0,
+          "max_us": 46.0
+        },
+        "update": {
+          "total_sec": 0.006009,
+          "mean_us": 0.471849234393404,
+          "p95_us": 2.0,
+          "p99_us": 2.0,
+          "max_us": 13.0
+        },
+        "counters_one_rep": {
+          "current_transitions": 18688,
+          "rollout_transitions": 0,
+          "rollouts": 0,
+          "candidate_states": 4245,
+          "eligible_orders": 0,
+          "visited_actions": 5194,
+          "common_pairs": 0,
+          "form_scores": 0,
+          "memo_hits": 0
+        },
+        "maxima": {
+          "memo_bytes": 0,
+          "memo_entries": 0,
+          "history_bytes": 0,
+          "index_bytes": 0,
+          "interned_nodes": 4116,
+          "current_cache_bytes": 35100,
+          "current_cache_entries": 31
+        },
+        "child_rss_max_bytes": 3358720
+      },
+      "REF": {
+        "cohorts_each": 4245,
+        "prefill_each": 124522251,
+        "reps": [
+          {
+            "rep": 1,
+            "cohorts": 4245,
+            "prefill": 124522251,
+            "kernel_cpu_s": 0.218868,
+            "native_measured_cpu_s": 0.245838,
+            "wrapper_decision_cpu_s": 0.055415,
+            "decision_wall_s": 0.372530245,
+            "child_all_s": 0.34396699999999997,
+            "wrapper_all_s": 0.13613999999999749,
+            "whole_cells_wall_s": 0.4844372500083409
+          },
+          {
+            "rep": 2,
+            "cohorts": 4245,
+            "prefill": 124522251,
+            "kernel_cpu_s": 0.221545,
+            "native_measured_cpu_s": 0.249279,
+            "wrapper_decision_cpu_s": 0.058024,
+            "decision_wall_s": 0.382540402,
+            "child_all_s": 0.350989,
+            "wrapper_all_s": 0.13889999999999958,
+            "whole_cells_wall_s": 0.4969794579956215
+          },
+          {
+            "rep": 3,
+            "cohorts": 4245,
+            "prefill": 124522251,
+            "kernel_cpu_s": 0.219033,
+            "native_measured_cpu_s": 0.245987,
+            "wrapper_decision_cpu_s": 0.056939,
+            "decision_wall_s": 0.373855404,
+            "child_all_s": 0.344728,
+            "wrapper_all_s": 0.14034800000000125,
+            "whole_cells_wall_s": 0.4884819989965763
+          }
+        ],
+        "kernel": {
+          "total_sec": 0.659446,
+          "mean_us": 51.78217510797016,
+          "p95_us": 138.0,
+          "p99_us": 153.0,
+          "max_us": 199.0
+        },
+        "native_including_parse_and_update": {
+          "total_sec": 0.741104,
+          "mean_us": 58.194267765999214,
+          "p95_us": 143.0,
+          "p99_us": 158.0,
+          "max_us": 202.0
+        },
+        "wall": {
+          "total_sec": 1.128926051,
+          "mean_us": 88.64751087553985,
+          "p95_us": 172.5,
+          "p99_us": 191.333,
+          "max_us": 1783.292
+        },
+        "wrapper_cpu": {
+          "total_sec": 0.170378,
+          "mean_us": 13.378720062819003,
+          "p95_us": 18.0,
+          "p99_us": 24.0,
+          "max_us": 52.0
+        },
+        "parse": {
+          "total_sec": 0.074055,
+          "mean_us": 5.8150765606596,
+          "p95_us": 10.0,
+          "p99_us": 15.0,
+          "max_us": 29.0
+        },
+        "update": {
+          "total_sec": 0.007603,
+          "mean_us": 0.5970160973694543,
+          "p95_us": 2.0,
+          "p99_us": 4.0,
+          "max_us": 16.0
+        },
+        "counters_one_rep": {
+          "current_transitions": 220356,
+          "rollout_transitions": 2000228,
+          "rollouts": 276052,
+          "candidate_states": 35048,
+          "eligible_orders": 69616,
+          "visited_actions": 79837,
+          "common_pairs": 4264,
+          "form_scores": 0,
+          "memo_hits": 0
+        },
+        "maxima": {
+          "memo_bytes": 0,
+          "memo_entries": 0,
+          "history_bytes": 6772,
+          "index_bytes": 0,
+          "interned_nodes": 4116,
+          "current_cache_bytes": 35100,
+          "current_cache_entries": 65
+        },
+        "child_rss_max_bytes": 3473408
+      },
+      "OPT": {
+        "cohorts_each": 4245,
+        "prefill_each": 124522251,
+        "reps": [
+          {
+            "rep": 1,
+            "cohorts": 4245,
+            "prefill": 124522251,
+            "kernel_cpu_s": 0.099235,
+            "native_measured_cpu_s": 0.126021,
+            "wrapper_decision_cpu_s": 0.054896,
+            "decision_wall_s": 0.249497894,
+            "child_all_s": 0.224935,
+            "wrapper_all_s": 0.13561799999999913,
+            "whole_cells_wall_s": 0.36347237398149446
+          },
+          {
+            "rep": 2,
+            "cohorts": 4245,
+            "prefill": 124522251,
+            "kernel_cpu_s": 0.10607,
+            "native_measured_cpu_s": 0.134675,
+            "wrapper_decision_cpu_s": 0.059306,
+            "decision_wall_s": 0.269533837,
+            "child_all_s": 0.238222,
+            "wrapper_all_s": 0.14358700000000013,
+            "whole_cells_wall_s": 0.38795262499479577
+          },
+          {
+            "rep": 3,
+            "cohorts": 4245,
+            "prefill": 124522251,
+            "kernel_cpu_s": 0.105405,
+            "native_measured_cpu_s": 0.133522,
+            "wrapper_decision_cpu_s": 0.058744,
+            "decision_wall_s": 0.268602419,
+            "child_all_s": 0.23493299999999998,
+            "wrapper_all_s": 0.14131799999999828,
+            "whole_cells_wall_s": 0.3850122079893481
+          }
+        ],
+        "kernel": {
+          "total_sec": 0.31071,
+          "mean_us": 24.39811542991755,
+          "p95_us": 82.0,
+          "p99_us": 124.0,
+          "max_us": 192.0
+        },
+        "native_including_parse_and_update": {
+          "total_sec": 0.394218,
+          "mean_us": 30.955477031802122,
+          "p95_us": 87.0,
+          "p99_us": 130.0,
+          "max_us": 200.0
+        },
+        "wall": {
+          "total_sec": 0.78763415,
+          "mean_us": 61.847989791912056,
+          "p95_us": 117.917,
+          "p99_us": 163.208,
+          "max_us": 1451.708
+        },
+        "wrapper_cpu": {
+          "total_sec": 0.172946,
+          "mean_us": 13.580369061641147,
+          "p95_us": 18.0,
+          "p99_us": 26.0,
+          "max_us": 68.0
+        },
+        "parse": {
+          "total_sec": 0.074857,
+          "mean_us": 5.878052610914802,
+          "p95_us": 11.0,
+          "p99_us": 16.0,
+          "max_us": 61.0
+        },
+        "update": {
+          "total_sec": 0.008651,
+          "mean_us": 0.6793089909697684,
+          "p95_us": 2.0,
+          "p99_us": 2.0,
+          "max_us": 21.0
+        },
+        "counters_one_rep": {
+          "current_transitions": 220356,
+          "rollout_transitions": 518390,
+          "rollouts": 69253,
+          "candidate_states": 35048,
+          "eligible_orders": 69616,
+          "visited_actions": 79837,
+          "common_pairs": 19582,
+          "form_scores": 8574,
+          "memo_hits": 64782
+        },
+        "maxima": {
+          "memo_bytes": 4016,
+          "memo_entries": 18,
+          "history_bytes": 20484,
+          "index_bytes": 15104,
+          "interned_nodes": 4116,
+          "current_cache_bytes": 35100,
+          "current_cache_entries": 65
+        },
+        "child_rss_max_bytes": 3620864
+      }
+    }
+  },
+  "analysis_cpu_seconds": 1.9926910000000002
+}

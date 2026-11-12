@@ -1,0 +1,145 @@
+{
+  "start_utc": "2026-11-08T22:53:00Z",
+  "split_frozen_utc": "2026-11-08T22:56:10.566950+00:00",
+  "parent_path": "../commitment_20261108",
+  "parent_config_sha256": "de6b6a53a5c56b7f0c3f487d5cd798390db4c6548fdb49dbf351de30a8e8d0a6",
+  "parent_replay_sha256": "b3b04b1b62fd3fac75508acc9d2a785a55e10a43a25984b1d55e20db52474386",
+  "parent_exposure_records": {
+    "development.jsonl": "5c6ee89e96e4eb6820e8f5bfcd968eea2e3bd55f72e621959bb9fc6361de5f2a",
+    "evaluation.jsonl": "bbbaa41e3ecc986c7b000fd91e3be82152b9944bf6a0d89e242026d1a37ef9ec",
+    "summary.json": "597a8bcae044912ec6f2d4dba233a583ce593bfd62f352c69a2fddf089f534b7"
+  },
+  "inputs": [
+    {
+      "name": "conversation",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/3cca71daccf2a7afb8fe3f0295358f70e3a69fdb/FAST25-release/traces/conversation_trace.jsonl",
+      "git_blob": "5a371794b81d7fc7487ec8a02a2c631bcc7fbdf8",
+      "bytes": 3029533,
+      "sha256": "b8cbb061a85206d729d91cdc2981f43c9e0d99209dce588d3af5f7934408b9df",
+      "newline_records": 12031
+    },
+    {
+      "name": "toolagent",
+      "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/3cca71daccf2a7afb8fe3f0295358f70e3a69fdb/FAST25-release/traces/toolagent_trace.jsonl",
+      "git_blob": "b765599d1e0828b37f68d481563c385d3c11de54",
+      "bytes": 4415857,
+      "sha256": "48a2db1a13d3bc05e6330140c64f604ba366df20d3c9e128b5c35a01c1fa5f71",
+      "newline_records": 23608
+    }
+  ],
+  "scoped_evidence": "Parent replay parsed both public files globally, generated outcomes only for sampled bin IDs. Parent analysis reconstructed only toolagent bin 3. Project search for trace file names, split seeds and creator release did not locate another outcome run. Protected relative to this project\u2019s recorded outcome exposure; public traces.",
+  "traces": {
+    "conversation": {
+      "parent_dev": [
+        7,
+        24,
+        29,
+        46
+      ],
+      "parent_eval_now_exposed": [
+        0,
+        2,
+        5,
+        6,
+        10,
+        15,
+        18,
+        19,
+        28,
+        30,
+        35,
+        36,
+        41,
+        43,
+        45,
+        47
+      ],
+      "new_eval": [
+        1,
+        3,
+        4,
+        8,
+        9,
+        11,
+        12,
+        13,
+        14,
+        16,
+        17,
+        20,
+        21,
+        22,
+        23,
+        25,
+        26,
+        27,
+        31,
+        32,
+        33,
+        34,
+        37,
+        38,
+        39,
+        40,
+        42,
+        44
+      ]
+    },
+    "toolagent": {
+      "parent_dev": [
+        25,
+        33,
+        44,
+        46
+      ],
+      "parent_eval_now_exposed": [
+        1,
+        3,
+        8,
+        9,
+        11,
+        12,
+        15,
+        16,
+        22,
+        26,
+        29,
+        30,
+        31,
+        32,
+        43,
+        47
+      ],
+      "new_eval": [
+        0,
+        2,
+        4,
+        5,
+        6,
+        7,
+        10,
+        13,
+        14,
+        17,
+        18,
+        19,
+        20,
+        21,
+        23,
+        24,
+        27,
+        28,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        45
+      ]
+    }
+  }
+}

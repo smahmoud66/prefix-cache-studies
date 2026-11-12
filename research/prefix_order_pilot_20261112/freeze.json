@@ -1,0 +1,32 @@
+{
+  "utc": "2026-11-12T18:28:06.194383+00:00",
+  "files": {
+    "protocol.md": "4748a91b1d5e16c8f0f25ad5286c834b9d6c113fd886d295d094bdac27a0f39a",
+    "calibration.json": "9eaaa66e0e483729c70d21999a9e15acfb0b007dbc352909495bc4a6c53914e1",
+    "calibrate.py": "c96966d9ed4422ae9bff536df30e0e074c00b983a5187b9557a427ef8c142416",
+    "export_profile.py": "92cb9e72078d054c4448d6f21f247b482d687888b85b510c3b516b39bed18675",
+    "simulator.cpp": "d658d84d6c37109d5420633bd8f0e32d2a0dd6479336b10944eb3d2a4c07a531",
+    "prepare.py": "6db4b3294bb7da520f1db9be8aa2a4850ca705bd5b9c362a1f9c6418c57c996d",
+    "decide.py": "b1b8a444edba55ab5ee7b8b24c5a850a4ec7e9af5be9920ef64665e7d908027b",
+    "verify.py": "0f9137fadd2de0f33f3842e2c2ee1944f2c97596257f005dcd65c627cff947c0",
+    "execute.py": "2ca946b4694c90330282255b4def486a1277f916740217674366a22ec9549b77",
+    "build/pilot": "268f7268875dbce4790e7750b498c7c730bad1e8cb4bb9d420ee4ce442febce5",
+    "fixtures.json": "f0b1b17a15066f15744d890db7b0a21b96d41a0610bf378ad146125c134719ed",
+    "panels/conversation.json": "968ff8e621d389c65f3ca1a731224be4b12690f70d65e49a90030677fc125c29",
+    "panels/conversation.txt": "0c0bb060126d65dd22c094df632f7c1185840db8592c9373c866be2cd7180a77",
+    "panels/qwenapi.json": "62123c8fcfbe0317f84d70c4aea3f69682ec322991aa29a5ce391c8e17b68ee1",
+    "panels/qwenapi.txt": "36570df856e8b19d86b401953241dd5a0e0cf1c1a5166a1b77deb92e53326dbb",
+    "panels/qwenchat.json": "e2cea5afe12041b3666cab172127139e51cea26c7a7a4b3f6e81485129feff03",
+    "panels/qwenchat.txt": "50f57bc3e519c3100b420782b787177b68ac2111b7a6197c2edf6e1ff09816f2",
+    "panels/toolagent.json": "3d29e7333c4fead548bc808c97958778a93cb5b53f4b96e753a3c74dcfbc914c",
+    "panels/toolagent.txt": "9db3f1b664cf72eb6f47d79ea1cbf918047cf4e82397bf93ef0ea1bdbac9e260",
+    "sources/attention.parquet": "49413ad72ffe49820fea106d598295d849f8e30b6b52803fa91289f0e2d9d2c2",
+    "sources/freeinference.lcp.zst": "39f75bbba1ce912546517802719ef7742d0db7fa53dcbc66681bba090aa5d1f7",
+    "sources/freeinference_README.md": "887bf256b00f856e0c8a9e1603c8fef66afe0b2bd8bb7592f60ecd055a9b32e3",
+    "sources/gemm.parquet": "f7caf684e6624236a222ad9d74d22818adb9e931021f31d71fb35090734a435d",
+    "sources/lcp_format.md": "78ea4a26972b9f16e7f853fd38740c57019e8153158a211ed615d0f9cdaa2b59",
+    "sources/profile_points.json": "8b3dbb4c177dc32c74c350b959bf28a71ee177b5f7d15d5c6204ef6a99508205"
+  },
+  "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+  "python": "3.13.0"
+}

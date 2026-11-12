@@ -1,0 +1,26 @@
+{
+  "material": {
+    "n": 36,
+    "material": 0,
+    "flagged": 0,
+    "correct_flags": 0,
+    "false_positive": 0,
+    "false_negative": 0,
+    "precision": null,
+    "recall": null,
+    "f1": 0,
+    "go": false
+  },
+  "literal_material": {
+    "n": 36,
+    "material": 9,
+    "flagged": 36,
+    "correct_flags": 9,
+    "false_positive": 27,
+    "false_negative": 0,
+    "precision": 0.25,
+    "recall": 1.0,
+    "f1": 0.4,
+    "go": false
+  }
+}

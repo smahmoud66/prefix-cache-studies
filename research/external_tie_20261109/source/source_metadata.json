@@ -1,0 +1,54 @@
+{
+  "repository": "alibaba-edu/qwen-bailian-usagetraces-anon",
+  "revision": "5f7439c51ec248a0c585f7d90a41a6f57773b912",
+  "fields": [
+    "chat_id",
+    "hash_ids",
+    "input_length",
+    "output_length",
+    "parent_chat_id",
+    "timestamp",
+    "turn",
+    "type"
+  ],
+  "files": {
+    "A": {
+      "sha256": "07cedc9ed8aff301994ac68ed4aede8123b7603673575eeba9dd677de663db17",
+      "bytes": 56354493,
+      "rows": 43058,
+      "first": 0.0,
+      "last": 7199.464,
+      "total_input_positions": 100382715,
+      "min_input_length": 56,
+      "max_input_length": 89286,
+      "aligned_16": 2683,
+      "partial_final_16": 40375,
+      "chronology_inversions": 0,
+      "panel_row_timestamps_seconds": {
+        "1": 0.0,
+        "1000": 309.614,
+        "1001": 310.078,
+        "21000": 4077.589
+      }
+    },
+    "B": {
+      "sha256": "68e3f98e2d601d60d0abf4b89bc8a3654372abab7b1cde6373a13d0054379d59",
+      "bytes": 96209982,
+      "rows": 172800,
+      "first": 0.0,
+      "last": 7199.97,
+      "total_input_positions": 158029113,
+      "min_input_length": 19,
+      "max_input_length": 66446,
+      "aligned_16": 10864,
+      "partial_final_16": 161936,
+      "chronology_inversions": 0,
+      "panel_row_timestamps_seconds": {
+        "1": 0.0,
+        "1000": 40.161,
+        "1001": 40.17,
+        "21000": 945.968
+      }
+    }
+  }
+}

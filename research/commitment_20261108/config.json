@@ -1,0 +1,44 @@
+{
+  "study": "commitment_prefix_20261108",
+  "source_commit": "3cca71daccf2a7afb8fe3f0295358f70e3a69fdb",
+  "paths": {
+    "conversation": "FAST25-release/traces/conversation_trace.jsonl",
+    "toolagent": "FAST25-release/traces/toolagent_trace.jsonl"
+  },
+  "git_blobs": {
+    "conversation": "5a371794b81d7fc7487ec8a02a2c631bcc7fbdf8",
+    "toolagent": "b765599d1e0828b37f68d481563c385d3c11de54"
+  },
+  "split": {
+    "bins": 48,
+    "dev": 4,
+    "evaluation": 16,
+    "seeds": {
+      "conversation": 603817,
+      "toolagent": 982731
+    },
+    "sampler": "Python random.Random(seed).sample(range(48),20), first4 dev, next16 evaluation; one draw per trace, no replacement. Remaining28 per trace unobserved including zero requests if any."
+  },
+  "time": "Sort on timestamp,line index. Divide [min timestamp,max timestamp+1) into 48 equal-time strata bins per trace using integer comparisons. Reset each episode; first quarter of its time duration FCFS/LRU warm-up without charging the primary endpoint; operational counters and work separately reported.",
+  "cohorts": "Start at first as-yet unassigned request. Close on fourth arrival or 1000ms after first, whichever comes first; last partial cohort flushes by episode end. No future cohort or output length visible. Never reorder across cohorts.",
+  "full_block_tokens": 512,
+  "primary_retained_blocks": 128,
+  "pressure_retained_blocks": 32,
+  "cache_semantics": "For L>0 admit q=min(floor((L-1)/512),len(hash_ids),C) complete blocks. Canonicalize chained full prefix string, and always compute L-512q other positions. Distinct transient current request workspace outside retained cache. Protect requested admissible path at commit, then evict off-path leaves until capacity fits. No output KV, migration or recomputation from host.",
+  "tie": "arrival order then original line index; leaf eviction by lowest maximum ancestor(pending_count*depth), oldest request touch, deepest node, canonical tree ID assigned in arrival order. All blocks of one request touched together. LRU omits pending score.",
+  "policies": [
+    "FCFS with leaf LRU",
+    "k-LPM k=2 with leaf LRU: oldest then LPM, start new cycle per cohort",
+    "cLPM with PEEK-like leaf eviction; warm h>0 then first cold root pioneer then cold siblings, longer h,higher sum counts,higher deepest shared count,arrival",
+    "incumbent with same PEEK-like eviction: simulate FCFS,kLPM,LPM,cLPM and shadow DFS; choose least cohort misses, tie by listed order",
+    "certified search from incumbent: exhaustive legal order for <=4, prune by union of absent remaining blocks, keep incumbent on ties; search arrival order",
+    "certified search with LRU (eviction ablation); use same portfolio policy rules for its incumbent"
+  ],
+  "dfs": "Order children by descending 10000 times fraction of distinct pending subtree nodes resident at cohort entry plus .001 times pending subtree request count, ties earliest request then node ID; request terminating at node emitted first. No future wave information. These are block-resolution adaptations; no claim of engine reproduction.",
+  "bound": "Offline D-H for mandatory cohort cuts. D=sum distinct admissible blocks per cohort. For initially retained blocks add interval [-1,first); then each same-block next demand adds [prev,next). H is max number of unit intervals at overlap <=C via start-order sweep removing latest end at overflow. Add always computed tokens. Also report cold-unique bound and incumbent potential savings ceiling. This is a global relaxation.",
+  "endpoints": "Primary paired saved prefill tokens per request, incumbent minus certified search at C128; within-episode request mean, zero for empty episode, then equal episode weights within each trace and equal trace weights. Include every selected group. Secondary total prefill, cache hits, ordinal displacement, gating delay, count of strict cohort gains and costs at own entry, pruning/CPU overhead, global bound/ceilings, C32 stress and LRU ablation. Fixed cap comparisons, no quality or wall-time-serving claim.",
+  "uncertainty": "Stratified simple random sampling of bins from 44 nondevelopment bins in each of two fixed traces. Finite-population variance with (1-16/44), equal trace weights, approximate Welch-Satterthwaite t interval. No extrapolation to independent production systems; degenerate variance -> unavailable CI. With equal within-trace SD 8/32/128, approximate half-width 2.3/9.2/37 tokens per request.",
+  "failure": "Validate nonnegative lengths/timestamps and list of hash IDs. Short hash lists charge all uncovered tokens, count mismatches. Raw duplicates are distinct requests. If parse or invariants fail after evaluation save failure, mark affected result invalid; never drop a hard group or rerun under changed rules.",
+  "development": "Same fixed operating points on both splits, one configuration, no tuning. Independent small exhaustive cache and bound checks on fixtures, check exhaustive permutations on dev. No change of research objective or criteria after evaluation.",
+  "costs": "Single-process CPU replay. Time each algorithm including planning, record committed input positions and transient input size, warm-up, replay CPU and elapsed, preparation, receipt hashes. No conversion to FLOPs, latency, dollars, or observed accelerator time."
+}

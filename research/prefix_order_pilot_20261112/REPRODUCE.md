@@ -1,0 +1,1 @@
+See the [artifact reproduction guide](../../docs/reproduce.md) for offline verification and source-based replication. The JSON and witness files alongside this note are the outcomes of the original frozen run. A replication writes to a separate directory.

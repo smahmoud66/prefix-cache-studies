@@ -1,0 +1,15 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+build/
+build-cache/
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+research/focused_comparison_20261109/evaluator
+research/commitment_20261108/inputs/*.jsonl
+research/external_tie_20261109/source/*.jsonl
+research/prefix_order_pilot_20261112/sources/*.zst

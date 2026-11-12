@@ -1,0 +1,11 @@
+{
+  "literal_focused_update_vs_leaf": 9304,
+  "distinct_literal_pair_runs": 2000,
+  "synthetic_decisions": 3287,
+  "eligible_candidate_scores": 3928,
+  "certified_literal_pairs": 499,
+  "cpu_seconds": 0.09010499999999999,
+  "wall_seconds": 0.09066745900781825,
+  "status": "PASS",
+  "verifier_sha256": "fb71cd618e371952044053f06659bdc1260fa99f24c6d51ffc58fff09e5114cb"
+}

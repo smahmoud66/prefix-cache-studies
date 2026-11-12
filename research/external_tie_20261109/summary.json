@@ -1,0 +1,5373 @@
+{
+  "episodes": {
+    "A": {
+      "requests": 20000,
+      "cohorts": 5200,
+      "input_tokens": 43333279,
+      "collection_ms": {
+        "mean": 272.4133,
+        "p95": 872,
+        "p99": 1000,
+        "max": 1000
+      },
+      "windows": [
+        5002,
+        5000,
+        4998,
+        5000
+      ]
+    },
+    "B": {
+      "requests": 20000,
+      "cohorts": 5000,
+      "input_tokens": 17516341,
+      "collection_ms": {
+        "mean": 68.2102,
+        "p95": 224,
+        "p99": 338,
+        "max": 706
+      },
+      "windows": [
+        5000,
+        5000,
+        5000,
+        5000
+      ]
+    }
+  },
+  "cells": {
+    "A_512_128": {
+      "FCFS": {
+        "warm_prefill": 1680425,
+        "work": 43320991,
+        "by_window": [
+          10208863,
+          11111204,
+          11534726,
+          10466198
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 0
+        },
+        "exit_hist": {},
+        "change_type": {},
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 44905,
+          "displacement": 0
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "f0514b77612312882ca59ccfd371dc82cb5d577d8b44061ed4456281a99182eb",
+        "timing": [
+          {
+            "measured_cpu_ns": 13214000,
+            "measured_wall_ns": 14782119,
+            "process_cpu_s": 0.053619000000000305,
+            "process_wall_s": 0.05944574999739416,
+            "rss": 5537792
+          },
+          {
+            "measured_cpu_ns": 13376000,
+            "measured_wall_ns": 14958367,
+            "process_cpu_s": 0.054246000000000016,
+            "process_wall_s": 0.06214791600359604,
+            "rss": 5537792
+          }
+        ],
+        "cpu_ns": {
+          "mean": 2556.730769230769,
+          "p95": 4000,
+          "p99": 5000,
+          "max": 136000
+        },
+        "wall_ns": {
+          "mean": 2859.6621153846154,
+          "p95": 3708,
+          "p99": 4917,
+          "max": 136792
+        }
+      },
+      "K": {
+        "warm_prefill": 1680425,
+        "work": 43320479,
+        "by_window": [
+          10208863,
+          11111204,
+          11534726,
+          10465686
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 16
+        },
+        "exit_hist": {},
+        "change_type": {},
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 44905,
+          "displacement": 2
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "be4ad044d6f8978fa1f4cd79218d3c857f196abf3c941bc047473289f3a6df07",
+        "timing": [
+          {
+            "measured_cpu_ns": 15297000,
+            "measured_wall_ns": 17186520,
+            "process_cpu_s": 0.05891299999999999,
+            "process_wall_s": 0.06267320798360743,
+            "rss": 5554176
+          },
+          {
+            "measured_cpu_ns": 14410000,
+            "measured_wall_ns": 16136901,
+            "process_cpu_s": 0.05588899999999963,
+            "process_wall_s": 0.06870329202502035,
+            "rss": 5619712
+          }
+        ],
+        "cpu_ns": {
+          "mean": 2856.4423076923076,
+          "p95": 4000,
+          "p99": 6000,
+          "max": 87000
+        },
+        "wall_ns": {
+          "mean": 3204.175096153846,
+          "p95": 4083,
+          "p99": 7042,
+          "max": 87459
+        }
+      },
+      "IMM": {
+        "warm_prefill": 1680425,
+        "work": 43320479,
+        "by_window": [
+          10208863,
+          11111204,
+          11534726,
+          10465686
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 4
+        },
+        "exit_hist": {},
+        "change_type": {},
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 44905,
+          "displacement": 2
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "c9b3152064e4fd35d71751c8aa50cff9bc069ef06688b305584cba8dfadb3660",
+        "timing": [
+          {
+            "measured_cpu_ns": 15660000,
+            "measured_wall_ns": 17402253,
+            "process_cpu_s": 0.05882599999999982,
+            "process_wall_s": 0.06584745799773373,
+            "rss": 5554176
+          },
+          {
+            "measured_cpu_ns": 16496000,
+            "measured_wall_ns": 18256027,
+            "process_cpu_s": 0.060820000000000096,
+            "process_wall_s": 0.06483533402206376,
+            "rss": 5570560
+          }
+        ],
+        "cpu_ns": {
+          "mean": 3091.923076923077,
+          "p95": 4000,
+          "p99": 6000,
+          "max": 78000
+        },
+        "wall_ns": {
+          "mean": 3428.6807692307693,
+          "p95": 4375,
+          "p99": 7542,
+          "max": 78709
+        }
+      },
+      "OPT": {
+        "warm_prefill": 1680425,
+        "work": 43320479,
+        "by_window": [
+          10208863,
+          11111204,
+          11534726,
+          10465686
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "multiple_orders": 5169,
+          "multiple_exits": 4643,
+          "exit_count": 43988,
+          "eligible_orders_total": 113579,
+          "changed": 0,
+          "rollouts": 21,
+          "direct": 939,
+          "memo_hits": 25,
+          "common": 41516,
+          "sum_abs_displacement": 4
+        },
+        "exit_hist": {
+          "6": 2018,
+          "24": 1185,
+          "1": 557,
+          "2": 1437,
+          "3": 3
+        },
+        "change_type": {
+          "none": 5200
+        },
+        "peaks": {
+          "memo_bytes": 368,
+          "index_bytes": 139264,
+          "history_bytes": 143116,
+          "index_slots": 44906,
+          "ids": 44905,
+          "displacement": 2
+        },
+        "ids_after_warm": 2215,
+        "active_final": 152,
+        "fingerprint": "9a1858b293748e7a144c3dc553a6ccf9bc900fff46b2ae0add5f49880e394973",
+        "timing": [
+          {
+            "measured_cpu_ns": 118395000,
+            "measured_wall_ns": 122033555,
+            "process_cpu_s": 0.16046199999999988,
+            "process_wall_s": 0.1827817919838708,
+            "rss": 5931008
+          },
+          {
+            "measured_cpu_ns": 124430000,
+            "measured_wall_ns": 127332358,
+            "process_cpu_s": 0.16817899999999986,
+            "process_wall_s": 0.18005249998532236,
+            "rss": 5767168
+          }
+        ],
+        "cpu_ns": {
+          "mean": 23348.55769230769,
+          "p95": 32000,
+          "p99": 38000,
+          "max": 104000
+        },
+        "wall_ns": {
+          "mean": 23977.491634615384,
+          "p95": 32792,
+          "p99": 44042,
+          "max": 123916
+        }
+      },
+      "RANK": {
+        "warm_prefill": 1680425,
+        "work": 43320479,
+        "by_window": [
+          10208863,
+          11111204,
+          11534726,
+          10465686
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "multiple_orders": 5169,
+          "multiple_exits": 4643,
+          "exit_count": 43991,
+          "eligible_orders_total": 113591,
+          "changed": 62,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 234
+        },
+        "exit_hist": {
+          "6": 2019,
+          "24": 1185,
+          "1": 557,
+          "2": 1437,
+          "3": 2
+        },
+        "change_type": {
+          "none": 5138,
+          "recency": 62
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 278528,
+          "history_bytes": 282380,
+          "index_slots": 44906,
+          "ids": 44905,
+          "displacement": 3
+        },
+        "ids_after_warm": 2215,
+        "active_final": 152,
+        "fingerprint": "e4e3009346587fd302ae525ed14d1a07b87537e4c064cc237ce556398f4b1516",
+        "timing": [
+          {
+            "measured_cpu_ns": 123077000,
+            "measured_wall_ns": 125252028,
+            "process_cpu_s": 0.16752899999999993,
+            "process_wall_s": 0.17526895797345787,
+            "rss": 5849088
+          },
+          {
+            "measured_cpu_ns": 113836000,
+            "measured_wall_ns": 115928620,
+            "process_cpu_s": 0.1554610000000003,
+            "process_wall_s": 0.17214820900699124,
+            "rss": 5832704
+          }
+        ],
+        "cpu_ns": {
+          "mean": 22780.096153846152,
+          "p95": 31000,
+          "p99": 34000,
+          "max": 102000
+        },
+        "wall_ns": {
+          "mean": 23190.446923076925,
+          "p95": 31125,
+          "p99": 36417,
+          "max": 107375
+        }
+      },
+      "RAND1729": {
+        "warm_prefill": 1680425,
+        "work": 43320479,
+        "by_window": [
+          10208863,
+          11111204,
+          11534726,
+          10465686
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "multiple_orders": 5169,
+          "multiple_exits": 4643,
+          "exit_count": 43994,
+          "eligible_orders_total": 113603,
+          "changed": 3589,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 15288
+        },
+        "exit_hist": {
+          "6": 2020,
+          "24": 1185,
+          "1": 557,
+          "2": 1437,
+          "3": 1
+        },
+        "change_type": {
+          "recency": 3589,
+          "none": 1611
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 44905,
+          "displacement": 3
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "2bef24a426ccb1439187e8841cbbca130611150787e73c3a71df878947e836a2",
+        "timing": [
+          {
+            "measured_cpu_ns": 115781000,
+            "measured_wall_ns": 118419667,
+            "process_cpu_s": 0.17582300000000006,
+            "process_wall_s": 0.187644707999425,
+            "rss": 5636096
+          },
+          {
+            "measured_cpu_ns": 118697000,
+            "measured_wall_ns": 121393876,
+            "process_cpu_s": 0.18004299999999995,
+            "process_wall_s": 0.1958044999919366,
+            "rss": 5734400
+          }
+        ],
+        "cpu_ns": {
+          "mean": 22545.96153846154,
+          "p95": 29000,
+          "p99": 33000,
+          "max": 105000
+        },
+        "wall_ns": {
+          "mean": 23058.994519230768,
+          "p95": 30000,
+          "p99": 36625,
+          "max": 107375
+        }
+      },
+      "RAND314159": {
+        "warm_prefill": 1680425,
+        "work": 43317407,
+        "by_window": [
+          10206303,
+          11111204,
+          11534214,
+          10465686
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "multiple_orders": 5169,
+          "multiple_exits": 4642,
+          "exit_count": 43987,
+          "eligible_orders_total": 113567,
+          "changed": 3531,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 15090
+        },
+        "exit_hist": {
+          "6": 2018,
+          "24": 1185,
+          "1": 558,
+          "2": 1436,
+          "3": 3
+        },
+        "change_type": {
+          "recency": 3531,
+          "none": 1669
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 44905,
+          "displacement": 3
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "546abae07ec60e7a095e1441e578a95da930343a1e76bbf2eff3fb6264b2af09",
+        "timing": [
+          {
+            "measured_cpu_ns": 117648000,
+            "measured_wall_ns": 120011742,
+            "process_cpu_s": 0.17839500000000008,
+            "process_wall_s": 0.18794975001947023,
+            "rss": 5603328
+          },
+          {
+            "measured_cpu_ns": 110885000,
+            "measured_wall_ns": 113406542,
+            "process_cpu_s": 0.16925500000000016,
+            "process_wall_s": 0.1845531249709893,
+            "rss": 5701632
+          }
+        ],
+        "cpu_ns": {
+          "mean": 21974.326923076922,
+          "p95": 29000,
+          "p99": 33000,
+          "max": 103000
+        },
+        "wall_ns": {
+          "mean": 22444.06576923077,
+          "p95": 29625,
+          "p99": 36250,
+          "max": 102958
+        }
+      },
+      "RAND271828": {
+        "warm_prefill": 1680425,
+        "work": 43316895,
+        "by_window": [
+          10206303,
+          11111204,
+          11533702,
+          10465686
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "multiple_orders": 5169,
+          "multiple_exits": 4641,
+          "exit_count": 43989,
+          "eligible_orders_total": 113567,
+          "changed": 3563,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 15226
+        },
+        "exit_hist": {
+          "6": 2019,
+          "24": 1185,
+          "1": 559,
+          "2": 1435,
+          "3": 2
+        },
+        "change_type": {
+          "none": 1637,
+          "recency": 3563
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 44905,
+          "displacement": 3
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "ea65936c5986531f40d2e99b67ed879d8b19e62f454d02b4556a6fdc2496c91a",
+        "timing": [
+          {
+            "measured_cpu_ns": 106100000,
+            "measured_wall_ns": 108506746,
+            "process_cpu_s": 0.16113899999999992,
+            "process_wall_s": 0.20037195799523033,
+            "rss": 5619712
+          },
+          {
+            "measured_cpu_ns": 116515000,
+            "measured_wall_ns": 118586045,
+            "process_cpu_s": 0.17669200000000007,
+            "process_wall_s": 0.19353379198582843,
+            "rss": 5636096
+          }
+        ],
+        "cpu_ns": {
+          "mean": 21405.28846153846,
+          "p95": 29000,
+          "p99": 32000,
+          "max": 109000
+        },
+        "wall_ns": {
+          "mean": 21835.84528846154,
+          "p95": 29250,
+          "p99": 35792,
+          "max": 108708
+        }
+      }
+    },
+    "A_512_32": {
+      "FCFS": {
+        "warm_prefill": 1693225,
+        "work": 43332767,
+        "by_window": [
+          10214495,
+          11112740,
+          11537798,
+          10467734
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 0
+        },
+        "exit_hist": {},
+        "change_type": {},
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 44635,
+          "displacement": 0
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "3f0ac302208f4b42b53fa81da49a34519f384ee3ff3281aa4cbb2e6e92414b4d",
+        "timing": [
+          {
+            "measured_cpu_ns": 10141000,
+            "measured_wall_ns": 11849065,
+            "process_cpu_s": 0.055137000000000214,
+            "process_wall_s": 0.06075387500459328,
+            "rss": 5521408
+          },
+          {
+            "measured_cpu_ns": 8537000,
+            "measured_wall_ns": 10044710,
+            "process_cpu_s": 0.04690300000000036,
+            "process_wall_s": 0.04948208300629631,
+            "rss": 5537792
+          }
+        ],
+        "cpu_ns": {
+          "mean": 1795.9615384615386,
+          "p95": 3000,
+          "p99": 4000,
+          "max": 77000
+        },
+        "wall_ns": {
+          "mean": 2105.170673076923,
+          "p95": 2708,
+          "p99": 4083,
+          "max": 77875
+        }
+      },
+      "K": {
+        "warm_prefill": 1693225,
+        "work": 43332767,
+        "by_window": [
+          10214495,
+          11112740,
+          11537798,
+          10467734
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 2
+        },
+        "exit_hist": {},
+        "change_type": {},
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 44635,
+          "displacement": 1
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "6172ec9b27de660cfb303f5a30feb14b4700316e9bc4a4e862bdeaa73113d390",
+        "timing": [
+          {
+            "measured_cpu_ns": 9829000,
+            "measured_wall_ns": 11900031,
+            "process_cpu_s": 0.051283999999999885,
+            "process_wall_s": 0.06211808300577104,
+            "rss": 5373952
+          },
+          {
+            "measured_cpu_ns": 10207000,
+            "measured_wall_ns": 12584940,
+            "process_cpu_s": 0.05165299999999995,
+            "process_wall_s": 0.06171574999461882,
+            "rss": 5570560
+          }
+        ],
+        "cpu_ns": {
+          "mean": 1926.5384615384614,
+          "p95": 3000,
+          "p99": 6000,
+          "max": 82000
+        },
+        "wall_ns": {
+          "mean": 2354.3241346153845,
+          "p95": 3375,
+          "p99": 11250,
+          "max": 104750
+        }
+      },
+      "IMM": {
+        "warm_prefill": 1693225,
+        "work": 43332767,
+        "by_window": [
+          10214495,
+          11112740,
+          11537798,
+          10467734
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 0
+        },
+        "exit_hist": {},
+        "change_type": {},
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 44635,
+          "displacement": 0
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "3f0ac302208f4b42b53fa81da49a34519f384ee3ff3281aa4cbb2e6e92414b4d",
+        "timing": [
+          {
+            "measured_cpu_ns": 10651000,
+            "measured_wall_ns": 12740566,
+            "process_cpu_s": 0.0514070000000002,
+            "process_wall_s": 0.06266187501023524,
+            "rss": 5586944
+          },
+          {
+            "measured_cpu_ns": 10883000,
+            "measured_wall_ns": 12648473,
+            "process_cpu_s": 0.05597999999999992,
+            "process_wall_s": 0.05851991698727943,
+            "rss": 5521408
+          }
+        ],
+        "cpu_ns": {
+          "mean": 2070.576923076923,
+          "p95": 3000,
+          "p99": 5000,
+          "max": 98000
+        },
+        "wall_ns": {
+          "mean": 2441.25375,
+          "p95": 3209,
+          "p99": 7208,
+          "max": 170500
+        }
+      },
+      "OPT": {
+        "warm_prefill": 1693225,
+        "work": 43332767,
+        "by_window": [
+          10214495,
+          11112740,
+          11537798,
+          10467734
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "multiple_orders": 5169,
+          "multiple_exits": 4643,
+          "exit_count": 43442,
+          "eligible_orders_total": 113615,
+          "changed": 3,
+          "rollouts": 171,
+          "direct": 541,
+          "memo_hits": 270,
+          "common": 41516,
+          "sum_abs_displacement": 6
+        },
+        "exit_hist": {
+          "6": 1984,
+          "18": 10,
+          "1": 557,
+          "2": 1437,
+          "24": 1056,
+          "14": 2,
+          "22": 71,
+          "16": 28,
+          "5": 37,
+          "20": 18
+        },
+        "change_type": {
+          "none": 5197,
+          "recency": 2,
+          "resident": 1
+        },
+        "peaks": {
+          "memo_bytes": 1112,
+          "index_bytes": 139264,
+          "history_bytes": 143096,
+          "index_slots": 44636,
+          "ids": 44635,
+          "displacement": 1
+        },
+        "ids_after_warm": 2215,
+        "active_final": 152,
+        "fingerprint": "8f5a2b709068c212b7988d0f792921aea0b869e389859229c6a54c093446d2c1",
+        "timing": [
+          {
+            "measured_cpu_ns": 42986000,
+            "measured_wall_ns": 59430666,
+            "process_cpu_s": 0.08585599999999971,
+            "process_wall_s": 0.11937641599797644,
+            "rss": 5750784
+          },
+          {
+            "measured_cpu_ns": 37988000,
+            "measured_wall_ns": 40393115,
+            "process_cpu_s": 0.07771699999999981,
+            "process_wall_s": 0.11564437497872859,
+            "rss": 5701632
+          }
+        ],
+        "cpu_ns": {
+          "mean": 7785.961538461538,
+          "p95": 12000,
+          "p99": 22000,
+          "max": 81000
+        },
+        "wall_ns": {
+          "mean": 9598.44048076923,
+          "p95": 14708,
+          "p99": 33208,
+          "max": 4497583
+        }
+      },
+      "RANK": {
+        "warm_prefill": 1693225,
+        "work": 43332767,
+        "by_window": [
+          10214495,
+          11112740,
+          11537798,
+          10467734
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "multiple_orders": 5169,
+          "multiple_exits": 4643,
+          "exit_count": 43442,
+          "eligible_orders_total": 113615,
+          "changed": 62,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 234
+        },
+        "exit_hist": {
+          "6": 1984,
+          "18": 10,
+          "1": 557,
+          "2": 1437,
+          "24": 1056,
+          "14": 2,
+          "22": 71,
+          "16": 28,
+          "5": 37,
+          "20": 18
+        },
+        "change_type": {
+          "none": 5138,
+          "recency": 60,
+          "resident": 2
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 278528,
+          "history_bytes": 282360,
+          "index_slots": 44636,
+          "ids": 44635,
+          "displacement": 3
+        },
+        "ids_after_warm": 2215,
+        "active_final": 152,
+        "fingerprint": "8c648f82a460c6e42029cbb6f95c7bfab698d9de8447e119e48d349f6c22f7cd",
+        "timing": [
+          {
+            "measured_cpu_ns": 42423000,
+            "measured_wall_ns": 119135596,
+            "process_cpu_s": 0.08633099999999949,
+            "process_wall_s": 0.23708454202278517,
+            "rss": 5947392
+          },
+          {
+            "measured_cpu_ns": 39802000,
+            "measured_wall_ns": 43563977,
+            "process_cpu_s": 0.08287599999999884,
+            "process_wall_s": 0.09916495898505673,
+            "rss": 5849088
+          }
+        ],
+        "cpu_ns": {
+          "mean": 7906.25,
+          "p95": 13000,
+          "p99": 23000,
+          "max": 84000
+        },
+        "wall_ns": {
+          "mean": 15644.189711538462,
+          "p95": 16958,
+          "p99": 44875,
+          "max": 25008875
+        }
+      },
+      "RAND1729": {
+        "warm_prefill": 1693225,
+        "work": 43332767,
+        "by_window": [
+          10214495,
+          11112740,
+          11537798,
+          10467734
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "multiple_orders": 5169,
+          "multiple_exits": 4643,
+          "exit_count": 43442,
+          "eligible_orders_total": 113615,
+          "changed": 3590,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 15256
+        },
+        "exit_hist": {
+          "6": 1984,
+          "18": 10,
+          "1": 557,
+          "2": 1437,
+          "24": 1056,
+          "14": 2,
+          "22": 71,
+          "16": 28,
+          "5": 37,
+          "20": 18
+        },
+        "change_type": {
+          "recency": 3256,
+          "resident": 334,
+          "none": 1610
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 44635,
+          "displacement": 3
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "1fd0ea8717a0a0ee2262dd06cd56f979f413d867c1f637c866c39f58cad89c2a",
+        "timing": [
+          {
+            "measured_cpu_ns": 36736000,
+            "measured_wall_ns": 40149737,
+            "process_cpu_s": 0.08179400000000037,
+            "process_wall_s": 0.09574633298325352,
+            "rss": 5701632
+          },
+          {
+            "measured_cpu_ns": 35011000,
+            "measured_wall_ns": 37383570,
+            "process_cpu_s": 0.07872500000000038,
+            "process_wall_s": 0.12760220799827948,
+            "rss": 5668864
+          }
+        ],
+        "cpu_ns": {
+          "mean": 6898.75,
+          "p95": 10000,
+          "p99": 16000,
+          "max": 78000
+        },
+        "wall_ns": {
+          "mean": 7455.125673076923,
+          "p95": 11292,
+          "p99": 21667,
+          "max": 104000
+        }
+      },
+      "RAND314159": {
+        "warm_prefill": 1693225,
+        "work": 43332767,
+        "by_window": [
+          10214495,
+          11112740,
+          11537798,
+          10467734
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "multiple_orders": 5169,
+          "multiple_exits": 4643,
+          "exit_count": 43442,
+          "eligible_orders_total": 113615,
+          "changed": 3518,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 15056
+        },
+        "exit_hist": {
+          "6": 1984,
+          "18": 10,
+          "1": 557,
+          "2": 1437,
+          "24": 1056,
+          "14": 2,
+          "22": 71,
+          "16": 28,
+          "5": 37,
+          "20": 18
+        },
+        "change_type": {
+          "recency": 3205,
+          "resident": 313,
+          "none": 1682
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 44635,
+          "displacement": 3
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "1667899e5f150722250cbf7519232177638ae76c7102bfaa1ad0b6ff305090f3",
+        "timing": [
+          {
+            "measured_cpu_ns": 35180000,
+            "measured_wall_ns": 37798203,
+            "process_cpu_s": 0.07782499999999981,
+            "process_wall_s": 0.08926875001634471,
+            "rss": 5685248
+          },
+          {
+            "measured_cpu_ns": 34502000,
+            "measured_wall_ns": 36492451,
+            "process_cpu_s": 0.07731099999999991,
+            "process_wall_s": 0.10458062498946674,
+            "rss": 5668864
+          }
+        ],
+        "cpu_ns": {
+          "mean": 6700.192307692308,
+          "p95": 9000,
+          "p99": 13000,
+          "max": 76000
+        },
+        "wall_ns": {
+          "mean": 7143.3321153846155,
+          "p95": 8917,
+          "p99": 19208,
+          "max": 124416
+        }
+      },
+      "RAND271828": {
+        "warm_prefill": 1693225,
+        "work": 43332767,
+        "by_window": [
+          10214495,
+          11112740,
+          11537798,
+          10467734
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "multiple_orders": 5169,
+          "multiple_exits": 4643,
+          "exit_count": 43442,
+          "eligible_orders_total": 113615,
+          "changed": 3569,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 15238
+        },
+        "exit_hist": {
+          "6": 1984,
+          "18": 10,
+          "1": 557,
+          "2": 1437,
+          "24": 1056,
+          "14": 2,
+          "22": 71,
+          "16": 28,
+          "5": 37,
+          "20": 18
+        },
+        "change_type": {
+          "none": 1631,
+          "resident": 328,
+          "recency": 3241
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 44635,
+          "displacement": 3
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "4ca2b5d5bbe56dcec749ba727a88dde405c0c594d2f04a231a454ef2ab877339",
+        "timing": [
+          {
+            "measured_cpu_ns": 35745000,
+            "measured_wall_ns": 37569655,
+            "process_cpu_s": 0.07954500000000042,
+            "process_wall_s": 0.09324749998631887,
+            "rss": 5619712
+          },
+          {
+            "measured_cpu_ns": 34674000,
+            "measured_wall_ns": 36523664,
+            "process_cpu_s": 0.07712000000000074,
+            "process_wall_s": 0.10701637499732897,
+            "rss": 5603328
+          }
+        ],
+        "cpu_ns": {
+          "mean": 6771.057692307692,
+          "p95": 9000,
+          "p99": 12000,
+          "max": 83000
+        },
+        "wall_ns": {
+          "mean": 7124.357596153846,
+          "p95": 9708,
+          "p99": 14708,
+          "max": 84958
+        }
+      }
+    },
+    "A_16_4096": {
+      "FCFS": {
+        "warm_prefill": 1681177,
+        "work": 43320047,
+        "by_window": [
+          10209007,
+          11111060,
+          11535286,
+          10464694
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 0
+        },
+        "exit_hist": {},
+        "change_type": {},
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 1620274,
+          "displacement": 0
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "27a33b8feab5b5b42fbbb188251efafc80910d1c71d8037fb6d6e22b84ce8107",
+        "timing": [
+          {
+            "measured_cpu_ns": 294746000,
+            "measured_wall_ns": 298658316,
+            "process_cpu_s": 1.0786160000000002,
+            "process_wall_s": 1.0954078749928158,
+            "rss": 123994112
+          },
+          {
+            "measured_cpu_ns": 304965000,
+            "measured_wall_ns": 308535924,
+            "process_cpu_s": 1.1109969999999976,
+            "process_wall_s": 1.1188636670121923,
+            "rss": 124043264
+          }
+        ],
+        "cpu_ns": {
+          "mean": 57664.519230769234,
+          "p95": 75000,
+          "p99": 90000,
+          "max": 2763000
+        },
+        "wall_ns": {
+          "mean": 58384.06153846154,
+          "p95": 76917,
+          "p99": 92084,
+          "max": 2787084
+        }
+      },
+      "K": {
+        "warm_prefill": 1681177,
+        "work": 43319967,
+        "by_window": [
+          10209007,
+          11111060,
+          11535286,
+          10464614
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 24
+        },
+        "exit_hist": {},
+        "change_type": {},
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 1620274,
+          "displacement": 2
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "2580ff0b0d4405e3c002a5f86b40a284c250225d9bf56923f0d317b38724f2f6",
+        "timing": [
+          {
+            "measured_cpu_ns": 305826000,
+            "measured_wall_ns": 310312941,
+            "process_cpu_s": 1.0929759999999984,
+            "process_wall_s": 1.1143805409956258,
+            "rss": 124043264
+          },
+          {
+            "measured_cpu_ns": 307533000,
+            "measured_wall_ns": 312214380,
+            "process_cpu_s": 1.1005329999999987,
+            "process_wall_s": 1.1160198749857955,
+            "rss": 124043264
+          }
+        ],
+        "cpu_ns": {
+          "mean": 58976.82692307692,
+          "p95": 77000,
+          "p99": 94000,
+          "max": 3025000
+        },
+        "wall_ns": {
+          "mean": 59858.39625,
+          "p95": 79167,
+          "p99": 99167,
+          "max": 3050250
+        }
+      },
+      "IMM": {
+        "warm_prefill": 1681177,
+        "work": 43318207,
+        "by_window": [
+          10207983,
+          11111060,
+          11534550,
+          10464614
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 8
+        },
+        "exit_hist": {},
+        "change_type": {},
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 1620274,
+          "displacement": 2
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "ce3649c85ed17e81ca4b6ed77679f39b4d1c6d21f6240ec9721d938a11e40167",
+        "timing": [
+          {
+            "measured_cpu_ns": 315341000,
+            "measured_wall_ns": 320060782,
+            "process_cpu_s": 1.0883850000000006,
+            "process_wall_s": 1.122185582993552,
+            "rss": 123961344
+          },
+          {
+            "measured_cpu_ns": 328587000,
+            "measured_wall_ns": 333411208,
+            "process_cpu_s": 1.1314360000000008,
+            "process_wall_s": 1.1489698750083335,
+            "rss": 124305408
+          }
+        ],
+        "cpu_ns": {
+          "mean": 61916.153846153844,
+          "p95": 79000,
+          "p99": 93000,
+          "max": 3819000
+        },
+        "wall_ns": {
+          "mean": 62833.845192307694,
+          "p95": 80750,
+          "p99": 97500,
+          "max": 3829750
+        }
+      },
+      "OPT": {
+        "warm_prefill": 1681177,
+        "work": 43318207,
+        "by_window": [
+          10207983,
+          11111060,
+          11534550,
+          10464614
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "multiple_orders": 5169,
+          "multiple_exits": 5169,
+          "exit_count": 113567,
+          "eligible_orders_total": 113567,
+          "changed": 0,
+          "rollouts": 69,
+          "direct": 3200,
+          "memo_hits": 131,
+          "common": 41445,
+          "sum_abs_displacement": 8
+        },
+        "exit_hist": {
+          "24": 4619,
+          "6": 386,
+          "2": 161,
+          "1": 31,
+          "12": 1,
+          "14": 1,
+          "16": 1
+        },
+        "change_type": {
+          "none": 5200
+        },
+        "peaks": {
+          "memo_bytes": 4544,
+          "index_bytes": 4673536,
+          "history_bytes": 4732692,
+          "index_slots": 1620275,
+          "ids": 1620274,
+          "displacement": 2
+        },
+        "ids_after_warm": 83113,
+        "active_final": 5696,
+        "fingerprint": "83a28beb5feba228a90ffdf86a43784e5ab46cbdd3e1620dcc8c2900f86d9bce",
+        "timing": [
+          {
+            "measured_cpu_ns": 3627741000,
+            "measured_wall_ns": 3646480078,
+            "process_cpu_s": 4.428889999999999,
+            "process_wall_s": 4.457109999988461,
+            "rss": 125747200
+          },
+          {
+            "measured_cpu_ns": 3608453000,
+            "measured_wall_ns": 3635540136,
+            "process_cpu_s": 4.404250000000005,
+            "process_wall_s": 4.439856292010518,
+            "rss": 126812160
+          }
+        ],
+        "cpu_ns": {
+          "mean": 695787.8846153846,
+          "p95": 819000,
+          "p99": 852000,
+          "max": 4243000
+        },
+        "wall_ns": {
+          "mean": 700194.2513461538,
+          "p95": 829459,
+          "p99": 872375,
+          "max": 4260458
+        }
+      },
+      "RANK": {
+        "warm_prefill": 1681177,
+        "work": 43318207,
+        "by_window": [
+          10207983,
+          11111060,
+          11534550,
+          10464614
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "multiple_orders": 5169,
+          "multiple_exits": 5169,
+          "exit_count": 113573,
+          "eligible_orders_total": 113573,
+          "changed": 119,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 524
+        },
+        "exit_hist": {
+          "24": 4619,
+          "6": 385,
+          "2": 161,
+          "1": 31,
+          "12": 2,
+          "14": 1,
+          "16": 1
+        },
+        "change_type": {
+          "none": 5081,
+          "recency": 119
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 9347072,
+          "history_bytes": 9406228,
+          "index_slots": 1620275,
+          "ids": 1620274,
+          "displacement": 3
+        },
+        "ids_after_warm": 83113,
+        "active_final": 5696,
+        "fingerprint": "b6645580d543ab523ef62338da3b750f9559259a07a8ee5bf50c73dbc98caac3",
+        "timing": [
+          {
+            "measured_cpu_ns": 3475165000,
+            "measured_wall_ns": 3497795706,
+            "process_cpu_s": 4.295622,
+            "process_wall_s": 4.325896041991655,
+            "rss": 140296192
+          },
+          {
+            "measured_cpu_ns": 3475179000,
+            "measured_wall_ns": 3498555310,
+            "process_cpu_s": 4.295489000000003,
+            "process_wall_s": 4.325715375016443,
+            "rss": 136970240
+          }
+        ],
+        "cpu_ns": {
+          "mean": 668302.3076923077,
+          "p95": 785000,
+          "p99": 812000,
+          "max": 4149000
+        },
+        "wall_ns": {
+          "mean": 672726.0592307693,
+          "p95": 795292,
+          "p99": 831792,
+          "max": 4175042
+        }
+      },
+      "RAND1729": {
+        "warm_prefill": 1681177,
+        "work": 43317471,
+        "by_window": [
+          10207983,
+          11111060,
+          11533814,
+          10464614
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "multiple_orders": 5169,
+          "multiple_exits": 5169,
+          "exit_count": 113539,
+          "eligible_orders_total": 113539,
+          "changed": 4841,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 24232
+        },
+        "exit_hist": {
+          "24": 4617,
+          "6": 386,
+          "2": 161,
+          "1": 31,
+          "12": 3,
+          "10": 1,
+          "16": 1
+        },
+        "change_type": {
+          "recency": 4841,
+          "none": 359
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 1620274,
+          "displacement": 3
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "84b9e3d6913cd1e3df0dee00c324f505ef183e4abe53043a2e889aacf0748033",
+        "timing": [
+          {
+            "measured_cpu_ns": 3280430000,
+            "measured_wall_ns": 3298207723,
+            "process_cpu_s": 4.884705,
+            "process_wall_s": 4.916908957995474,
+            "rss": 126582784
+          },
+          {
+            "measured_cpu_ns": 3245540000,
+            "measured_wall_ns": 3269532001,
+            "process_cpu_s": 4.832341999999997,
+            "process_wall_s": 4.907744500000263,
+            "rss": 118571008
+          }
+        ],
+        "cpu_ns": {
+          "mean": 627497.1153846154,
+          "p95": 737000,
+          "p99": 766000,
+          "max": 4225000
+        },
+        "wall_ns": {
+          "mean": 631513.435,
+          "p95": 748208,
+          "p99": 789333,
+          "max": 4226084
+        }
+      },
+      "RAND314159": {
+        "warm_prefill": 1681177,
+        "work": 43317487,
+        "by_window": [
+          10207983,
+          11111060,
+          11533750,
+          10464694
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "multiple_orders": 5169,
+          "multiple_exits": 5169,
+          "exit_count": 113547,
+          "eligible_orders_total": 113547,
+          "changed": 4813,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 24318
+        },
+        "exit_hist": {
+          "24": 4617,
+          "6": 386,
+          "2": 161,
+          "1": 31,
+          "12": 3,
+          "16": 1,
+          "18": 1
+        },
+        "change_type": {
+          "recency": 4813,
+          "none": 387
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 1620274,
+          "displacement": 3
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "ff1bed29216fbf3443e095fab933009b55129e47440cdabaab844433121a7125",
+        "timing": [
+          {
+            "measured_cpu_ns": 3264826000,
+            "measured_wall_ns": 3290335958,
+            "process_cpu_s": 4.866687000000002,
+            "process_wall_s": 4.908168124995427,
+            "rss": 126582784
+          },
+          {
+            "measured_cpu_ns": 3254075000,
+            "measured_wall_ns": 3274648375,
+            "process_cpu_s": 4.843792000000008,
+            "process_wall_s": 4.879950625007041,
+            "rss": 125976576
+          }
+        ],
+        "cpu_ns": {
+          "mean": 626817.4038461539,
+          "p95": 737000,
+          "p99": 765000,
+          "max": 4061000
+        },
+        "wall_ns": {
+          "mean": 631248.4935576923,
+          "p95": 748750,
+          "p99": 789542,
+          "max": 4061708
+        }
+      },
+      "RAND271828": {
+        "warm_prefill": 1681177,
+        "work": 43316911,
+        "by_window": [
+          10207983,
+          11111060,
+          11533078,
+          10464790
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "multiple_orders": 5169,
+          "multiple_exits": 5169,
+          "exit_count": 113559,
+          "eligible_orders_total": 113559,
+          "changed": 4809,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 24088
+        },
+        "exit_hist": {
+          "24": 4618,
+          "6": 385,
+          "2": 161,
+          "1": 31,
+          "8": 1,
+          "12": 2,
+          "14": 1,
+          "18": 1
+        },
+        "change_type": {
+          "none": 391,
+          "recency": 4809
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 1620274,
+          "displacement": 3
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "0a41d028ab06be7f0035bec354a0230ffa3d56c57ae1d7647b3fdae547f3918f",
+        "timing": [
+          {
+            "measured_cpu_ns": 3288543000,
+            "measured_wall_ns": 3308517456,
+            "process_cpu_s": 4.896537000000002,
+            "process_wall_s": 4.927490332978778,
+            "rss": 125452288
+          },
+          {
+            "measured_cpu_ns": 3272690000,
+            "measured_wall_ns": 3293021014,
+            "process_cpu_s": 4.866743999999997,
+            "process_wall_s": 4.907683416997315,
+            "rss": 126550016
+          }
+        ],
+        "cpu_ns": {
+          "mean": 630887.7884615385,
+          "p95": 738000,
+          "p99": 766000,
+          "max": 4089000
+        },
+        "wall_ns": {
+          "mean": 634763.3144230769,
+          "p95": 748125,
+          "p99": 788708,
+          "max": 4128792
+        }
+      }
+    },
+    "A_16_1024": {
+      "FCFS": {
+        "warm_prefill": 1693081,
+        "work": 43331951,
+        "by_window": [
+          10214143,
+          11112340,
+          11537734,
+          10467734
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 0
+        },
+        "exit_hist": {},
+        "change_type": {},
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 1610931,
+          "displacement": 0
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "30c8ef55ee79815953d07eab38e64af09f21d1e658ebf75469bad1fc85fd2532",
+        "timing": [
+          {
+            "measured_cpu_ns": 150440000,
+            "measured_wall_ns": 153608187,
+            "process_cpu_s": 0.9335119999999932,
+            "process_wall_s": 0.9480199170066044,
+            "rss": 124010496
+          },
+          {
+            "measured_cpu_ns": 139502000,
+            "measured_wall_ns": 143270193,
+            "process_cpu_s": 0.8716199999999787,
+            "process_wall_s": 0.8891592500149272,
+            "rss": 124010496
+          }
+        ],
+        "cpu_ns": {
+          "mean": 27879.03846153846,
+          "p95": 43000,
+          "p99": 57000,
+          "max": 4027000
+        },
+        "wall_ns": {
+          "mean": 28545.998076923075,
+          "p95": 44708,
+          "p99": 60959,
+          "max": 4056375
+        }
+      },
+      "K": {
+        "warm_prefill": 1693081,
+        "work": 43331951,
+        "by_window": [
+          10214143,
+          11112340,
+          11537734,
+          10467734
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 4
+        },
+        "exit_hist": {},
+        "change_type": {},
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 1610931,
+          "displacement": 1
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "9cf7f04bb628c7c402dda75704d3433037fe9a4a756370bddf3dd00a5a3aff5f",
+        "timing": [
+          {
+            "measured_cpu_ns": 152438000,
+            "measured_wall_ns": 156731035,
+            "process_cpu_s": 0.9210159999999945,
+            "process_wall_s": 0.9381239999784157,
+            "rss": 124026880
+          },
+          {
+            "measured_cpu_ns": 147644000,
+            "measured_wall_ns": 152030653,
+            "process_cpu_s": 0.9204369999999642,
+            "process_wall_s": 0.9458524590008892,
+            "rss": 124043264
+          }
+        ],
+        "cpu_ns": {
+          "mean": 28854.03846153846,
+          "p95": 44000,
+          "p99": 61000,
+          "max": 3382000
+        },
+        "wall_ns": {
+          "mean": 29688.623846153845,
+          "p95": 45709,
+          "p99": 68417,
+          "max": 3406083
+        }
+      },
+      "IMM": {
+        "warm_prefill": 1693081,
+        "work": 43331951,
+        "by_window": [
+          10214143,
+          11112340,
+          11537734,
+          10467734
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 0
+        },
+        "exit_hist": {},
+        "change_type": {},
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 1610931,
+          "displacement": 0
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "30c8ef55ee79815953d07eab38e64af09f21d1e658ebf75469bad1fc85fd2532",
+        "timing": [
+          {
+            "measured_cpu_ns": 152670000,
+            "measured_wall_ns": 155502409,
+            "process_cpu_s": 0.9368690000000015,
+            "process_wall_s": 0.9443382500030566,
+            "rss": 124207104
+          },
+          {
+            "measured_cpu_ns": 147414000,
+            "measured_wall_ns": 150214925,
+            "process_cpu_s": 0.9345490000000325,
+            "process_wall_s": 0.954862165992381,
+            "rss": 124076032
+          }
+        ],
+        "cpu_ns": {
+          "mean": 28854.23076923077,
+          "p95": 44000,
+          "p99": 59000,
+          "max": 2915000
+        },
+        "wall_ns": {
+          "mean": 29395.8975,
+          "p95": 44875,
+          "p99": 60042,
+          "max": 2932708
+        }
+      },
+      "OPT": {
+        "warm_prefill": 1693081,
+        "work": 43331951,
+        "by_window": [
+          10214143,
+          11112340,
+          11537734,
+          10467734
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "multiple_orders": 5169,
+          "multiple_exits": 5169,
+          "exit_count": 112368,
+          "eligible_orders_total": 113615,
+          "changed": 13,
+          "rollouts": 590,
+          "direct": 1701,
+          "memo_hits": 1157,
+          "common": 41444,
+          "sum_abs_displacement": 42
+        },
+        "exit_hist": {
+          "24": 4307,
+          "18": 13,
+          "6": 380,
+          "2": 161,
+          "1": 31,
+          "14": 2,
+          "22": 178,
+          "5": 5,
+          "16": 74,
+          "20": 49
+        },
+        "change_type": {
+          "none": 5187,
+          "recency": 10,
+          "resident": 3
+        },
+        "peaks": {
+          "memo_bytes": 43712,
+          "index_bytes": 4583424,
+          "history_bytes": 4641940,
+          "index_slots": 1610932,
+          "ids": 1610931,
+          "displacement": 3
+        },
+        "ids_after_warm": 83091,
+        "active_final": 5696,
+        "fingerprint": "aee98335ff5ce4e07acb9ef7de0e8dcd5fec7ad17b27cde6d372019c610444dc",
+        "timing": [
+          {
+            "measured_cpu_ns": 1063864000,
+            "measured_wall_ns": 1072325272,
+            "process_cpu_s": 1.8559529999999995,
+            "process_wall_s": 1.876276416995097,
+            "rss": 125288448
+          },
+          {
+            "measured_cpu_ns": 1041868000,
+            "measured_wall_ns": 1049256406,
+            "process_cpu_s": 1.8231970000000217,
+            "process_wall_s": 1.8418762500223238,
+            "rss": 125403136
+          }
+        ],
+        "cpu_ns": {
+          "mean": 202474.23076923078,
+          "p95": 244000,
+          "p99": 411000,
+          "max": 3219000
+        },
+        "wall_ns": {
+          "mean": 203998.23826923076,
+          "p95": 249208,
+          "p99": 425042,
+          "max": 3233917
+        }
+      },
+      "RANK": {
+        "warm_prefill": 1693081,
+        "work": 43331951,
+        "by_window": [
+          10214143,
+          11112340,
+          11537734,
+          10467734
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "multiple_orders": 5169,
+          "multiple_exits": 5169,
+          "exit_count": 112368,
+          "eligible_orders_total": 113615,
+          "changed": 120,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 522
+        },
+        "exit_hist": {
+          "24": 4307,
+          "18": 13,
+          "6": 380,
+          "2": 161,
+          "1": 31,
+          "14": 2,
+          "22": 178,
+          "5": 5,
+          "16": 74,
+          "20": 49
+        },
+        "change_type": {
+          "none": 5080,
+          "recency": 116,
+          "resident": 4
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 9166848,
+          "history_bytes": 9225364,
+          "index_slots": 1610932,
+          "ids": 1610931,
+          "displacement": 3
+        },
+        "ids_after_warm": 83091,
+        "active_final": 5696,
+        "fingerprint": "cc2fe82f18853aab4a2bceab2ee8afe67511e057619fe8644b4ba51a8d68c8ec",
+        "timing": [
+          {
+            "measured_cpu_ns": 998330000,
+            "measured_wall_ns": 1017169042,
+            "process_cpu_s": 1.794512999999995,
+            "process_wall_s": 1.831977833993733,
+            "rss": 139640832
+          },
+          {
+            "measured_cpu_ns": 980768000,
+            "measured_wall_ns": 987521185,
+            "process_cpu_s": 1.7711289999999735,
+            "process_wall_s": 1.7913910420029424,
+            "rss": 139624448
+          }
+        ],
+        "cpu_ns": {
+          "mean": 190297.88461538462,
+          "p95": 230000,
+          "p99": 254000,
+          "max": 4808000
+        },
+        "wall_ns": {
+          "mean": 192758.6756730769,
+          "p95": 235292,
+          "p99": 280041,
+          "max": 4882334
+        }
+      },
+      "RAND1729": {
+        "warm_prefill": 1693081,
+        "work": 43331951,
+        "by_window": [
+          10214143,
+          11112340,
+          11537734,
+          10467734
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "multiple_orders": 5169,
+          "multiple_exits": 5169,
+          "exit_count": 112368,
+          "eligible_orders_total": 113615,
+          "changed": 4842,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 24206
+        },
+        "exit_hist": {
+          "24": 4307,
+          "18": 13,
+          "6": 380,
+          "2": 161,
+          "1": 31,
+          "14": 2,
+          "22": 178,
+          "5": 5,
+          "16": 74,
+          "20": 49
+        },
+        "change_type": {
+          "resident": 449,
+          "recency": 4393,
+          "none": 358
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 1610931,
+          "displacement": 3
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "0f6f5d0e802bb765445b2a8bee9d217caefd7f77e91c0ef09bf2b929d68ab3a8",
+        "timing": [
+          {
+            "measured_cpu_ns": 919589000,
+            "measured_wall_ns": 926427553,
+            "process_cpu_s": 1.888660999999999,
+            "process_wall_s": 1.9057239169778768,
+            "rss": 122060800
+          },
+          {
+            "measured_cpu_ns": 895478000,
+            "measured_wall_ns": 914954876,
+            "process_cpu_s": 1.839585999999997,
+            "process_wall_s": 1.8821360000001732,
+            "rss": 125468672
+          }
+        ],
+        "cpu_ns": {
+          "mean": 174525.67307692306,
+          "p95": 215000,
+          "p99": 240000,
+          "max": 3785000
+        },
+        "wall_ns": {
+          "mean": 177056.00278846154,
+          "p95": 220834,
+          "p99": 280667,
+          "max": 3963292
+        }
+      },
+      "RAND314159": {
+        "warm_prefill": 1693081,
+        "work": 43331951,
+        "by_window": [
+          10214143,
+          11112340,
+          11537734,
+          10467734
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "multiple_orders": 5169,
+          "multiple_exits": 5169,
+          "exit_count": 112368,
+          "eligible_orders_total": 113615,
+          "changed": 4801,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 24252
+        },
+        "exit_hist": {
+          "24": 4307,
+          "18": 13,
+          "6": 380,
+          "2": 161,
+          "1": 31,
+          "14": 2,
+          "22": 178,
+          "5": 5,
+          "16": 74,
+          "20": 49
+        },
+        "change_type": {
+          "resident": 432,
+          "recency": 4369,
+          "none": 399
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 1610931,
+          "displacement": 3
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "72d9774da26c4ffaf2c976640f7ad4ddca3b21888aebf8f7256fe115097e8534",
+        "timing": [
+          {
+            "measured_cpu_ns": 944949000,
+            "measured_wall_ns": 951943156,
+            "process_cpu_s": 1.9412240000000054,
+            "process_wall_s": 1.957012750004651,
+            "rss": 125435904
+          },
+          {
+            "measured_cpu_ns": 933957000,
+            "measured_wall_ns": 943727051,
+            "process_cpu_s": 1.9169660000000022,
+            "process_wall_s": 1.9423599589790683,
+            "rss": 125435904
+          }
+        ],
+        "cpu_ns": {
+          "mean": 180664.03846153847,
+          "p95": 217000,
+          "p99": 236000,
+          "max": 2866000
+        },
+        "wall_ns": {
+          "mean": 182275.9814423077,
+          "p95": 221250,
+          "p99": 248667,
+          "max": 2874666
+        }
+      },
+      "RAND271828": {
+        "warm_prefill": 1693081,
+        "work": 43331951,
+        "by_window": [
+          10214143,
+          11112340,
+          11537734,
+          10467734
+        ],
+        "cohorts": 5200,
+        "counters": {
+          "multiple_orders": 5169,
+          "multiple_exits": 5169,
+          "exit_count": 112368,
+          "eligible_orders_total": 113615,
+          "changed": 4812,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 24092
+        },
+        "exit_hist": {
+          "24": 4307,
+          "18": 13,
+          "6": 380,
+          "2": 161,
+          "1": 31,
+          "14": 2,
+          "22": 178,
+          "5": 5,
+          "16": 74,
+          "20": 49
+        },
+        "change_type": {
+          "none": 388,
+          "resident": 447,
+          "recency": 4365
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 1610931,
+          "displacement": 3
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "e5ee7130c9bd3364ea4d8290d7bd26b20fdd8857cf77ad204534f91dac724aba",
+        "timing": [
+          {
+            "measured_cpu_ns": 907951000,
+            "measured_wall_ns": 917201840,
+            "process_cpu_s": 1.8633230000000083,
+            "process_wall_s": 1.8913373750110622,
+            "rss": 123027456
+          },
+          {
+            "measured_cpu_ns": 933774000,
+            "measured_wall_ns": 941836648,
+            "process_cpu_s": 1.9128340000000037,
+            "process_wall_s": 1.9295996660075616,
+            "rss": 125435904
+          }
+        ],
+        "cpu_ns": {
+          "mean": 177088.9423076923,
+          "p95": 215000,
+          "p99": 233000,
+          "max": 3120000
+        },
+        "wall_ns": {
+          "mean": 178753.70076923078,
+          "p95": 219459,
+          "p99": 245541,
+          "max": 3122792
+        }
+      }
+    },
+    "B_512_128": {
+      "FCFS": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 0
+        },
+        "exit_hist": {},
+        "change_type": {},
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 26638,
+          "displacement": 0
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "fbda7f2d63a4b2fae9b40d954e24b67406fb6348eca4fa4202009150a74cae5c",
+        "timing": [
+          {
+            "measured_cpu_ns": 11951000,
+            "measured_wall_ns": 13437260,
+            "process_cpu_s": 0.03989999999999938,
+            "process_wall_s": 0.045508834009524435,
+            "rss": 4440064
+          },
+          {
+            "measured_cpu_ns": 12434000,
+            "measured_wall_ns": 15028112,
+            "process_cpu_s": 0.04252400000000023,
+            "process_wall_s": 0.06702550000045449,
+            "rss": 4489216
+          }
+        ],
+        "cpu_ns": {
+          "mean": 2438.5,
+          "p95": 3000,
+          "p99": 6000,
+          "max": 103000
+        },
+        "wall_ns": {
+          "mean": 2846.5372,
+          "p95": 3541,
+          "p99": 11000,
+          "max": 112250
+        }
+      },
+      "K": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 0
+        },
+        "exit_hist": {},
+        "change_type": {},
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 26638,
+          "displacement": 0
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "fbda7f2d63a4b2fae9b40d954e24b67406fb6348eca4fa4202009150a74cae5c",
+        "timing": [
+          {
+            "measured_cpu_ns": 14395000,
+            "measured_wall_ns": 16065296,
+            "process_cpu_s": 0.04688399999999948,
+            "process_wall_s": 0.053459832997759804,
+            "rss": 4456448
+          },
+          {
+            "measured_cpu_ns": 11858000,
+            "measured_wall_ns": 13510538,
+            "process_cpu_s": 0.03926099999999977,
+            "process_wall_s": 0.04261499998392537,
+            "rss": 4440064
+          }
+        ],
+        "cpu_ns": {
+          "mean": 2625.3,
+          "p95": 4000,
+          "p99": 5000,
+          "max": 95000
+        },
+        "wall_ns": {
+          "mean": 2957.5834,
+          "p95": 3625,
+          "p99": 7334,
+          "max": 94833
+        }
+      },
+      "IMM": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 0
+        },
+        "exit_hist": {},
+        "change_type": {},
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 26638,
+          "displacement": 0
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "fbda7f2d63a4b2fae9b40d954e24b67406fb6348eca4fa4202009150a74cae5c",
+        "timing": [
+          {
+            "measured_cpu_ns": 13191000,
+            "measured_wall_ns": 14775911,
+            "process_cpu_s": 0.04167600000000027,
+            "process_wall_s": 0.05464045799453743,
+            "rss": 4423680
+          },
+          {
+            "measured_cpu_ns": 14839000,
+            "measured_wall_ns": 16646989,
+            "process_cpu_s": 0.04748000000000019,
+            "process_wall_s": 0.053145374986343086,
+            "rss": 4472832
+          }
+        ],
+        "cpu_ns": {
+          "mean": 2803,
+          "p95": 4000,
+          "p99": 6000,
+          "max": 78000
+        },
+        "wall_ns": {
+          "mean": 3142.29,
+          "p95": 3833,
+          "p99": 7917,
+          "max": 83875
+        }
+      },
+      "OPT": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "multiple_orders": 5000,
+          "multiple_exits": 3367,
+          "exit_count": 21563,
+          "eligible_orders_total": 120000,
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 40000,
+          "sum_abs_displacement": 0
+        },
+        "exit_hist": {
+          "6": 1220,
+          "1": 1633,
+          "2": 1769,
+          "24": 378
+        },
+        "change_type": {
+          "none": 5000
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 98304,
+          "history_bytes": 101128,
+          "index_slots": 26639,
+          "ids": 26638,
+          "displacement": 0
+        },
+        "ids_after_warm": 1207,
+        "active_final": 80,
+        "fingerprint": "0839624e0a28b3b42d4c21fbc165fe23419b84511afdeb09eb81610a4b50e04d",
+        "timing": [
+          {
+            "measured_cpu_ns": 114622000,
+            "measured_wall_ns": 117249703,
+            "process_cpu_s": 0.14486200000000027,
+            "process_wall_s": 0.15780337501200847,
+            "rss": 4751360
+          },
+          {
+            "measured_cpu_ns": 120350000,
+            "measured_wall_ns": 124716174,
+            "process_cpu_s": 0.15167700000000028,
+            "process_wall_s": 0.164298083022004,
+            "rss": 4734976
+          }
+        ],
+        "cpu_ns": {
+          "mean": 23497.2,
+          "p95": 29000,
+          "p99": 34000,
+          "max": 108000
+        },
+        "wall_ns": {
+          "mean": 24196.5877,
+          "p95": 30958,
+          "p99": 40958,
+          "max": 229542
+        }
+      },
+      "RANK": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "multiple_orders": 5000,
+          "multiple_exits": 3367,
+          "exit_count": 21563,
+          "eligible_orders_total": 120000,
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 0
+        },
+        "exit_hist": {
+          "6": 1220,
+          "1": 1633,
+          "2": 1769,
+          "24": 378
+        },
+        "change_type": {
+          "none": 5000
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 196608,
+          "history_bytes": 199432,
+          "index_slots": 26639,
+          "ids": 26638,
+          "displacement": 0
+        },
+        "ids_after_warm": 1207,
+        "active_final": 80,
+        "fingerprint": "3e4ddebd8694b3b2c39aca97c37b02267c1610328e7b9be93ac85bff50ba5a96",
+        "timing": [
+          {
+            "measured_cpu_ns": 119079000,
+            "measured_wall_ns": 121232808,
+            "process_cpu_s": 0.14990199999999998,
+            "process_wall_s": 0.15969529197900556,
+            "rss": 4685824
+          },
+          {
+            "measured_cpu_ns": 117555000,
+            "measured_wall_ns": 119715273,
+            "process_cpu_s": 0.1486200000000002,
+            "process_wall_s": 0.15917774999979883,
+            "rss": 4685824
+          }
+        ],
+        "cpu_ns": {
+          "mean": 23663.4,
+          "p95": 29000,
+          "p99": 33000,
+          "max": 102000
+        },
+        "wall_ns": {
+          "mean": 24094.8081,
+          "p95": 29625,
+          "p99": 36000,
+          "max": 102167
+        }
+      },
+      "RAND1729": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "multiple_orders": 5000,
+          "multiple_exits": 3367,
+          "exit_count": 21563,
+          "eligible_orders_total": 120000,
+          "changed": 2259,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 9048
+        },
+        "exit_hist": {
+          "6": 1220,
+          "1": 1633,
+          "2": 1769,
+          "24": 378
+        },
+        "change_type": {
+          "recency": 2259,
+          "none": 2741
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 26638,
+          "displacement": 3
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "80642b05dd325394b1cbe8f8f39ba46357f50668af4f2f73bec51f122b14f30a",
+        "timing": [
+          {
+            "measured_cpu_ns": 112065000,
+            "measured_wall_ns": 113823231,
+            "process_cpu_s": 0.1498170000000001,
+            "process_wall_s": 0.16017958300653845,
+            "rss": 4505600
+          },
+          {
+            "measured_cpu_ns": 112358000,
+            "measured_wall_ns": 116366213,
+            "process_cpu_s": 0.1506949999999998,
+            "process_wall_s": 0.168539458012674,
+            "rss": 4571136
+          }
+        ],
+        "cpu_ns": {
+          "mean": 22442.3,
+          "p95": 28000,
+          "p99": 31000,
+          "max": 148000
+        },
+        "wall_ns": {
+          "mean": 23018.9444,
+          "p95": 28375,
+          "p99": 37667,
+          "max": 154792
+        }
+      },
+      "RAND314159": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "multiple_orders": 5000,
+          "multiple_exits": 3367,
+          "exit_count": 21563,
+          "eligible_orders_total": 120000,
+          "changed": 2240,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 9150
+        },
+        "exit_hist": {
+          "6": 1220,
+          "1": 1633,
+          "2": 1769,
+          "24": 378
+        },
+        "change_type": {
+          "recency": 2240,
+          "none": 2760
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 26638,
+          "displacement": 3
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "e26d529b9a03cb52aef3ded298f0af41da8ca549f2b94404c3d01c67a543d668",
+        "timing": [
+          {
+            "measured_cpu_ns": 115565000,
+            "measured_wall_ns": 118381398,
+            "process_cpu_s": 0.1545150000000004,
+            "process_wall_s": 0.17462162498850375,
+            "rss": 4587520
+          },
+          {
+            "measured_cpu_ns": 113105000,
+            "measured_wall_ns": 115195679,
+            "process_cpu_s": 0.15123799999999932,
+            "process_wall_s": 0.1637002079805825,
+            "rss": 4521984
+          }
+        ],
+        "cpu_ns": {
+          "mean": 22867,
+          "p95": 28000,
+          "p99": 32000,
+          "max": 170000
+        },
+        "wall_ns": {
+          "mean": 23357.7077,
+          "p95": 28625,
+          "p99": 35500,
+          "max": 170917
+        }
+      },
+      "RAND271828": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "multiple_orders": 5000,
+          "multiple_exits": 3367,
+          "exit_count": 21563,
+          "eligible_orders_total": 120000,
+          "changed": 2258,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 8986
+        },
+        "exit_hist": {
+          "6": 1220,
+          "1": 1633,
+          "2": 1769,
+          "24": 378
+        },
+        "change_type": {
+          "none": 2742,
+          "recency": 2258
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 26638,
+          "displacement": 3
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "3794b97f2c989c746de5c6db1274b20463d7b3245c768d3f815d0098c5184af1",
+        "timing": [
+          {
+            "measured_cpu_ns": 115518000,
+            "measured_wall_ns": 118693554,
+            "process_cpu_s": 0.15542200000000017,
+            "process_wall_s": 0.1708619999990333,
+            "rss": 4571136
+          },
+          {
+            "measured_cpu_ns": 115038000,
+            "measured_wall_ns": 118076634,
+            "process_cpu_s": 0.15561399999999992,
+            "process_wall_s": 0.16635645800852217,
+            "rss": 4620288
+          }
+        ],
+        "cpu_ns": {
+          "mean": 23055.6,
+          "p95": 28000,
+          "p99": 32000,
+          "max": 98000
+        },
+        "wall_ns": {
+          "mean": 23677.0188,
+          "p95": 29083,
+          "p99": 38583,
+          "max": 97833
+        }
+      }
+    },
+    "B_512_32": {
+      "FCFS": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 0
+        },
+        "exit_hist": {},
+        "change_type": {},
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 26328,
+          "displacement": 0
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "ff840eaf3b93a28ff06e6413ec227264fbfbb6003b682ffb7876c93dd977a77a",
+        "timing": [
+          {
+            "measured_cpu_ns": 7579000,
+            "measured_wall_ns": 9048882,
+            "process_cpu_s": 0.03540999999999972,
+            "process_wall_s": 0.0482402500056196,
+            "rss": 4456448
+          },
+          {
+            "measured_cpu_ns": 8123000,
+            "measured_wall_ns": 9747033,
+            "process_cpu_s": 0.036864999999999704,
+            "process_wall_s": 0.045351000007940456,
+            "rss": 4472832
+          }
+        ],
+        "cpu_ns": {
+          "mean": 1570.2,
+          "p95": 2000,
+          "p99": 4000,
+          "max": 67000
+        },
+        "wall_ns": {
+          "mean": 1879.5915,
+          "p95": 2333,
+          "p99": 3792,
+          "max": 67458
+        }
+      },
+      "K": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 0
+        },
+        "exit_hist": {},
+        "change_type": {},
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 26328,
+          "displacement": 0
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "ff840eaf3b93a28ff06e6413ec227264fbfbb6003b682ffb7876c93dd977a77a",
+        "timing": [
+          {
+            "measured_cpu_ns": 8287000,
+            "measured_wall_ns": 10006412,
+            "process_cpu_s": 0.03681700000000099,
+            "process_wall_s": 0.04586216699681245,
+            "rss": 4472832
+          },
+          {
+            "measured_cpu_ns": 7588000,
+            "measured_wall_ns": 9137947,
+            "process_cpu_s": 0.03492500000000032,
+            "process_wall_s": 0.047898583026835695,
+            "rss": 4472832
+          }
+        ],
+        "cpu_ns": {
+          "mean": 1587.5,
+          "p95": 2000,
+          "p99": 4000,
+          "max": 68000
+        },
+        "wall_ns": {
+          "mean": 1914.4359,
+          "p95": 2416,
+          "p99": 3833,
+          "max": 68166
+        }
+      },
+      "IMM": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 0
+        },
+        "exit_hist": {},
+        "change_type": {},
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 26328,
+          "displacement": 0
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "ff840eaf3b93a28ff06e6413ec227264fbfbb6003b682ffb7876c93dd977a77a",
+        "timing": [
+          {
+            "measured_cpu_ns": 8041000,
+            "measured_wall_ns": 9543466,
+            "process_cpu_s": 0.036265999999999465,
+            "process_wall_s": 0.05073520899168216,
+            "rss": 4489216
+          },
+          {
+            "measured_cpu_ns": 8669000,
+            "measured_wall_ns": 10465247,
+            "process_cpu_s": 0.03764600000000051,
+            "process_wall_s": 0.045406124991131946,
+            "rss": 4472832
+          }
+        ],
+        "cpu_ns": {
+          "mean": 1671,
+          "p95": 3000,
+          "p99": 5000,
+          "max": 126000
+        },
+        "wall_ns": {
+          "mean": 2000.8713,
+          "p95": 2500,
+          "p99": 7166,
+          "max": 126583
+        }
+      },
+      "OPT": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "multiple_orders": 5000,
+          "multiple_exits": 3367,
+          "exit_count": 21538,
+          "eligible_orders_total": 120000,
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 40000,
+          "sum_abs_displacement": 0
+        },
+        "exit_hist": {
+          "6": 1213,
+          "1": 1633,
+          "2": 1769,
+          "24": 375,
+          "5": 7,
+          "22": 1,
+          "16": 2
+        },
+        "change_type": {
+          "none": 5000
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 98304,
+          "history_bytes": 100988,
+          "index_slots": 26329,
+          "ids": 26328,
+          "displacement": 0
+        },
+        "ids_after_warm": 1207,
+        "active_final": 80,
+        "fingerprint": "57b1e64030575c10a12e5ad4cd3fa2739993f077664cfdb2ef39d1ea8e34ea18",
+        "timing": [
+          {
+            "measured_cpu_ns": 38008000,
+            "measured_wall_ns": 41155094,
+            "process_cpu_s": 0.06750100000000003,
+            "process_wall_s": 0.07949783297954127,
+            "rss": 4751360
+          },
+          {
+            "measured_cpu_ns": 37640000,
+            "measured_wall_ns": 40032459,
+            "process_cpu_s": 0.06738099999999925,
+            "process_wall_s": 0.07890395799768157,
+            "rss": 4702208
+          }
+        ],
+        "cpu_ns": {
+          "mean": 7564.8,
+          "p95": 10000,
+          "p99": 14000,
+          "max": 149000
+        },
+        "wall_ns": {
+          "mean": 8118.7553,
+          "p95": 10959,
+          "p99": 20541,
+          "max": 149667
+        }
+      },
+      "RANK": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "multiple_orders": 5000,
+          "multiple_exits": 3367,
+          "exit_count": 21538,
+          "eligible_orders_total": 120000,
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 0
+        },
+        "exit_hist": {
+          "6": 1213,
+          "1": 1633,
+          "2": 1769,
+          "24": 375,
+          "5": 7,
+          "22": 1,
+          "16": 2
+        },
+        "change_type": {
+          "none": 5000
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 196608,
+          "history_bytes": 199292,
+          "index_slots": 26329,
+          "ids": 26328,
+          "displacement": 0
+        },
+        "ids_after_warm": 1207,
+        "active_final": 80,
+        "fingerprint": "32467466b3ae72b76e1eab2b8aa65893f251d26e7e77700c7c32e53aa3fd742a",
+        "timing": [
+          {
+            "measured_cpu_ns": 39572000,
+            "measured_wall_ns": 41457976,
+            "process_cpu_s": 0.0714049999999995,
+            "process_wall_s": 0.07652550001512282,
+            "rss": 4685824
+          },
+          {
+            "measured_cpu_ns": 35424000,
+            "measured_wall_ns": 37932466,
+            "process_cpu_s": 0.06385800000000064,
+            "process_wall_s": 0.07437483398825862,
+            "rss": 4784128
+          }
+        ],
+        "cpu_ns": {
+          "mean": 7499.6,
+          "p95": 10000,
+          "p99": 12000,
+          "max": 86000
+        },
+        "wall_ns": {
+          "mean": 7939.0442,
+          "p95": 10208,
+          "p99": 16000,
+          "max": 115667
+        }
+      },
+      "RAND1729": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "multiple_orders": 5000,
+          "multiple_exits": 3367,
+          "exit_count": 21538,
+          "eligible_orders_total": 120000,
+          "changed": 2260,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 9052
+        },
+        "exit_hist": {
+          "6": 1213,
+          "1": 1633,
+          "2": 1769,
+          "24": 375,
+          "5": 7,
+          "22": 1,
+          "16": 2
+        },
+        "change_type": {
+          "recency": 2245,
+          "none": 2740,
+          "resident": 15
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 26328,
+          "displacement": 3
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "b67a7265e38538237af4f828c2721fa33578013c7f41223c8315c96ba17e163c",
+        "timing": [
+          {
+            "measured_cpu_ns": 37329000,
+            "measured_wall_ns": 40205321,
+            "process_cpu_s": 0.0708909999999996,
+            "process_wall_s": 0.0812965829973109,
+            "rss": 4571136
+          },
+          {
+            "measured_cpu_ns": 38366000,
+            "measured_wall_ns": 40516169,
+            "process_cpu_s": 0.07155500000000004,
+            "process_wall_s": 0.07708999997703359,
+            "rss": 4571136
+          }
+        ],
+        "cpu_ns": {
+          "mean": 7569.5,
+          "p95": 10000,
+          "p99": 14000,
+          "max": 85000
+        },
+        "wall_ns": {
+          "mean": 8072.149,
+          "p95": 10333,
+          "p99": 18500,
+          "max": 86833
+        }
+      },
+      "RAND314159": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "multiple_orders": 5000,
+          "multiple_exits": 3367,
+          "exit_count": 21538,
+          "eligible_orders_total": 120000,
+          "changed": 2239,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 9142
+        },
+        "exit_hist": {
+          "6": 1213,
+          "1": 1633,
+          "2": 1769,
+          "24": 375,
+          "5": 7,
+          "22": 1,
+          "16": 2
+        },
+        "change_type": {
+          "recency": 2224,
+          "none": 2761,
+          "resident": 15
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 26328,
+          "displacement": 3
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "2f73942210890dca86a78b8ef11992e1fde28b37106ca7f3b21caf48f45e98bb",
+        "timing": [
+          {
+            "measured_cpu_ns": 35552000,
+            "measured_wall_ns": 37700559,
+            "process_cpu_s": 0.0672240000000004,
+            "process_wall_s": 0.07964912499301136,
+            "rss": 4538368
+          },
+          {
+            "measured_cpu_ns": 34064000,
+            "measured_wall_ns": 36251571,
+            "process_cpu_s": 0.06429999999999936,
+            "process_wall_s": 0.08120895799947903,
+            "rss": 4571136
+          }
+        ],
+        "cpu_ns": {
+          "mean": 6961.6,
+          "p95": 9000,
+          "p99": 12000,
+          "max": 102000
+        },
+        "wall_ns": {
+          "mean": 7395.213,
+          "p95": 9542,
+          "p99": 16584,
+          "max": 102542
+        }
+      },
+      "RAND271828": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "multiple_orders": 5000,
+          "multiple_exits": 3367,
+          "exit_count": 21538,
+          "eligible_orders_total": 120000,
+          "changed": 2253,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 8962
+        },
+        "exit_hist": {
+          "6": 1213,
+          "1": 1633,
+          "2": 1769,
+          "24": 375,
+          "5": 7,
+          "22": 1,
+          "16": 2
+        },
+        "change_type": {
+          "none": 2747,
+          "recency": 2245,
+          "resident": 8
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 26328,
+          "displacement": 3
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "365307e1ab9222c187cb0c2a3c0e188ed410408f81b24b7f02f6f34f5549d546",
+        "timing": [
+          {
+            "measured_cpu_ns": 34832000,
+            "measured_wall_ns": 36691964,
+            "process_cpu_s": 0.06743699999999997,
+            "process_wall_s": 0.08857925000484101,
+            "rss": 4472832
+          },
+          {
+            "measured_cpu_ns": 36119000,
+            "measured_wall_ns": 37835158,
+            "process_cpu_s": 0.06756600000000024,
+            "process_wall_s": 0.07792124999104999,
+            "rss": 4505600
+          }
+        ],
+        "cpu_ns": {
+          "mean": 7095.1,
+          "p95": 9000,
+          "p99": 12000,
+          "max": 88000
+        },
+        "wall_ns": {
+          "mean": 7452.7122,
+          "p95": 9459,
+          "p99": 14708,
+          "max": 88042
+        }
+      }
+    },
+    "B_16_4096": {
+      "FCFS": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 0
+        },
+        "exit_hist": {},
+        "change_type": {},
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 1135766,
+          "displacement": 0
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "81728afbab6dbce0eedd4915e807c7fe0683f0bd6575065f76eeadeff7fbd3c1",
+        "timing": [
+          {
+            "measured_cpu_ns": 274622000,
+            "measured_wall_ns": 278664499,
+            "process_cpu_s": 0.6161299999999983,
+            "process_wall_s": 0.6290194590110332,
+            "rss": 99565568
+          },
+          {
+            "measured_cpu_ns": 273016000,
+            "measured_wall_ns": 277152947,
+            "process_cpu_s": 0.6146310000000028,
+            "process_wall_s": 0.6231716249894816,
+            "rss": 99532800
+          }
+        ],
+        "cpu_ns": {
+          "mean": 54763.8,
+          "p95": 66000,
+          "p99": 81000,
+          "max": 3767000
+        },
+        "wall_ns": {
+          "mean": 55581.7446,
+          "p95": 68417,
+          "p99": 85709,
+          "max": 3773250
+        }
+      },
+      "K": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 0
+        },
+        "exit_hist": {},
+        "change_type": {},
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 1135766,
+          "displacement": 0
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "81728afbab6dbce0eedd4915e807c7fe0683f0bd6575065f76eeadeff7fbd3c1",
+        "timing": [
+          {
+            "measured_cpu_ns": 278363000,
+            "measured_wall_ns": 282106409,
+            "process_cpu_s": 0.6182969999999983,
+            "process_wall_s": 0.6281523339857813,
+            "rss": 99549184
+          },
+          {
+            "measured_cpu_ns": 288436000,
+            "measured_wall_ns": 291810632,
+            "process_cpu_s": 0.6373140000000035,
+            "process_wall_s": 0.6458710419829004,
+            "rss": 99549184
+          }
+        ],
+        "cpu_ns": {
+          "mean": 56679.9,
+          "p95": 69000,
+          "p99": 82000,
+          "max": 3410000
+        },
+        "wall_ns": {
+          "mean": 57391.7041,
+          "p95": 70834,
+          "p99": 85584,
+          "max": 3420417
+        }
+      },
+      "IMM": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 0
+        },
+        "exit_hist": {},
+        "change_type": {},
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 1135766,
+          "displacement": 0
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "81728afbab6dbce0eedd4915e807c7fe0683f0bd6575065f76eeadeff7fbd3c1",
+        "timing": [
+          {
+            "measured_cpu_ns": 299896000,
+            "measured_wall_ns": 304682192,
+            "process_cpu_s": 0.6466899999999995,
+            "process_wall_s": 0.6540485839941539,
+            "rss": 99762176
+          },
+          {
+            "measured_cpu_ns": 300151000,
+            "measured_wall_ns": 303995047,
+            "process_cpu_s": 0.64777500000001,
+            "process_wall_s": 0.6590892910026014,
+            "rss": 99663872
+          }
+        ],
+        "cpu_ns": {
+          "mean": 60004.7,
+          "p95": 69000,
+          "p99": 82000,
+          "max": 3064000
+        },
+        "wall_ns": {
+          "mean": 60867.7239,
+          "p95": 71167,
+          "p99": 86125,
+          "max": 3078750
+        }
+      },
+      "OPT": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "multiple_orders": 5000,
+          "multiple_exits": 5000,
+          "exit_count": 120000,
+          "eligible_orders_total": 120000,
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 40000,
+          "sum_abs_displacement": 0
+        },
+        "exit_hist": {
+          "24": 5000
+        },
+        "change_type": {
+          "none": 5000
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 3915776,
+          "history_bytes": 3942100,
+          "index_slots": 1135767,
+          "ids": 1135766,
+          "displacement": 0
+        },
+        "ids_after_warm": 51475,
+        "active_final": 3395,
+        "fingerprint": "1aaab1d6e8404a64e72f14d220cf0f55e3cdcee37a5206951ee415da8991d9cd",
+        "timing": [
+          {
+            "measured_cpu_ns": 3779807000,
+            "measured_wall_ns": 3799708887,
+            "process_cpu_s": 4.1252390000000005,
+            "process_wall_s": 4.148714749986539,
+            "rss": 102252544
+          },
+          {
+            "measured_cpu_ns": 3766098000,
+            "measured_wall_ns": 3792068565,
+            "process_cpu_s": 4.112482000000014,
+            "process_wall_s": 4.148281375004444,
+            "rss": 102236160
+          }
+        ],
+        "cpu_ns": {
+          "mean": 754590.5,
+          "p95": 805000,
+          "p99": 835000,
+          "max": 6021000
+        },
+        "wall_ns": {
+          "mean": 759177.7452,
+          "p95": 816000,
+          "p99": 858125,
+          "max": 6033958
+        }
+      },
+      "RANK": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "multiple_orders": 5000,
+          "multiple_exits": 5000,
+          "exit_count": 120000,
+          "eligible_orders_total": 120000,
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 0
+        },
+        "exit_hist": {
+          "24": 5000
+        },
+        "change_type": {
+          "none": 5000
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 7831552,
+          "history_bytes": 7857876,
+          "index_slots": 1135767,
+          "ids": 1135766,
+          "displacement": 0
+        },
+        "ids_after_warm": 51475,
+        "active_final": 3395,
+        "fingerprint": "aed1c2d33cb0f6d764849b07b728e2362f0b92d1b181b9f25d702e46f05ca374",
+        "timing": [
+          {
+            "measured_cpu_ns": 3681382000,
+            "measured_wall_ns": 3705072876,
+            "process_cpu_s": 4.030811999999997,
+            "process_wall_s": 4.063828250014922,
+            "rss": 110886912
+          },
+          {
+            "measured_cpu_ns": 3716872000,
+            "measured_wall_ns": 3741370190,
+            "process_cpu_s": 4.065680999999984,
+            "process_wall_s": 4.09599837497808,
+            "rss": 110854144
+          }
+        ],
+        "cpu_ns": {
+          "mean": 739825.4,
+          "p95": 784000,
+          "p99": 812000,
+          "max": 6137000
+        },
+        "wall_ns": {
+          "mean": 744644.3066,
+          "p95": 795417,
+          "p99": 833250,
+          "max": 6162875
+        }
+      },
+      "RAND1729": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "multiple_orders": 5000,
+          "multiple_exits": 5000,
+          "exit_count": 120000,
+          "eligible_orders_total": 120000,
+          "changed": 4791,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 24958
+        },
+        "exit_hist": {
+          "24": 5000
+        },
+        "change_type": {
+          "recency": 4791,
+          "none": 209
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 1135766,
+          "displacement": 3
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "5bc440571b0803e25898b4e778ec1ee49d6860b61a76f3672ef65dae58227ba4",
+        "timing": [
+          {
+            "measured_cpu_ns": 3476816000,
+            "measured_wall_ns": 3496232295,
+            "process_cpu_s": 4.529104000000004,
+            "process_wall_s": 4.55609616698348,
+            "rss": 100712448
+          },
+          {
+            "measured_cpu_ns": 3432884000,
+            "measured_wall_ns": 3457295725,
+            "process_cpu_s": 4.471830999999995,
+            "process_wall_s": 4.50527104199864,
+            "rss": 95518720
+          }
+        ],
+        "cpu_ns": {
+          "mean": 690970,
+          "p95": 739000,
+          "p99": 767000,
+          "max": 5617000
+        },
+        "wall_ns": {
+          "mean": 695352.802,
+          "p95": 750791,
+          "p99": 788708,
+          "max": 5626042
+        }
+      },
+      "RAND314159": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "multiple_orders": 5000,
+          "multiple_exits": 5000,
+          "exit_count": 120000,
+          "eligible_orders_total": 120000,
+          "changed": 4787,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 25092
+        },
+        "exit_hist": {
+          "24": 5000
+        },
+        "change_type": {
+          "recency": 4787,
+          "none": 213
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 1135766,
+          "displacement": 3
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "0a15c699201517d50fd22d3c2cfb6f0f3be14107b815fbbd3f6a08801c8dd745",
+        "timing": [
+          {
+            "measured_cpu_ns": 3455062000,
+            "measured_wall_ns": 3474909112,
+            "process_cpu_s": 4.498967999999998,
+            "process_wall_s": 4.526249792019371,
+            "rss": 101810176
+          },
+          {
+            "measured_cpu_ns": 3477648000,
+            "measured_wall_ns": 3501223002,
+            "process_cpu_s": 4.530904000000007,
+            "process_wall_s": 4.561911083001178,
+            "rss": 101384192
+          }
+        ],
+        "cpu_ns": {
+          "mean": 693271,
+          "p95": 739000,
+          "p99": 767000,
+          "max": 5498000
+        },
+        "wall_ns": {
+          "mean": 697613.2114,
+          "p95": 750500,
+          "p99": 788875,
+          "max": 5508125
+        }
+      },
+      "RAND271828": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "multiple_orders": 5000,
+          "multiple_exits": 5000,
+          "exit_count": 120000,
+          "eligible_orders_total": 120000,
+          "changed": 4774,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 24826
+        },
+        "exit_hist": {
+          "24": 5000
+        },
+        "change_type": {
+          "none": 226,
+          "recency": 4774
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 1135766,
+          "displacement": 3
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "da3735db0d61db9953fb87dd42bec9f0eca4301701487e89f5e81f608e47531c",
+        "timing": [
+          {
+            "measured_cpu_ns": 3449372000,
+            "measured_wall_ns": 3473490493,
+            "process_cpu_s": 4.492818,
+            "process_wall_s": 4.527302165981382,
+            "rss": 101826560
+          },
+          {
+            "measured_cpu_ns": 3413870000,
+            "measured_wall_ns": 3455073540,
+            "process_cpu_s": 4.445519999999988,
+            "process_wall_s": 4.502934499992989,
+            "rss": 86048768
+          }
+        ],
+        "cpu_ns": {
+          "mean": 686324.2,
+          "p95": 738000,
+          "p99": 765000,
+          "max": 6973000
+        },
+        "wall_ns": {
+          "mean": 692856.4033,
+          "p95": 750667,
+          "p99": 807000,
+          "max": 7032917
+        }
+      }
+    },
+    "B_16_1024": {
+      "FCFS": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 0
+        },
+        "exit_hist": {},
+        "change_type": {},
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 1125500,
+          "displacement": 0
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "a39fbe7f988713a98db5197d4ddc8966a0e0cd4865ba5a2a3f520f43e422b9f9",
+        "timing": [
+          {
+            "measured_cpu_ns": 117120000,
+            "measured_wall_ns": 119974784,
+            "process_cpu_s": 0.4419759999999968,
+            "process_wall_s": 0.4554376250016503,
+            "rss": 98992128
+          },
+          {
+            "measured_cpu_ns": 114366000,
+            "measured_wall_ns": 117598662,
+            "process_cpu_s": 0.43833699999999,
+            "process_wall_s": 0.46791175001999363,
+            "rss": 98975744
+          }
+        ],
+        "cpu_ns": {
+          "mean": 23148.6,
+          "p95": 32000,
+          "p99": 44000,
+          "max": 3079000
+        },
+        "wall_ns": {
+          "mean": 23757.3446,
+          "p95": 33708,
+          "p99": 46875,
+          "max": 3115792
+        }
+      },
+      "K": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 0
+        },
+        "exit_hist": {},
+        "change_type": {},
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 1125500,
+          "displacement": 0
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "a39fbe7f988713a98db5197d4ddc8966a0e0cd4865ba5a2a3f520f43e422b9f9",
+        "timing": [
+          {
+            "measured_cpu_ns": 122375000,
+            "measured_wall_ns": 125285969,
+            "process_cpu_s": 0.4502640000000042,
+            "process_wall_s": 0.461213750008028,
+            "rss": 99024896
+          },
+          {
+            "measured_cpu_ns": 121812000,
+            "measured_wall_ns": 124218076,
+            "process_cpu_s": 0.4557789999999784,
+            "process_wall_s": 0.46155466701020487,
+            "rss": 98992128
+          }
+        ],
+        "cpu_ns": {
+          "mean": 24418.7,
+          "p95": 34000,
+          "p99": 47000,
+          "max": 2981000
+        },
+        "wall_ns": {
+          "mean": 24950.4045,
+          "p95": 34625,
+          "p99": 48666,
+          "max": 3001625
+        }
+      },
+      "IMM": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 0
+        },
+        "exit_hist": {},
+        "change_type": {},
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 1125500,
+          "displacement": 0
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "a39fbe7f988713a98db5197d4ddc8966a0e0cd4865ba5a2a3f520f43e422b9f9",
+        "timing": [
+          {
+            "measured_cpu_ns": 124851000,
+            "measured_wall_ns": 127224099,
+            "process_cpu_s": 0.46246200000000215,
+            "process_wall_s": 0.468548999982886,
+            "rss": 99123200
+          },
+          {
+            "measured_cpu_ns": 124223000,
+            "measured_wall_ns": 126616804,
+            "process_cpu_s": 0.4568829999999764,
+            "process_wall_s": 0.47575241600861773,
+            "rss": 99123200
+          }
+        ],
+        "cpu_ns": {
+          "mean": 24907.4,
+          "p95": 33000,
+          "p99": 45000,
+          "max": 4979000
+        },
+        "wall_ns": {
+          "mean": 25384.0903,
+          "p95": 34000,
+          "p99": 46292,
+          "max": 4983125
+        }
+      },
+      "OPT": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "multiple_orders": 5000,
+          "multiple_exits": 5000,
+          "exit_count": 119814,
+          "eligible_orders_total": 120000,
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 40000,
+          "sum_abs_displacement": 0
+        },
+        "exit_hist": {
+          "24": 4973,
+          "16": 22,
+          "22": 5
+        },
+        "change_type": {
+          "none": 5000
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 3915776,
+          "history_bytes": 3940808,
+          "index_slots": 1125501,
+          "ids": 1125500,
+          "displacement": 0
+        },
+        "ids_after_warm": 51475,
+        "active_final": 3395,
+        "fingerprint": "07e8704dbca90be6ef0c9761cf53c5c51090166bdec8ee2650fd847fcf693a7f",
+        "timing": [
+          {
+            "measured_cpu_ns": 1061103000,
+            "measured_wall_ns": 1069524593,
+            "process_cpu_s": 1.3925259999999895,
+            "process_wall_s": 1.4105006250028964,
+            "rss": 101679104
+          },
+          {
+            "measured_cpu_ns": 1054097000,
+            "measured_wall_ns": 1065048880,
+            "process_cpu_s": 1.3884400000000028,
+            "process_wall_s": 1.4059977500000969,
+            "rss": 101711872
+          }
+        ],
+        "cpu_ns": {
+          "mean": 211520,
+          "p95": 234000,
+          "p99": 255000,
+          "max": 5023000
+        },
+        "wall_ns": {
+          "mean": 213457.3473,
+          "p95": 239917,
+          "p99": 268250,
+          "max": 5022666
+        }
+      },
+      "RANK": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "multiple_orders": 5000,
+          "multiple_exits": 5000,
+          "exit_count": 119814,
+          "eligible_orders_total": 120000,
+          "changed": 0,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 0
+        },
+        "exit_hist": {
+          "24": 4973,
+          "16": 22,
+          "22": 5
+        },
+        "change_type": {
+          "none": 5000
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 7831552,
+          "history_bytes": 7856584,
+          "index_slots": 1125501,
+          "ids": 1125500,
+          "displacement": 0
+        },
+        "ids_after_warm": 51475,
+        "active_final": 3395,
+        "fingerprint": "7c0f5ea61064ddb60ef56cd57f53996d187afc303f6dc29950faf68a267cbbf2",
+        "timing": [
+          {
+            "measured_cpu_ns": 997148000,
+            "measured_wall_ns": 1006317084,
+            "process_cpu_s": 1.31979800000002,
+            "process_wall_s": 1.3389087910181843,
+            "rss": 110329856
+          },
+          {
+            "measured_cpu_ns": 1014418000,
+            "measured_wall_ns": 1021503170,
+            "process_cpu_s": 1.346554000000026,
+            "process_wall_s": 1.3690334999992047,
+            "rss": 109199360
+          }
+        ],
+        "cpu_ns": {
+          "mean": 201156.6,
+          "p95": 225000,
+          "p99": 244000,
+          "max": 4764000
+        },
+        "wall_ns": {
+          "mean": 202782.0254,
+          "p95": 230500,
+          "p99": 254542,
+          "max": 4914625
+        }
+      },
+      "RAND1729": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "multiple_orders": 5000,
+          "multiple_exits": 5000,
+          "exit_count": 119814,
+          "eligible_orders_total": 120000,
+          "changed": 4791,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 24956
+        },
+        "exit_hist": {
+          "24": 4973,
+          "16": 22,
+          "22": 5
+        },
+        "change_type": {
+          "recency": 4761,
+          "none": 209,
+          "resident": 30
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 1125500,
+          "displacement": 3
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "3efca81d413b3942a7104dbf2b4aa475f73047b851589b14623bc5359a77d7cd",
+        "timing": [
+          {
+            "measured_cpu_ns": 975132000,
+            "measured_wall_ns": 986391512,
+            "process_cpu_s": 1.487257999999997,
+            "process_wall_s": 1.505330124986358,
+            "rss": 90947584
+          },
+          {
+            "measured_cpu_ns": 930450000,
+            "measured_wall_ns": 941456939,
+            "process_cpu_s": 1.4191970000000254,
+            "process_wall_s": 1.4382893750153016,
+            "rss": 101269504
+          }
+        ],
+        "cpu_ns": {
+          "mean": 190558.2,
+          "p95": 214000,
+          "p99": 236000,
+          "max": 4823000
+        },
+        "wall_ns": {
+          "mean": 192784.8451,
+          "p95": 219750,
+          "p99": 259750,
+          "max": 4853625
+        }
+      },
+      "RAND314159": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "multiple_orders": 5000,
+          "multiple_exits": 5000,
+          "exit_count": 119814,
+          "eligible_orders_total": 120000,
+          "changed": 4785,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 25082
+        },
+        "exit_hist": {
+          "24": 4973,
+          "16": 22,
+          "22": 5
+        },
+        "change_type": {
+          "recency": 4756,
+          "none": 215,
+          "resident": 29
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 1125500,
+          "displacement": 3
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "928b848c437c4f149e13354572fd74f4867dfcfe788e0eb9ea3bff63d5dee46b",
+        "timing": [
+          {
+            "measured_cpu_ns": 991366000,
+            "measured_wall_ns": 998102406,
+            "process_cpu_s": 1.5098740000000106,
+            "process_wall_s": 1.524220666004112,
+            "rss": 100188160
+          },
+          {
+            "measured_cpu_ns": 981610000,
+            "measured_wall_ns": 988444124,
+            "process_cpu_s": 1.4972059999999772,
+            "process_wall_s": 1.51530774999992,
+            "rss": 100188160
+          }
+        ],
+        "cpu_ns": {
+          "mean": 197297.6,
+          "p95": 215000,
+          "p99": 231000,
+          "max": 5323000
+        },
+        "wall_ns": {
+          "mean": 198654.653,
+          "p95": 219792,
+          "p99": 240250,
+          "max": 5347042
+        }
+      },
+      "RAND271828": {
+        "warm_prefill": 832444,
+        "work": 17516341,
+        "by_window": [
+          4381928,
+          3944756,
+          4359121,
+          4830536
+        ],
+        "cohorts": 5000,
+        "counters": {
+          "multiple_orders": 5000,
+          "multiple_exits": 5000,
+          "exit_count": 119814,
+          "eligible_orders_total": 120000,
+          "changed": 4771,
+          "rollouts": 0,
+          "direct": 0,
+          "memo_hits": 0,
+          "common": 0,
+          "sum_abs_displacement": 24816
+        },
+        "exit_hist": {
+          "24": 4973,
+          "16": 22,
+          "22": 5
+        },
+        "change_type": {
+          "none": 229,
+          "recency": 4745,
+          "resident": 26
+        },
+        "peaks": {
+          "memo_bytes": 0,
+          "index_bytes": 0,
+          "history_bytes": 0,
+          "index_slots": 0,
+          "ids": 1125500,
+          "displacement": 3
+        },
+        "ids_after_warm": 0,
+        "active_final": 0,
+        "fingerprint": "d27eeb4e08aa4476a2d8c6b2701c3badec009ac4224a4d4ec528e4adb83da8e5",
+        "timing": [
+          {
+            "measured_cpu_ns": 961722000,
+            "measured_wall_ns": 971762984,
+            "process_cpu_s": 1.469902999999988,
+            "process_wall_s": 1.4884124170057476,
+            "rss": 101253120
+          },
+          {
+            "measured_cpu_ns": 975490000,
+            "measured_wall_ns": 983357745,
+            "process_cpu_s": 1.4896780000000263,
+            "process_wall_s": 1.5060372090083547,
+            "rss": 101253120
+          }
+        ],
+        "cpu_ns": {
+          "mean": 193721.2,
+          "p95": 215000,
+          "p99": 231000,
+          "max": 3574000
+        },
+        "wall_ns": {
+          "mean": 195512.0729,
+          "p95": 219708,
+          "p99": 243125,
+          "max": 3577000
+        }
+      }
+    }
+  },
+  "comparisons": {
+    "A_512_128": {
+      "FCFS": {
+        "savings": 512,
+        "savings_per_request": 0.0256,
+        "fraction": 1.1818750868372332e-05,
+        "window_savings": [
+          0,
+          0,
+          0,
+          512
+        ],
+        "extra_decision_wall_ns": 109812713.5,
+        "break_even_ns_per_position": 214477.9560546875,
+        "different_trajectory_orders": 1
+      },
+      "K": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 108021246.0,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 5
+      },
+      "IMM": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 106853816.5,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 0
+      },
+      "OPT": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 0.0,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 0
+      },
+      "RANK": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 4092632.5,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 62
+      },
+      "RAND1729": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 4776185.0,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 3589
+      },
+      "RAND314159": {
+        "savings": -3072,
+        "savings_per_request": -0.1536,
+        "fraction": -7.091837237625974e-05,
+        "window_savings": [
+          -2560,
+          0,
+          -512,
+          0
+        ],
+        "extra_decision_wall_ns": 7973814.5,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 3531
+      },
+      "RAND271828": {
+        "savings": -3584,
+        "savings_per_request": -0.1792,
+        "fraction": -8.273907905910615e-05,
+        "window_savings": [
+          -2560,
+          0,
+          -1024,
+          0
+        ],
+        "extra_decision_wall_ns": 11136561.0,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 3564
+      }
+    },
+    "A_512_32": {
+      "FCFS": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 38965003.0,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 3
+      },
+      "K": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 37669405.0,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 4
+      },
+      "IMM": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 37217371.0,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 3
+      },
+      "OPT": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 0.0,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 0
+      },
+      "RANK": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": -31437896.0,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 60
+      },
+      "RAND1729": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 11145237.0,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 3590
+      },
+      "RAND314159": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 12766563.5,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 3517
+      },
+      "RAND271828": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 12865231.0,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 3569
+      }
+    },
+    "A_16_4096": {
+      "FCFS": {
+        "savings": 1840,
+        "savings_per_request": 0.092,
+        "fraction": 4.247456148881833e-05,
+        "window_savings": [
+          1024,
+          0,
+          736,
+          80
+        ],
+        "extra_decision_wall_ns": 3337412987,
+        "break_even_ns_per_position": 1813811.4059782608,
+        "different_trajectory_orders": 3
+      },
+      "K": {
+        "savings": 1760,
+        "savings_per_request": 0.088,
+        "fraction": 4.0627916452475597e-05,
+        "window_savings": [
+          1024,
+          0,
+          736,
+          0
+        ],
+        "extra_decision_wall_ns": 3329746446.5,
+        "break_even_ns_per_position": 1891901.3900568183,
+        "different_trajectory_orders": 10
+      },
+      "IMM": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 3314274112,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 0
+      },
+      "OPT": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 0,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 0
+      },
+      "RANK": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 142834599,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 119
+      },
+      "RAND1729": {
+        "savings": -736,
+        "savings_per_request": -0.0368,
+        "fraction": -1.69908349450964e-05,
+        "window_savings": [
+          0,
+          0,
+          -736,
+          0
+        ],
+        "extra_decision_wall_ns": 357140245,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 4841
+      },
+      "RAND314159": {
+        "savings": -720,
+        "savings_per_request": -0.036,
+        "fraction": -1.6621462828626233e-05,
+        "window_savings": [
+          0,
+          0,
+          -800,
+          80
+        ],
+        "extra_decision_wall_ns": 358517940.5,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 4813
+      },
+      "RAND271828": {
+        "savings": -1296,
+        "savings_per_request": -0.0648,
+        "fraction": -2.9919030929975594e-05,
+        "window_savings": [
+          0,
+          0,
+          -1472,
+          176
+        ],
+        "extra_decision_wall_ns": 340240872,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 4809
+      }
+    },
+    "A_16_1024": {
+      "FCFS": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 912351649,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 13
+      },
+      "K": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 906409995,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 15
+      },
+      "IMM": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 907932172,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 13
+      },
+      "OPT": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 0,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 0
+      },
+      "RANK": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 58445725.5,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 112
+      },
+      "RAND1729": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 140099624.5,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 4843
+      },
+      "RAND314159": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 112955735.5,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 4801
+      },
+      "RAND271828": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 131271595,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 4812
+      }
+    },
+    "B_512_128": {
+      "FCFS": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 106750252.5,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 0
+      },
+      "K": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 106195021.5,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 0
+      },
+      "IMM": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 105271488.5,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 0
+      },
+      "OPT": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 0.0,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 0
+      },
+      "RANK": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 508898.0,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 0
+      },
+      "RAND1729": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 5888216.5,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 2259
+      },
+      "RAND314159": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 4194400.0,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 2240
+      },
+      "RAND271828": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 2597844.5,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 2258
+      }
+    },
+    "B_512_32": {
+      "FCFS": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 31195819.0,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 0
+      },
+      "K": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 31021597.0,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 0
+      },
+      "IMM": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 30589420.0,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 0
+      },
+      "OPT": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 0.0,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 0
+      },
+      "RANK": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 898555.5,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 0
+      },
+      "RAND1729": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 233031.5,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 2260
+      },
+      "RAND314159": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 3617711.5,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 2239
+      },
+      "RAND271828": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 3330215.5,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 2253
+      }
+    },
+    "B_16_4096": {
+      "FCFS": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 3517980003,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 0
+      },
+      "K": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 3508930205.5,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 0
+      },
+      "IMM": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 3491550106.5,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 0
+      },
+      "OPT": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 0,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 0
+      },
+      "RANK": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 72667193,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 0
+      },
+      "RAND1729": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 319124716,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 4791
+      },
+      "RAND314159": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 307822669,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 4787
+      },
+      "RAND271828": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 331606709.5,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 4774
+      }
+    },
+    "B_16_1024": {
+      "FCFS": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 948500013.5,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 0
+      },
+      "K": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 942534714.0,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 0
+      },
+      "IMM": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 940366285.0,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 0
+      },
+      "OPT": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 0.0,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 0
+      },
+      "RANK": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 53376609.5,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 0
+      },
+      "RAND1729": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 103362511.0,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 4791
+      },
+      "RAND314159": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 74013471.5,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 4785
+      },
+      "RAND271828": {
+        "savings": 0,
+        "savings_per_request": 0.0,
+        "fraction": 0.0,
+        "window_savings": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "extra_decision_wall_ns": 89726372.0,
+        "break_even_ns_per_position": null,
+        "different_trajectory_orders": 4771
+      }
+    }
+  },
+  "analysis_cpu_s": 6.311806000000001
+}

@@ -1,0 +1,617 @@
+{
+  "primary": {
+    "A": {
+      "FCFS": {
+        "delta": 512,
+        "by_window": [
+          0,
+          0,
+          0,
+          512
+        ],
+        "relative": 1.1818750868372332e-05,
+        "per_req": 0.0256,
+        "extra_ns": 109812713.5,
+        "initial": {
+          "work": 43320991,
+          "windows": [
+            10208863,
+            11111204,
+            11534726,
+            10466198
+          ],
+          "changed": 0,
+          "mean_wait_ms": 272.4133,
+          "input_tokens": 43333279,
+          "mean_wall_ns": 14870243
+        },
+        "optimized": {
+          "work": 43320479,
+          "windows": [
+            10208863,
+            11111204,
+            11534726,
+            10465686
+          ],
+          "changed": 0,
+          "mean_wait_ms": 272.4133,
+          "input_tokens": 43333279,
+          "mean_wall_ns": 124682956.5
+        }
+      },
+      "K": {
+        "delta": 0,
+        "by_window": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "relative": 0.0,
+        "per_req": 0.0,
+        "extra_ns": 108021246.0,
+        "initial": {
+          "work": 43320479,
+          "windows": [
+            10208863,
+            11111204,
+            11534726,
+            10465686
+          ],
+          "changed": 0,
+          "mean_wait_ms": 272.4133,
+          "input_tokens": 43333279,
+          "mean_wall_ns": 16661710.5
+        },
+        "optimized": {
+          "work": 43320479,
+          "windows": [
+            10208863,
+            11111204,
+            11534726,
+            10465686
+          ],
+          "changed": 0,
+          "mean_wait_ms": 272.4133,
+          "input_tokens": 43333279,
+          "mean_wall_ns": 124682956.5
+        }
+      },
+      "IMM": {
+        "delta": 0,
+        "by_window": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "relative": 0.0,
+        "per_req": 0.0,
+        "extra_ns": 106853816.5,
+        "initial": {
+          "work": 43320479,
+          "windows": [
+            10208863,
+            11111204,
+            11534726,
+            10465686
+          ],
+          "changed": 0,
+          "mean_wait_ms": 272.4133,
+          "input_tokens": 43333279,
+          "mean_wall_ns": 17829140
+        },
+        "optimized": {
+          "work": 43320479,
+          "windows": [
+            10208863,
+            11111204,
+            11534726,
+            10465686
+          ],
+          "changed": 0,
+          "mean_wait_ms": 272.4133,
+          "input_tokens": 43333279,
+          "mean_wall_ns": 124682956.5
+        }
+      },
+      "OPT": {
+        "delta": 0,
+        "by_window": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "relative": 0.0,
+        "per_req": 0.0,
+        "extra_ns": 0.0,
+        "initial": {
+          "work": 43320479,
+          "windows": [
+            10208863,
+            11111204,
+            11534726,
+            10465686
+          ],
+          "changed": 0,
+          "mean_wait_ms": 272.4133,
+          "input_tokens": 43333279,
+          "mean_wall_ns": 124682956.5
+        },
+        "optimized": {
+          "work": 43320479,
+          "windows": [
+            10208863,
+            11111204,
+            11534726,
+            10465686
+          ],
+          "changed": 0,
+          "mean_wait_ms": 272.4133,
+          "input_tokens": 43333279,
+          "mean_wall_ns": 124682956.5
+        }
+      },
+      "RANK": {
+        "delta": 0,
+        "by_window": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "relative": 0.0,
+        "per_req": 0.0,
+        "extra_ns": 4092632.5,
+        "initial": {
+          "work": 43320479,
+          "windows": [
+            10208863,
+            11111204,
+            11534726,
+            10465686
+          ],
+          "changed": 62,
+          "mean_wait_ms": 272.4133,
+          "input_tokens": 43333279,
+          "mean_wall_ns": 120590324
+        },
+        "optimized": {
+          "work": 43320479,
+          "windows": [
+            10208863,
+            11111204,
+            11534726,
+            10465686
+          ],
+          "changed": 0,
+          "mean_wait_ms": 272.4133,
+          "input_tokens": 43333279,
+          "mean_wall_ns": 124682956.5
+        }
+      },
+      "RAND1729": {
+        "delta": 0,
+        "by_window": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "relative": 0.0,
+        "per_req": 0.0,
+        "extra_ns": 4776185.0,
+        "initial": {
+          "work": 43320479,
+          "windows": [
+            10208863,
+            11111204,
+            11534726,
+            10465686
+          ],
+          "changed": 3589,
+          "mean_wait_ms": 272.4133,
+          "input_tokens": 43333279,
+          "mean_wall_ns": 119906771.5
+        },
+        "optimized": {
+          "work": 43320479,
+          "windows": [
+            10208863,
+            11111204,
+            11534726,
+            10465686
+          ],
+          "changed": 0,
+          "mean_wait_ms": 272.4133,
+          "input_tokens": 43333279,
+          "mean_wall_ns": 124682956.5
+        }
+      },
+      "RAND314159": {
+        "delta": -3072,
+        "by_window": [
+          -2560,
+          0,
+          -512,
+          0
+        ],
+        "relative": -7.091837237625974e-05,
+        "per_req": -0.1536,
+        "extra_ns": 7973814.5,
+        "initial": {
+          "work": 43317407,
+          "windows": [
+            10206303,
+            11111204,
+            11534214,
+            10465686
+          ],
+          "changed": 3531,
+          "mean_wait_ms": 272.4133,
+          "input_tokens": 43333279,
+          "mean_wall_ns": 116709142
+        },
+        "optimized": {
+          "work": 43320479,
+          "windows": [
+            10208863,
+            11111204,
+            11534726,
+            10465686
+          ],
+          "changed": 0,
+          "mean_wait_ms": 272.4133,
+          "input_tokens": 43333279,
+          "mean_wall_ns": 124682956.5
+        }
+      },
+      "RAND271828": {
+        "delta": -3584,
+        "by_window": [
+          -2560,
+          0,
+          -1024,
+          0
+        ],
+        "relative": -8.273907905910615e-05,
+        "per_req": -0.1792,
+        "extra_ns": 11136561.0,
+        "initial": {
+          "work": 43316895,
+          "windows": [
+            10206303,
+            11111204,
+            11533702,
+            10465686
+          ],
+          "changed": 3563,
+          "mean_wait_ms": 272.4133,
+          "input_tokens": 43333279,
+          "mean_wall_ns": 113546395.5
+        },
+        "optimized": {
+          "work": 43320479,
+          "windows": [
+            10208863,
+            11111204,
+            11534726,
+            10465686
+          ],
+          "changed": 0,
+          "mean_wait_ms": 272.4133,
+          "input_tokens": 43333279,
+          "mean_wall_ns": 124682956.5
+        }
+      }
+    },
+    "B": {
+      "FCFS": {
+        "delta": 0,
+        "by_window": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "relative": 0.0,
+        "per_req": 0.0,
+        "extra_ns": 106750252.5,
+        "initial": {
+          "work": 17516341,
+          "windows": [
+            4381928,
+            3944756,
+            4359121,
+            4830536
+          ],
+          "changed": 0,
+          "mean_wait_ms": 68.2102,
+          "input_tokens": 17516341,
+          "mean_wall_ns": 14232686
+        },
+        "optimized": {
+          "work": 17516341,
+          "windows": [
+            4381928,
+            3944756,
+            4359121,
+            4830536
+          ],
+          "changed": 0,
+          "mean_wait_ms": 68.2102,
+          "input_tokens": 17516341,
+          "mean_wall_ns": 120982938.5
+        }
+      },
+      "K": {
+        "delta": 0,
+        "by_window": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "relative": 0.0,
+        "per_req": 0.0,
+        "extra_ns": 106195021.5,
+        "initial": {
+          "work": 17516341,
+          "windows": [
+            4381928,
+            3944756,
+            4359121,
+            4830536
+          ],
+          "changed": 0,
+          "mean_wait_ms": 68.2102,
+          "input_tokens": 17516341,
+          "mean_wall_ns": 14787917
+        },
+        "optimized": {
+          "work": 17516341,
+          "windows": [
+            4381928,
+            3944756,
+            4359121,
+            4830536
+          ],
+          "changed": 0,
+          "mean_wait_ms": 68.2102,
+          "input_tokens": 17516341,
+          "mean_wall_ns": 120982938.5
+        }
+      },
+      "IMM": {
+        "delta": 0,
+        "by_window": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "relative": 0.0,
+        "per_req": 0.0,
+        "extra_ns": 105271488.5,
+        "initial": {
+          "work": 17516341,
+          "windows": [
+            4381928,
+            3944756,
+            4359121,
+            4830536
+          ],
+          "changed": 0,
+          "mean_wait_ms": 68.2102,
+          "input_tokens": 17516341,
+          "mean_wall_ns": 15711450
+        },
+        "optimized": {
+          "work": 17516341,
+          "windows": [
+            4381928,
+            3944756,
+            4359121,
+            4830536
+          ],
+          "changed": 0,
+          "mean_wait_ms": 68.2102,
+          "input_tokens": 17516341,
+          "mean_wall_ns": 120982938.5
+        }
+      },
+      "OPT": {
+        "delta": 0,
+        "by_window": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "relative": 0.0,
+        "per_req": 0.0,
+        "extra_ns": 0.0,
+        "initial": {
+          "work": 17516341,
+          "windows": [
+            4381928,
+            3944756,
+            4359121,
+            4830536
+          ],
+          "changed": 0,
+          "mean_wait_ms": 68.2102,
+          "input_tokens": 17516341,
+          "mean_wall_ns": 120982938.5
+        },
+        "optimized": {
+          "work": 17516341,
+          "windows": [
+            4381928,
+            3944756,
+            4359121,
+            4830536
+          ],
+          "changed": 0,
+          "mean_wait_ms": 68.2102,
+          "input_tokens": 17516341,
+          "mean_wall_ns": 120982938.5
+        }
+      },
+      "RANK": {
+        "delta": 0,
+        "by_window": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "relative": 0.0,
+        "per_req": 0.0,
+        "extra_ns": 508898.0,
+        "initial": {
+          "work": 17516341,
+          "windows": [
+            4381928,
+            3944756,
+            4359121,
+            4830536
+          ],
+          "changed": 0,
+          "mean_wait_ms": 68.2102,
+          "input_tokens": 17516341,
+          "mean_wall_ns": 120474040.5
+        },
+        "optimized": {
+          "work": 17516341,
+          "windows": [
+            4381928,
+            3944756,
+            4359121,
+            4830536
+          ],
+          "changed": 0,
+          "mean_wait_ms": 68.2102,
+          "input_tokens": 17516341,
+          "mean_wall_ns": 120982938.5
+        }
+      },
+      "RAND1729": {
+        "delta": 0,
+        "by_window": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "relative": 0.0,
+        "per_req": 0.0,
+        "extra_ns": 5888216.5,
+        "initial": {
+          "work": 17516341,
+          "windows": [
+            4381928,
+            3944756,
+            4359121,
+            4830536
+          ],
+          "changed": 2259,
+          "mean_wait_ms": 68.2102,
+          "input_tokens": 17516341,
+          "mean_wall_ns": 115094722
+        },
+        "optimized": {
+          "work": 17516341,
+          "windows": [
+            4381928,
+            3944756,
+            4359121,
+            4830536
+          ],
+          "changed": 0,
+          "mean_wait_ms": 68.2102,
+          "input_tokens": 17516341,
+          "mean_wall_ns": 120982938.5
+        }
+      },
+      "RAND314159": {
+        "delta": 0,
+        "by_window": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "relative": 0.0,
+        "per_req": 0.0,
+        "extra_ns": 4194400.0,
+        "initial": {
+          "work": 17516341,
+          "windows": [
+            4381928,
+            3944756,
+            4359121,
+            4830536
+          ],
+          "changed": 2240,
+          "mean_wait_ms": 68.2102,
+          "input_tokens": 17516341,
+          "mean_wall_ns": 116788538.5
+        },
+        "optimized": {
+          "work": 17516341,
+          "windows": [
+            4381928,
+            3944756,
+            4359121,
+            4830536
+          ],
+          "changed": 0,
+          "mean_wait_ms": 68.2102,
+          "input_tokens": 17516341,
+          "mean_wall_ns": 120982938.5
+        }
+      },
+      "RAND271828": {
+        "delta": 0,
+        "by_window": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "relative": 0.0,
+        "per_req": 0.0,
+        "extra_ns": 2597844.5,
+        "initial": {
+          "work": 17516341,
+          "windows": [
+            4381928,
+            3944756,
+            4359121,
+            4830536
+          ],
+          "changed": 2258,
+          "mean_wait_ms": 68.2102,
+          "input_tokens": 17516341,
+          "mean_wall_ns": 118385094
+        },
+        "optimized": {
+          "work": 17516341,
+          "windows": [
+            4381928,
+            3944756,
+            4359121,
+            4830536
+          ],
+          "changed": 0,
+          "mean_wait_ms": 68.2102,
+          "input_tokens": 17516341,
+          "mean_wall_ns": 120982938.5
+        }
+      }
+    }
+  },
+  "cpu_s": 0.553443
+}

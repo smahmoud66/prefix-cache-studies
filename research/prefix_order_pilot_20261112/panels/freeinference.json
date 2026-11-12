@@ -1,0 +1,11 @@
+{
+  "source_sha256": "39f75bbba1ce912546517802719ef7742d0db7fa53dcbc66681bba090aa5d1f7",
+  "full_requests": 327548,
+  "full_block_entries": 656240179,
+  "explicit_links_in_panel": 3283,
+  "selection": "first 5000 by (arrival microseconds, source ordinal); sorted across entire file",
+  "panel_sha256": "fe849d305c76f5bfd3267370ccd00be7fbc70a880b74f11837d703cd8b587b76",
+  "n": 5000,
+  "warm": 2000,
+  "measured": 3000
+}

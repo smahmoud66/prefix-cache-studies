@@ -1,0 +1,8 @@
+{
+  "state_checks": "4000 cache-pair suffix fixtures passed",
+  "synthetic_scores": {
+    "witnesses": 180,
+    "request_starts_checked": 14400,
+    "max_absolute_numeric_difference_ms": 5.229594535194337e-12
+  }
+}

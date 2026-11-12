@@ -1,0 +1,37 @@
+{
+  "conversation": {
+    "path": "commitment_20261108/inputs/conversation.jsonl",
+    "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/3cca71daccf2a7afb8fe3f0295358f70e3a69fdb/FAST25-release/traces/conversation_trace.jsonl",
+    "sha256": "b8cbb061a85206d729d91cdc2981f43c9e0d99209dce588d3af5f7934408b9df"
+  },
+  "toolagent": {
+    "path": "commitment_20261108/inputs/toolagent.jsonl",
+    "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/3cca71daccf2a7afb8fe3f0295358f70e3a69fdb/FAST25-release/traces/toolagent_trace.jsonl",
+    "sha256": "48a2db1a13d3bc05e6330140c64f604ba366df20d3c9e128b5c35a01c1fa5f71"
+  },
+  "qwenA": {
+    "path": "external_tie_20261109/source/qwen_traceA_blksz_16.jsonl",
+    "url": "https://media.githubusercontent.com/media/alibaba-edu/qwen-bailian-usagetraces-anon/5f7439c51ec248a0c585f7d90a41a6f57773b912/qwen_traceA_blksz_16.jsonl",
+    "sha256": "07cedc9ed8aff301994ac68ed4aede8123b7603673575eeba9dd677de663db17"
+  },
+  "qwenB": {
+    "path": "external_tie_20261109/source/qwen_traceB_blksz_16.jsonl",
+    "url": "https://media.githubusercontent.com/media/alibaba-edu/qwen-bailian-usagetraces-anon/5f7439c51ec248a0c585f7d90a41a6f57773b912/qwen_traceB_blksz_16.jsonl",
+    "sha256": "68e3f98e2d601d60d0abf4b89bc8a3654372abab7b1cde6373a13d0054379d59"
+  },
+  "freeinference": {
+    "path": "prefix_order_pilot_20261112/sources/freeinference.lcp.zst",
+    "url": "https://huggingface.co/datasets/harvardMadsys/2026_prefixcache/resolve/ba89a343a048073dda72617bb6087910da6214d0/freeinference.lcp.zst",
+    "sha256": "39f75bbba1ce912546517802719ef7742d0db7fa53dcbc66681bba090aa5d1f7"
+  },
+  "attention": {
+    "path": "prefix_order_pilot_20261112/sources/attention.parquet",
+    "url": "https://raw.githubusercontent.com/ai-dynamo/aiconfigurator/6cd6f9686ab7de6e8fb28171d6e350ee0aa4ed39/aic-core/src/aiconfigurator_core/systems/data/h100_sxm/attention/sglang/0.5.14/context_attention_perf.parquet",
+    "sha256": "49413ad72ffe49820fea106d598295d849f8e30b6b52803fa91289f0e2d9d2c2"
+  },
+  "gemm": {
+    "path": "prefix_order_pilot_20261112/sources/gemm.parquet",
+    "url": "https://raw.githubusercontent.com/ai-dynamo/aiconfigurator/6cd6f9686ab7de6e8fb28171d6e350ee0aa4ed39/aic-core/src/aiconfigurator_core/systems/data/h100_sxm/gemm/sglang/0.5.14/gemm_perf.parquet",
+    "sha256": "f7caf684e6624236a222ad9d74d22818adb9e931021f31d71fb35090734a435d"
+  }
+}

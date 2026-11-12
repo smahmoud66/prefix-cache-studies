@@ -1,0 +1,16 @@
+{
+  "cpu_wrapper": 10.906862,
+  "wall": 14.072946166008478,
+  "cpu": 2.993544,
+  "rss": 4079616,
+  "counts": {
+    "development_K_cohorts": 276,
+    "development_IMM_cohorts": 276,
+    "development_REF_cohorts": 276,
+    "development_OPT_cohorts": 276,
+    "online_K_cohorts": 8490,
+    "online_IMM_cohorts": 8490,
+    "online_REF_cohorts": 8490,
+    "online_OPT_cohorts": 8490
+  }
+}

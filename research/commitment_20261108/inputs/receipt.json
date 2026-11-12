@@ -1,0 +1,18 @@
+[
+  {
+    "name": "conversation",
+    "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/3cca71daccf2a7afb8fe3f0295358f70e3a69fdb/FAST25-release/traces/conversation_trace.jsonl",
+    "git_blob": "5a371794b81d7fc7487ec8a02a2c631bcc7fbdf8",
+    "bytes": 3029533,
+    "sha256": "b8cbb061a85206d729d91cdc2981f43c9e0d99209dce588d3af5f7934408b9df",
+    "newline_records": 12031
+  },
+  {
+    "name": "toolagent",
+    "url": "https://raw.githubusercontent.com/kvcache-ai/Mooncake/3cca71daccf2a7afb8fe3f0295358f70e3a69fdb/FAST25-release/traces/toolagent_trace.jsonl",
+    "git_blob": "b765599d1e0828b37f68d481563c385d3c11de54",
+    "bytes": 4415857,
+    "sha256": "48a2db1a13d3bc05e6330140c64f604ba366df20d3c9e128b5c35a01c1fa5f71",
+    "newline_records": 23608
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "status": "COMPLETE",
+  "groups": 32,
+  "wall_seconds": 9.958326332998695,
+  "cpu_seconds": 9.742591,
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "raw_sha256": "bbbaa41e3ecc986c7b000fd91e3be82152b9944bf6a0d89e242026d1a37ef9ec",
+  "script_sha256": "b3b04b1b62fd3fac75508acc9d2a785a55e10a43a25984b1d55e20db52474386",
+  "config_sha256": "de6b6a53a5c56b7f0c3f487d5cd798390db4c6548fdb49dbf351de30a8e8d0a6"
+}

@@ -1,0 +1,16 @@
+{
+  "cpu_including_wrapper_and_child": 6.174948,
+  "counts": {
+    "integration_independent_historical_pair_rollouts": 23144,
+    "development_full_vectors": 276,
+    "development_candidate_scores": 2893,
+    "integration_additional_checked_calls": 2484,
+    "online_full_vectors": 8490,
+    "online_candidate_scores": 88061
+  },
+  "native": {
+    "cpu": 2.064723,
+    "rss": 3981312
+  },
+  "sha256": "8fa7e12a78678c09ab57714c1a066cb73f96d03f3aea87fb7e1221be28f2c962"
+}
