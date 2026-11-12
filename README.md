@@ -7,6 +7,8 @@ Two research artifacts by **Mohammad Ali Seyed Mahmoud**, Georgia Institute of T
 | Exact evaluation of adaptive cache continuations | Two exact implementations saved the same replays across eight conditions. In one 128-block tool/agent condition, the focused implementation took 66.59 microseconds per decision and the full-state implementation with the same shortcuts took 89.00. No independent planner benefit was demonstrated. | [Evaluator: code and results](docs/evaluator.md) |
 | Request ordering under a waiting limit | None of 36 primary configurations on one held-out FreeInference period achieved the registered 3% modeled prefill saving through ordering. Nine qualified when the offline reference could also change eviction. These are CPU simulations, not GPU latency measurements. | [Ordering: code and results](docs/ordering.md) |
 
+Read the [two papers and their LaTeX sources](papers/README.md), or download the [versioned source bundles, PDFs and checksums](https://github.com/smahmoud66/prefix-cache-studies/releases/tag/v1.0).
+
 To print the two headline tables using Python 3.11+:
 
 ```sh

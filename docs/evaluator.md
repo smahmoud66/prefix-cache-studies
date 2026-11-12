@@ -1,5 +1,7 @@
 # Exact continuation evaluator
 
+[Read the paper](../papers/evaluator/paper.pdf) · [LaTeX source](../papers/evaluator/main.tex)
+
 One request charges its missing prefix blocks at entry, admits the whole path atomically and evicts by LRU. The evaluator scores known, finite continuations whose next action can depend on cache hits. Candidates tied for best immediate work can have different complete exit states. Only the historical scalar score is shared; the winning candidate commits its own complete exit.
 
 - [Matched C++ evaluator](../research/focused_comparison_20261109/evaluator.cpp), [focused kernel](../research/focused_comparison_20261109/focused_kernel.inc), [previous evaluator](../research/exact_tie_20261108/evaluator.cpp), [original cache engine](../research/exit_cache_20261108/engine.cpp), [build script](../research/focused_comparison_20261109/build.py).

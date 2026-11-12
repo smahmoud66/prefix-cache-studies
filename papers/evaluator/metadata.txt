@@ -1,0 +1,9 @@
+Title: Exact Evaluation of Adaptive Prefix-Cache Continuations
+Authors: Mohammad Ali Seyed Mahmoud
+Affiliation: Georgia Institute of Technology
+Corresponding email: m.seyedmahmoud@gatech.edu
+Suggested primary category: cs.DS (Data Structures and Algorithms)
+Comments: 7 pages. Technical report, manuscript v3.1. Code and data: https://github.com/smahmoud66/prefix-cache-studies/releases/tag/v1.0
+
+Abstract:
+Tied request orders can leave different cache states. Under ordinary LRU with prefix paths charged at entry, we show how to score a known, finite continuation from those states even when its request order depends on cache hits. Equivalent starting states can share a score; a sufficient persistence test sometimes gives the score without replay. On one previously examined Mooncake tool/agent panel (128 blocks, decision output), the two shortcuts reduced historical replays from 267,672 to 46,610. Our original implementation and our adaptation of focused LRU saved exactly the same replays in all eight conditions. The original used more mean native CPU in six. On the highlighted panel, the focused implementation took 66.59 microseconds per decision versus 89.00 microseconds for the original; the local caller's wall time fell 16.9%. The historical policy saved 0.204% of pooled modeled prefill work over exact immediate ordering on Mooncake and zero on two external episodes. The evidence supports a specialization of focused LRU and a measurement of evaluator cost. We have not established an end-to-end benefit for an independent planner.
