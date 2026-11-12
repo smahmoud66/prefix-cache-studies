@@ -2,8 +2,10 @@ Title: Request Ordering Under a Waiting Limit for LLM Prefix Reuse: A Trace Repl
 Authors: Mohammad Ali Seyed Mahmoud
 Affiliation: Georgia Institute of Technology
 Corresponding email: m.seyedmahmoud@gatech.edu
+Distribution license: Creative Commons Attribution 4.0 International (CC BY 4.0)
+License URL: https://creativecommons.org/licenses/by/4.0/
 Suggested primary category: cs.PF (Performance)
-Comments: 5 pages, 1 figure. CPU trace replay study. Code and data: https://github.com/smahmoud66/prefix-cache-studies/releases/tag/v1.0
+Comments: 5 pages, 1 figure. CPU trace replay study. Code and data: https://github.com/smahmoud66/prefix-cache-studies/releases/tag/v1.0.1
 
 Abstract:
 Can the waiting queue identify when changing request order saves enough prefill work to matter? We tested this question in a CPU replay with an LRU prefix cache and a bound on added start delay relative to first-come-first-served (FCFS). We fitted the decision rule on two Mooncake traces, fixed its predictions, then scored 3,000 held-out FreeInference requests at 36 combinations of utilization, queue depth and cache capacity. With a 500 ms waiting allowance, no configuration met the prespecified 3% modeled prefill saving through ordering alone. The best tested LRU schedule saved at most 1.323% over FCFS. Nine cells met the mixed criterion when the offline reference could also change eviction, all at the smallest capacity. A rule that flagged every cell had 25% precision against an 80% requirement. On one matched order, changing only eviction saved another 7.174 percentage points of FCFS work. An independent audit checked 540,000 request starts and found no waiting-limit violation. The result distinguishes an offline eviction opportunity from a measured ordering gain. It does not establish an optimality bound or a production latency result.

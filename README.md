@@ -7,7 +7,7 @@ Two research artifacts by **Mohammad Ali Seyed Mahmoud**, Georgia Institute of T
 | Exact evaluation of adaptive cache continuations | Two exact implementations saved the same replays across eight conditions. In one 128-block tool/agent condition, the focused implementation took 66.59 microseconds per decision and the full-state implementation with the same shortcuts took 89.00. No independent planner benefit was demonstrated. | [Evaluator: code and results](docs/evaluator.md) |
 | Request ordering under a waiting limit | None of 36 primary configurations on one held-out FreeInference period achieved the registered 3% modeled prefill saving through ordering. Nine qualified when the offline reference could also change eviction. These are CPU simulations, not GPU latency measurements. | [Ordering: code and results](docs/ordering.md) |
 
-Read the [two papers and their LaTeX sources](papers/README.md), or download the [versioned source bundles, PDFs and checksums](https://github.com/smahmoud66/prefix-cache-studies/releases/tag/v1.0).
+Read the [two papers and their LaTeX sources](papers/README.md), or download the [versioned source bundles, PDFs and checksums](https://github.com/smahmoud66/prefix-cache-studies/releases/tag/v1.0.1).
 
 To print the two headline tables using Python 3.11+:
 
@@ -16,3 +16,5 @@ python3 tools/reproduce.py summary
 ```
 
 The [reproduction guide](docs/reproduce.md) describes the offline audit and optional full CPU replications. [Data sources](data/README.md) lists the pinned public inputs, transformations and attribution. Scientific code, comparison baselines, numerical outputs and original freeze records are under `research/`. The dated folder names preserve the relative imports in the frozen programs. The top-level guides are the entry points for this distribution.
+
+The two manuscripts are available under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The original software currently has no reuse license. See the [upstream terms](data/README.md) for the datasets.
